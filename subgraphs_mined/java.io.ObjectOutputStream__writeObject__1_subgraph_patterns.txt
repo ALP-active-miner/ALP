@@ -1,0 +1,57 @@
+t # 1809 * 168
+v 0 ObjectOutputStream
+v 1 AutoCloseable.close()
+v 2 <catch>
+e 0 1 recv
+e 1 2 order_rev
+
+t # 1646 * 126
+v 0 ObjectOutputStream
+v 1 ObjectOutput.writeObject()
+v 2 <nullcheck>
+e 0 1 recv
+e 0 2 para
+
+t # 14862 * 590
+v 0 ObjectOutput.writeObject()
+v 1 AutoCloseable.close()
+e 0 1 finally
+
+t # 24530 * 929
+v 0 ObjectOutputStream.<init>
+v 1 AutoCloseable.close()
+v 2 AutoCloseable.close()
+e 0 1 order
+e 0 2 order
+
+t # 2878 * 450
+v 0 <return>
+v 1 ObjectOutput.writeObject()
+v 2 AutoCloseable.close()
+e 0 1 order_rev
+e 1 2 finally
+
+t # 5788 * 2671
+v 0 ByteArrayOutputStream.<init>
+v 1 ObjectOutput.writeObject()
+e 0 1 order
+
+t # 14616 * 216
+v 0 <catch>
+v 1 Flushable.flush()
+v 2 ByteArrayOutputStream.toByteArray()
+e 0 1 order_rev
+e 1 2 order
+
+t # 4955 * 2627
+v 0 ByteArrayOutputStream.<init>
+v 1 ByteArrayOutputStream
+e 0 1 def
+
+t # 19832 * 631
+v 0 ByteArrayOutputStream.toByteArray()
+v 1 byte[]
+v 2 Flushable.flush()
+e 0 1 def
+e 0 2 order_rev
+

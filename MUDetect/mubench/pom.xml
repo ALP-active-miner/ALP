@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>mudetect</artifactId>
+        <groupId>de.tu-darmstadt.stg.mudetect</groupId>
+        <version>0.0.3-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>mubench</artifactId>
+    <name>MuBench</name>
+
+    <dependencies>
+        <!-- ### AUGs ##################################################### -->
+        <dependency>
+            <groupId>de.tu-darmstadt.stg.mudetect</groupId>
+            <artifactId>aug</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tu-darmstadt.stg.mudetect</groupId>
+            <artifactId>src2egroum2aug</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- ### MuBench ################################################## -->
+        <dependency>
+            <groupId>de.tu-darmstadt.stg</groupId>
+            <artifactId>mubench.cli</artifactId>
+            <version>0.0.11</version>
+        </dependency>
+
+        <!-- ### Utils #################################################### -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <!-- ### Logging ################################################## -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+
+        <!-- ### Testing ################################################## -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jmock</groupId>
+            <artifactId>jmock-junit4</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.tu-darmstadt.stg.mudetect</groupId>
+            <artifactId>aug</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.tu-darmstadt.stg.mudetect</groupId>
+            <artifactId>src2egroum2aug</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>mudetect</id>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>de.tu_darmstadt.stg.mubench.MuDetectRunner</mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <finalName>MuDetect</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
+                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>mudetect-xproject</id>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>de.tu_darmstadt.stg.mubench.MuDetectCrossProjectRunner</mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <finalName>MuDetectXP</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
+                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>mudetect-ranking</id>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>de.tu_darmstadt.stg.mubench.MuDetectRankingComparisonRunner</mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <finalName>MuDetectRankComp</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
+                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>aug-exporter</id>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>de.tu_darmstadt.stg.mubench.AUGExportRunner</mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <finalName>AUGExporter</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
+                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,77 @@
+t # 200 * 1618
+v 0 List.get()
+v 1 Collection.size()
+e 0 1 order_rev
+
+t # 1 * 2367
+v 0 Collection.add()
+
+t # 26 * 2909
+v 0 Collection.size()
+
+t # 144 * 999
+v 0 ArrayList.<init>
+v 1 List.get()
+e 0 1 order
+
+t # 143 * 360
+v 0 ArrayList.<init>
+v 1 ArrayList.<init>
+e 0 1 order
+
+t # 177 * 984
+v 0 List.get()
+v 1 List.get()
+e 0 1 order
+
+t # 113 * 653
+v 0 Collection.add()
+v 1 List.get()
+e 0 1 order_rev
+
+t # 36 * 1766
+v 0 Integer
+
+t # 211 * 282
+v 0 List.get()
+v 1 Map.get()
+e 0 1 order_rev
+
+t # 202 * 304
+v 0 List.get()
+v 1 Iterable.iterator()
+e 0 1 order_rev
+
+t # 264 * 639
+v 0 Collection.size()
+v 1 Collection.size()
+e 0 1 order
+
+t # 51 * 834
+v 0 Map.put()
+
+t # 99 * 459
+v 0 Collection.add()
+v 1 Collection.add()
+e 0 1 order
+
+t # 59 * 991
+v 0 Map.get()
+
+t # 31 * 224
+v 0 Collection.isEmpty()
+
+t # 57 * 432
+v 0 param:String
+
+t # 96 * 184
+v 0 String
+v 1 <return>
+e 0 1 para
+
+t # 89 * 148
+v 0 Random.nextInt()
+
+t # 54 * 206
+v 0 boolean:false
+

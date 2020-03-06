@@ -1,0 +1,175 @@
+t # 12 * 1029
+v 0 Map.containsKey()
+
+t # 36 * 2060
+v 0 Set
+
+t # 25 * 1097
+v 0 param:String
+
+t # 42 * 2506
+v 0 UNKNOWN
+
+t # 26 * 3765
+v 0 Map.put()
+
+t # 107046 * 634
+v 0 Map.put()
+v 1 <nullcheck>
+e 0 1 order_rev
+
+t # 13661 * 2076
+v 0 Map.get()
+v 1 <return>
+e 0 1 order
+
+t # 61361 * 558
+v 0 Map.containsKey()
+v 1 Map.put()
+e 0 1 sel
+
+t # 22004 * 310
+v 0 Map.get()
+v 1 Entry.getKey()
+v 2 Map.put()
+e 0 1 order
+e 1 2 order_rev
+
+t # 44 * 1716
+v 0 <nullcheck>
+
+t # 17340 * 520
+v 0 Map.get()
+v 1 Map.put()
+v 2 <nullcheck>
+e 0 1 order
+e 0 2 order
+
+t # 4 * 4848
+v 0 int
+
+t # 11265 * 462
+v 0 Map.get()
+v 1 Map.put()
+e 0 1 sel
+
+t # 27 * 2029
+v 0 Iterator.next()
+
+t # 22305 * 332
+v 0 Map.get()
+v 1 Entry.getValue()
+e 0 1 order
+
+t # 20683 * 877
+v 0 Map.get()
+v 1 <nullcheck>
+e 0 1 order
+
+t # 29923 * 272
+v 0 Map.get()
+v 1 Iterator.next()
+v 2 Map.put()
+e 0 1 order_rev
+e 1 2 sel
+
+t # 29249 * 746
+v 0 Map.get()
+v 1 Map.put()
+e 0 1 order_rev
+
+t # 23 * 3568
+v 0 Map
+
+t # 7 * 3157
+v 0 <return>
+
+t # 29897 * 447
+v 0 Map.get()
+v 1 Iterator.next()
+v 2 String
+e 0 1 order_rev
+e 1 2 def
+
+t # 28475 * 863
+v 0 Map.get()
+v 1 HashMap.<init>
+v 2 Map.put()
+e 0 1 order_rev
+e 1 2 order
+
+t # 23991 * 445
+v 0 Map.get()
+v 1 PrintStream.println()
+v 2 Map.put()
+e 0 1 order
+e 1 2 order_rev
+
+t # 16910 * 1253
+v 0 Map.get()
+v 1 Map.put()
+e 0 1 order
+
+t # 86950 * 939
+v 0 HashMap.<init>
+v 1 Map.put()
+e 0 1 order
+
+t # 41 * 2161
+v 0 Object
+
+t # 57048 * 217
+v 0 Collection.add()
+v 1 <nullcheck>
+v 2 Map.put()
+e 0 1 order_rev
+e 1 2 order
+
+t # 9863 * 497
+v 0 Map.get()
+v 1 Object
+v 2 <return>
+e 0 1 def
+e 0 2 order
+
+t # 32862 * 529
+v 0 Map.get()
+v 1 Map.keySet()
+v 2 Iterator.next()
+e 0 1 order_rev
+e 1 2 rep
+
+t # 54338 * 171
+v 0 Collection.add()
+v 1 ArrayList.<init>
+v 2 <nullcheck>
+e 0 1 order_rev
+e 0 2 order_rev
+
+t # 158068 * 353
+v 0 <nullcheck>
+v 1 <nullcheck>
+e 0 1 order_rev
+
+t # 27827 * 248
+v 0 Map.get()
+v 1 ArrayList.<init>
+v 2 Map.put()
+e 0 1 order_rev
+e 0 2 order_rev
+
+t # 11 * 759
+v 0 List.get()
+
+t # 62122 * 198
+v 0 Map.containsKey()
+v 1 ArrayList.<init>
+e 0 1 order
+
+t # 15041 * 247
+v 0 Map.get()
+v 1 Collection.add()
+v 2 Map.containsKey()
+e 0 1 order
+e 0 2 order_rev
+

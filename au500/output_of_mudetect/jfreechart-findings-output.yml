@@ -1,0 +1,1971 @@
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/chart/plot/SpiderWebPlot.java
+method: getLegendItems()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Object" shape="ellipse" ];
+    3 [ label="Iterator.next() L1079" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L1078" shape="box" ];
+    6 [ label="Iterable.iterator() L1076" shape="box" ];
+    7 [ label="List" shape="ellipse" ];
+    8 [ label="<nullcheck> L1071" shape="box" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    8 -> 3 [ label="order" style="bold" ];
+    8 -> 3 [ label="sel" style="bold" ];
+    6 -> 4 [ label="def" style="solid" ];
+    8 -> 5 [ label="sel" style="bold" ];
+    6 -> 5 [ label="order" style="bold" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" ];
+    8 -> 6 [ label="sel" style="bold" ];
+    7 -> 6 [ label="recv" style="solid" ];
+    8 -> 6 [ label="order" style="bold" ];
+    7 -> 8 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "getLegendItems()" {
+  nslimit=10000;
+
+    1 [ label="<nullcheck> L1071" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="List" shape="ellipse" color="gray" fontcolor="gray" ];
+    4 [ label="List" shape="ellipse" color="gray" fontcolor="gray" ];
+    5 [ label="LegendItem.setDataset() L1087" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterable.iterator() L1076" shape="box" ];
+    7 [ label="LegendItem.setSeriesIndex() L1089" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Iterator.hasNext() L1078" shape="box" ];
+    9 [ label="LegendItem.setSeriesKey() L1088" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Object.toString() L1080" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="Iterator.next() L1079" shape="box" ];
+    12 [ label="<return> L1072" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="<return> L1093" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="LegendItem.<init> L1085" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="LegendItemCollection.add() L1090" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="Comparable.<cast> L1079" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="Iterator" shape="ellipse" ];
+    18 [ label="=" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="Object" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" ];
+    18 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="sel" style="bold" ];
+    1 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="sel" style="bold" ];
+    1 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" ];
+    1 -> 11 [ label="order" style="bold" ];
+    1 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="sel" style="bold" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="order" style="bold" ];
+    1 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="recv" style="solid" ];
+    3 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="rep" style="bold" ];
+    6 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 17 [ label="def" style="solid" ];
+    6 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="order" style="bold" ];
+    6 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="order" style="bold" ];
+    6 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 8 [ label="recv" style="solid" ];
+    8 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="rep" style="bold" ];
+    8 -> 11 [ label="order" style="bold" ];
+    8 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 11 [ label="recv" style="solid" ];
+    11 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="def" style="solid" ];
+    11 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 16 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.058536585365853655
+pattern_support: 5
+confidence_string: (overlap = 24.00 / 25.00)*(pattern support = 5 / 41)*(violation support = 1 / 2)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 1071
+---
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/data/json/impl/JSONArray.java
+method: toJSONString(List)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Object" shape="ellipse" ];
+    3 [ label="Iterator.next() L127" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L119" shape="box" ];
+    6 [ label="Iterable.iterator() L117" shape="box" ];
+    7 [ label="List" shape="ellipse" ];
+    8 [ label="<nullcheck> L111" shape="box" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    8 -> 3 [ label="order" style="bold" ];
+    8 -> 3 [ label="sel" style="bold" ];
+    6 -> 4 [ label="def" style="solid" ];
+    8 -> 5 [ label="sel" style="bold" ];
+    6 -> 5 [ label="order" style="bold" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" ];
+    8 -> 6 [ label="sel" style="bold" ];
+    7 -> 6 [ label="recv" style="solid" ];
+    8 -> 6 [ label="order" style="bold" ];
+    7 -> 8 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "toJSONString(List)" {
+  nslimit=10000;
+
+    1 [ label="Iterable.iterator() L117" shape="box" ];
+    2 [ label="<nullcheck> L111" shape="box" ];
+    3 [ label="List" shape="ellipse" ];
+    4 [ label="AbstractStringBuilder.append() L132" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="JSONValue.toJSONString() L132" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="<nullcheck> L128" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Iterator.next() L127" shape="box" ];
+    8 [ label="Iterator" shape="ellipse" ];
+    9 [ label="<continue> L130" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Iterator.hasNext() L119" shape="box" ];
+    11 [ label="Object" shape="ellipse" ];
+    12 [ label="<return> L112" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="<return> L135" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="sel" style="bold" ];
+    2 -> 1 [ label="order" style="bold" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    1 -> 10 [ label="order" style="bold" ];
+    1 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="rep" style="bold" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="def" style="solid" ];
+    1 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="order" style="bold" ];
+    1 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="para" style="solid" ];
+    2 -> 7 [ label="order" style="bold" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="sel" style="bold" ];
+    2 -> 10 [ label="order" style="bold" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="sel" style="bold" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="recv" style="solid" ];
+    10 -> 7 [ label="order" style="bold" ];
+    10 -> 7 [ label="rep" style="bold" ];
+    7 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="def" style="solid" ];
+    8 -> 10 [ label="recv" style="solid" ];
+    10 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.058536585365853655
+pattern_support: 5
+confidence_string: (overlap = 24.00 / 25.00)*(pattern support = 5 / 41)*(violation support = 1 / 2)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 111
+---
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/chart/renderer/WaferMapRenderer.java
+method: getMaxPaintValue(Integer)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Number.doubleValue()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Number" shape="ellipse" color="red" fontcolor="red" ];
+    3 [ label="StatisticalCategoryDataset.getStdDevValue()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="ValueAxis.valueToJava2D()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    6 [ label="RectangleEdge" shape="ellipse" color="red" fontcolor="red" ];
+    7 [ label="CategoryPlot.getRangeAxisEdge()" shape="box" color="red" fontcolor="red" ];
+    8 [ label="Number.doubleValue() L377" shape="box" ];
+    9 [ label="Rectangle2D" shape="ellipse" color="red" fontcolor="red" ];
+    10 [ label="CategoryAxis.getCategoryStart()" shape="box" color="red" fontcolor="red" ];
+    11 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    12 [ label="StatisticalCategoryDataset.getMeanValue()" shape="box" color="red" fontcolor="red" ];
+    13 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    14 [ label="=" shape="box" color="red" fontcolor="red" ];
+    15 [ label="CategoryAxis" shape="ellipse" color="red" fontcolor="red" ];
+    16 [ label="double" shape="ellipse" ];
+    17 [ label="=" shape="box" color="red" fontcolor="red" ];
+    18 [ label="<r> L377" shape="box" ];
+    19 [ label="=" shape="box" color="red" fontcolor="red" ];
+    20 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    21 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    22 [ label="Number" shape="ellipse" ];
+    23 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    24 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    25 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    26 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    27 [ label="RectangleEdge" shape="ellipse" color="red" fontcolor="red" ];
+    28 [ label="CategoryPlot.getDomainAxisEdge()" shape="box" color="red" fontcolor="red" ];
+    29 [ label="CategoryPlot" shape="ellipse" color="red" fontcolor="red" ];
+    30 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    31 [ label="StatisticalCategoryDataset" shape="ellipse" color="red" fontcolor="red" ];
+    32 [ label="double" shape="ellipse" ];
+    33 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    34 [ label="ValueAxis" shape="ellipse" color="red" fontcolor="red" ];
+    35 [ label="=" shape="box" color="red" fontcolor="red" ];
+    36 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    37 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    38 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    39 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    40 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    41 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    42 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    43 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    23 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    14 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    19 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    35 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    17 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    12 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    35 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    10 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    14 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    31 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    12 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    17 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    19 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    11 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    25 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    13 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    8 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    41 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    42 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    9 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    12 -> 4 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    14 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    30 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    17 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 4 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    34 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    19 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    32 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    28 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    35 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    14 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    19 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    35 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    17 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="def" style="solid" color="red" fontcolor="red" ];
+    19 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    14 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    35 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    29 -> 7 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    12 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    17 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 8 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 8 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 8 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    28 -> 8 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 8 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 8 [ label="order" style="bold" color="red" fontcolor="red" ];
+    22 -> 8 [ label="recv" style="solid" ];
+    9 -> 10 [ label="para" style="solid" color="red" fontcolor="red" ];
+    33 -> 10 [ label="para" style="solid" color="red" fontcolor="red" ];
+    25 -> 10 [ label="para" style="solid" color="red" fontcolor="red" ];
+    27 -> 10 [ label="para" style="solid" color="red" fontcolor="red" ];
+    28 -> 10 [ label="order" style="bold" color="red" fontcolor="red" ];
+    15 -> 10 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    11 -> 12 [ label="para" style="solid" color="red" fontcolor="red" ];
+    28 -> 12 [ label="order" style="bold" color="red" fontcolor="red" ];
+    25 -> 12 [ label="para" style="solid" color="red" fontcolor="red" ];
+    31 -> 12 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    10 -> 12 [ label="order" style="bold" color="red" fontcolor="red" ];
+    16 -> 13 [ label="def" style="solid" color="red" fontcolor="red" ];
+    14 -> 13 [ label="def" style="solid" color="red" fontcolor="red" ];
+    8 -> 14 [ label="order" style="bold" color="red" fontcolor="red" ];
+    16 -> 14 [ label="para" style="solid" color="red" fontcolor="red" ];
+    28 -> 14 [ label="order" style="bold" color="red" fontcolor="red" ];
+    21 -> 14 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    20 -> 14 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    12 -> 14 [ label="order" style="bold" color="red" fontcolor="red" ];
+    38 -> 14 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    10 -> 14 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 14 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 17 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 17 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 17 [ label="order" style="bold" color="red" fontcolor="red" ];
+    20 -> 17 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    16 -> 17 [ label="para" style="solid" color="red" fontcolor="red" ];
+    8 -> 17 [ label="order" style="bold" color="red" fontcolor="red" ];
+    37 -> 17 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    12 -> 17 [ label="order" style="bold" color="red" fontcolor="red" ];
+    16 -> 18 [ label="para" style="solid" ];
+    32 -> 18 [ label="para" style="solid" ];
+    12 -> 18 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 18 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    20 -> 18 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    10 -> 19 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 19 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 19 [ label="order" style="bold" color="red" fontcolor="red" ];
+    26 -> 19 [ label="para" style="solid" color="red" fontcolor="red" ];
+    12 -> 19 [ label="order" style="bold" color="red" fontcolor="red" ];
+    18 -> 19 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 19 [ label="order" style="bold" color="red" fontcolor="red" ];
+    40 -> 19 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    16 -> 20 [ label="para" style="solid" color="red" fontcolor="red" ];
+    24 -> 20 [ label="para" style="solid" color="red" fontcolor="red" ];
+    38 -> 21 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    16 -> 21 [ label="para" style="solid" color="red" fontcolor="red" ];
+    23 -> 21 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 21 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    12 -> 21 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    20 -> 21 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    32 -> 21 [ label="para" style="solid" color="red" fontcolor="red" ];
+    12 -> 22 [ label="def" style="solid" color="red" fontcolor="red" ];
+    12 -> 23 [ label="order" style="bold" color="red" fontcolor="red" ];
+    22 -> 23 [ label="para" style="solid" color="red" fontcolor="red" ];
+    28 -> 23 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 23 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 27 [ label="def" style="solid" color="red" fontcolor="red" ];
+    29 -> 28 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    26 -> 30 [ label="def" style="solid" color="red" fontcolor="red" ];
+    35 -> 30 [ label="def" style="solid" color="red" fontcolor="red" ];
+    8 -> 32 [ label="def" style="solid" ];
+    37 -> 35 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 35 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 35 [ label="order" style="bold" color="red" fontcolor="red" ];
+    39 -> 35 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    36 -> 35 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    26 -> 35 [ label="para" style="solid" color="red" fontcolor="red" ];
+    23 -> 35 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 35 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 35 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 36 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    26 -> 36 [ label="para" style="solid" color="red" fontcolor="red" ];
+    32 -> 36 [ label="para" style="solid" color="red" fontcolor="red" ];
+    37 -> 36 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 36 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    39 -> 36 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 36 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    20 -> 37 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 37 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    16 -> 37 [ label="para" style="solid" color="red" fontcolor="red" ];
+    12 -> 37 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    32 -> 37 [ label="para" style="solid" color="red" fontcolor="red" ];
+    26 -> 38 [ label="para" style="solid" color="red" fontcolor="red" ];
+    12 -> 38 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    32 -> 38 [ label="para" style="solid" color="red" fontcolor="red" ];
+    23 -> 38 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    39 -> 38 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    43 -> 39 [ label="para" style="solid" color="red" fontcolor="red" ];
+    26 -> 39 [ label="para" style="solid" color="red" fontcolor="red" ];
+    20 -> 39 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    32 -> 40 [ label="para" style="solid" color="red" fontcolor="red" ];
+    26 -> 40 [ label="para" style="solid" color="red" fontcolor="red" ];
+    18 -> 40 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 40 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    12 -> 40 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 40 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    16 -> 41 [ label="def" style="solid" color="red" fontcolor="red" ];
+    17 -> 41 [ label="def" style="solid" color="red" fontcolor="red" ];
+    19 -> 42 [ label="def" style="solid" color="red" fontcolor="red" ];
+    26 -> 42 [ label="def" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getMaxPaintValue(Integer)" {
+  nslimit=10000;
+
+    1 [ label="double" shape="ellipse" ];
+    2 [ label="double" shape="ellipse" color="gray" fontcolor="gray" ];
+    3 [ label="<r> L377" shape="box" ];
+    4 [ label="Double.<init> L382" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Number" shape="ellipse" ];
+    6 [ label="Number.<cast> L377" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Number.doubleValue() L377" shape="box" ];
+    8 [ label="double" shape="ellipse" ];
+    9 [ label="Map.Entry.<cast> L375" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Integer.<cast> L376" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="Iterable.iterator() L374" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Iterator.hasNext() L374" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Object.equals() L376" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="Iterator.next() L375" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="Entry.getValue() L376" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="Entry.getKey() L378" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="Number.doubleValue() L378" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="Number.<cast> L378" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    1 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="para" style="solid" ];
+    11 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="recv" style="solid" ];
+    14 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="def" style="solid" ];
+    7 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.03269330565646082
+pattern_support: 7
+confidence_string: (overlap = 9.00 / 47.00)*(pattern support = 7 / 41)*(violation support = 1 / 1)
+pattern_examples:
+- dound/buffer_sizing/JFreeChart/src/org/jfree/chart/renderer/category/StatisticalBarRenderer.java#drawVerticalItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, StatisticalCategoryDataset, int, int)
+- apetresc/JFreeChart/src/main/java/org/jfree/chart/renderer/category/StatisticalBarRenderer.java#drawVerticalItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, StatisticalCategoryDataset, int, int, int)
+- TeAmigo/PeTraSys/lib/LibsLocal/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java#drawVerticalItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, StatisticalCategoryDataset, int, int, int)
+- laflechejonathan/EECE-419-Simulevator/Simulevator/lib/jfreechart-1.0.13/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java#drawHorizontalItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, StatisticalCategoryDataset, int, int, int)
+- robsonfpp/brproject/chart/src/main/java/org/jfree/chart/renderer/category/StatisticalBarRenderer.java#drawHorizontalItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, StatisticalCategoryDataset, int, int, int)
+startline: 377
+---
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/chart/PaintMap.java
+method: equals(Object)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Object" shape="ellipse" ];
+    3 [ label="Iterator.next() L157" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L156" shape="box" ];
+    6 [ label="Iterable.iterator() L155" shape="box" ];
+    7 [ label="Set" shape="ellipse" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="def" style="solid" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="order" style="bold" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "equals(Object)" {
+  nslimit=10000;
+
+    1 [ label="Set" shape="ellipse" ];
+    2 [ label="Iterable.iterator() L155" shape="box" ];
+    3 [ label="Object" shape="ellipse" ];
+    4 [ label="Iterator.next() L157" shape="box" ];
+    5 [ label="Comparable.<cast> L157" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterator" shape="ellipse" ];
+    7 [ label="Iterator.hasNext() L156" shape="box" ];
+    8 [ label="<return> L161" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="PaintUtils.equal() L160" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="PaintMap.getPaint() L159" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    2 -> 7 [ label="order" style="bold" ];
+    2 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="rep" style="bold" ];
+    2 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" ];
+    2 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="def" style="solid" ];
+    4 -> 3 [ label="def" style="solid" ];
+    3 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" ];
+    6 -> 4 [ label="recv" style="solid" ];
+    7 -> 4 [ label="rep" style="bold" ];
+    4 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="recv" style="solid" ];
+    7 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.027100271002710025
+pattern_support: 5
+confidence_string: (overlap = 16.00 / 18.00)*(pattern support = 5 / 41)*(violation support = 1 / 4)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 155
+---
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/chart/renderer/WaferMapRenderer.java
+method: getLegendCollection()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Object" shape="ellipse" ];
+    3 [ label="Iterator.next() L300" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L298" shape="box" ];
+    6 [ label="Iterable.iterator() L297" shape="box" ];
+    7 [ label="Set" shape="ellipse" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="def" style="solid" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="order" style="bold" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getLegendCollection()" {
+  nslimit=10000;
+
+    1 [ label="Set" shape="ellipse" ];
+    2 [ label="Iterable.iterator() L297" shape="box" ];
+    3 [ label="Object.toString() L301" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Entry.getKey() L301" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Entry.getValue() L305" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="LegendItemCollection.add() L309" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Map.Entry.<cast> L300" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Iterator.next() L300" shape="box" ];
+    9 [ label="LegendItem.<init> L309" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Iterator" shape="ellipse" ];
+    11 [ label="Number.intValue() L305" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Integer.<cast> L305" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Iterator.hasNext() L298" shape="box" ];
+    14 [ label="Object" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    2 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" ];
+    2 -> 13 [ label="order" style="bold" ];
+    2 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="rep" style="bold" ];
+    2 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="def" style="solid" ];
+    2 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="recv" style="solid" ];
+    13 -> 8 [ label="rep" style="bold" ];
+    13 -> 8 [ label="order" style="bold" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="def" style="solid" ];
+    13 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="recv" style="solid" ];
+    13 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.027100271002710025
+pattern_support: 5
+confidence_string: (overlap = 16.00 / 18.00)*(pattern support = 5 / 41)*(violation support = 1 / 4)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 297
+---
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/chart/renderer/WaferMapRenderer.java
+method: getLegendCollection()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Object" shape="ellipse" ];
+    3 [ label="Iterator.next() L319" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L318" shape="box" ];
+    6 [ label="Iterable.iterator() L317" shape="box" ];
+    7 [ label="Set" shape="ellipse" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="def" style="solid" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="order" style="bold" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getLegendCollection()" {
+  nslimit=10000;
+
+    1 [ label="Set" shape="ellipse" ];
+    2 [ label="Iterable.iterator() L317" shape="box" ];
+    3 [ label="Entry.getValue() L320" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Entry.getValue() L322" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Integer.<cast> L322" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Integer.<cast> L324" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Entry.getValue() L328" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Iterator.next() L319" shape="box" ];
+    10 [ label="Entry.getValue() L324" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="Number.intValue() L328" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Integer.<cast> L328" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Collection.add() L320" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="Map.Entry.<cast> L319" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="Iterator.hasNext() L318" shape="box" ];
+    16 [ label="Object" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    2 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="def" style="solid" ];
+    2 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="rep" style="bold" ];
+    2 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="order" style="bold" ];
+    2 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" ];
+    2 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 15 [ label="recv" style="solid" ];
+    4 -> 9 [ label="recv" style="solid" ];
+    15 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 9 [ label="order" style="bold" ];
+    15 -> 9 [ label="rep" style="bold" ];
+    9 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="def" style="solid" ];
+    9 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 14 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    15 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.027100271002710025
+pattern_support: 5
+confidence_string: (overlap = 16.00 / 18.00)*(pattern support = 5 / 41)*(violation support = 1 / 4)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 317
+---
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/chart/renderer/WaferMapRenderer.java
+method: getMaxPaintValue(Integer)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Object" shape="ellipse" ];
+    3 [ label="Iterator.next() L375" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L374" shape="box" ];
+    6 [ label="Iterable.iterator() L374" shape="box" ];
+    7 [ label="Set" shape="ellipse" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="def" style="solid" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="order" style="bold" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getMaxPaintValue(Integer)" {
+  nslimit=10000;
+
+    1 [ label="Iterator.hasNext() L374" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Number.<cast> L378" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Entry.getKey() L378" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Entry.getValue() L376" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Number.<cast> L377" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Object.equals() L376" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="<r> L377" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Iterator.next() L375" shape="box" ];
+    10 [ label="Entry.getKey() L377" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="Number.doubleValue() L377" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Number.doubleValue() L378" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Integer.<cast> L376" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="Map.Entry.<cast> L375" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="Iterable.iterator() L374" shape="box" ];
+    16 [ label="Set" shape="ellipse" ];
+    17 [ label="Object" shape="ellipse" ];
+    15 -> 1 [ label="order" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" ];
+    1 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="rep" style="bold" ];
+    1 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 2 [ label="def" style="solid" ];
+    2 -> 9 [ label="recv" style="solid" ];
+    5 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 9 [ label="rep" style="bold" ];
+    15 -> 9 [ label="order" style="bold" ];
+    9 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 17 [ label="def" style="solid" ];
+    9 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 14 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    16 -> 15 [ label="recv" style="solid" ];
+  }
+confidence: 0.027100271002710025
+pattern_support: 5
+confidence_string: (overlap = 16.00 / 18.00)*(pattern support = 5 / 41)*(violation support = 1 / 4)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 374
+---
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/chart/text/TextLine.java
+method: calculateDimensions(Graphics2D)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Object" shape="ellipse" ];
+    3 [ label="Iterator.next() L168" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L167" shape="box" ];
+    6 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    7 [ label="Collection" shape="ellipse" color="red" fontcolor="red" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "calculateDimensions(Graphics2D)" {
+  nslimit=10000;
+
+    1 [ label="Iterator.next() L168" shape="box" ];
+    2 [ label="Iterator.hasNext() L167" shape="box" ];
+    3 [ label="Iterator" shape="ellipse" ];
+    4 [ label="Object" shape="ellipse" ];
+    5 [ label="Size2D.getHeight() L171" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="TextFragment.calculateDimensions() L169" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Math.max() L171" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="TextFragment.<cast> L168" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Size2D.getWidth() L170" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="rep" style="bold" ];
+    2 -> 1 [ label="order" style="bold" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="def" style="solid" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="recv" style="solid" ];
+    2 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.021106941838649154
+pattern_support: 5
+confidence_string: (overlap = 9.00 / 13.00)*(pattern support = 5 / 41)*(violation support = 1 / 4)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 167
+---
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/chart/plot/CombinedRangeXYPlot.java
+method: setRenderer(XYItemRenderer)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Object" shape="ellipse" ];
+    3 [ label="Iterator.next() L616" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L615" shape="box" ];
+    6 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    7 [ label="Collection" shape="ellipse" color="red" fontcolor="red" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "setRenderer(XYItemRenderer)" {
+  nslimit=10000;
+
+    1 [ label="Object" shape="ellipse" ];
+    2 [ label="Iterator.next() L616" shape="box" ];
+    3 [ label="XYPlot.<cast> L616" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Iterator.hasNext() L615" shape="box" ];
+    5 [ label="Iterator" shape="ellipse" ];
+    6 [ label="XYPlot.setRenderer() L617" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" ];
+    1 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="rep" style="bold" ];
+    5 -> 2 [ label="recv" style="solid" ];
+    4 -> 2 [ label="order" style="bold" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="recv" style="solid" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.021106941838649154
+pattern_support: 5
+confidence_string: (overlap = 9.00 / 13.00)*(pattern support = 5 / 41)*(violation support = 1 / 4)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 615
+---
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/chart/plot/CombinedRangeXYPlot.java
+method: setShadowGenerator(ShadowGenerator)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Object" shape="ellipse" ];
+    3 [ label="Iterator.next() L648" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L647" shape="box" ];
+    6 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    7 [ label="Collection" shape="ellipse" color="red" fontcolor="red" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "setShadowGenerator(ShadowGenerator)" {
+  nslimit=10000;
+
+    1 [ label="Iterator" shape="ellipse" ];
+    2 [ label="Iterator.next() L648" shape="box" ];
+    3 [ label="Iterator.hasNext() L647" shape="box" ];
+    4 [ label="Object" shape="ellipse" ];
+    5 [ label="XYPlot.<cast> L648" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="XYPlot.setShadowGenerator() L649" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    3 -> 2 [ label="order" style="bold" ];
+    3 -> 2 [ label="rep" style="bold" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="def" style="solid" ];
+    3 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.021106941838649154
+pattern_support: 5
+confidence_string: (overlap = 9.00 / 13.00)*(pattern support = 5 / 41)*(violation support = 1 / 4)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 647
+---
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/chart/plot/CombinedDomainCategoryPlot.java
+method: setShadowGenerator(ShadowGenerator)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Object" shape="ellipse" ];
+    3 [ label="Iterator.next() L529" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L528" shape="box" ];
+    6 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    7 [ label="Collection" shape="ellipse" color="red" fontcolor="red" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "setShadowGenerator(ShadowGenerator)" {
+  nslimit=10000;
+
+    1 [ label="Object" shape="ellipse" ];
+    2 [ label="Iterator.next() L529" shape="box" ];
+    3 [ label="CategoryPlot.<cast> L529" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Iterator.hasNext() L528" shape="box" ];
+    5 [ label="Iterator" shape="ellipse" ];
+    6 [ label="CategoryPlot.setShadowGenerator() L530" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" ];
+    1 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="rep" style="bold" ];
+    5 -> 2 [ label="recv" style="solid" ];
+    4 -> 2 [ label="order" style="bold" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="recv" style="solid" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.021106941838649154
+pattern_support: 5
+confidence_string: (overlap = 9.00 / 13.00)*(pattern support = 5 / 41)*(violation support = 1 / 4)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 528
+---
+file: /mubench/checkouts/jfreechart/893f9b15/src/main/java/org/jfree/chart/renderer/WaferMapRenderer.java
+method: getMaxPaintValue(Integer)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Number.doubleValue()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Number" shape="ellipse" color="red" fontcolor="red" ];
+    3 [ label="StatisticalCategoryDataset.getStdDevValue()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="ValueAxis.valueToJava2D()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    6 [ label="RectangleEdge" shape="ellipse" color="red" fontcolor="red" ];
+    7 [ label="CategoryPlot.getRangeAxisEdge()" shape="box" color="red" fontcolor="red" ];
+    8 [ label="Number.doubleValue() L378" shape="box" ];
+    9 [ label="Rectangle2D" shape="ellipse" color="red" fontcolor="red" ];
+    10 [ label="CategoryAxis.getCategoryStart()" shape="box" color="red" fontcolor="red" ];
+    11 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    12 [ label="StatisticalCategoryDataset.getMeanValue()" shape="box" color="red" fontcolor="red" ];
+    13 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    14 [ label="=" shape="box" color="red" fontcolor="red" ];
+    15 [ label="CategoryAxis" shape="ellipse" color="red" fontcolor="red" ];
+    16 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    17 [ label="=" shape="box" color="red" fontcolor="red" ];
+    18 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    19 [ label="=" shape="box" color="red" fontcolor="red" ];
+    20 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    21 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    22 [ label="Number" shape="ellipse" ];
+    23 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    24 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    25 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    26 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    27 [ label="RectangleEdge" shape="ellipse" color="red" fontcolor="red" ];
+    28 [ label="CategoryPlot.getDomainAxisEdge()" shape="box" color="red" fontcolor="red" ];
+    29 [ label="CategoryPlot" shape="ellipse" color="red" fontcolor="red" ];
+    30 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    31 [ label="StatisticalCategoryDataset" shape="ellipse" color="red" fontcolor="red" ];
+    32 [ label="double" shape="ellipse" ];
+    33 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    34 [ label="ValueAxis" shape="ellipse" color="red" fontcolor="red" ];
+    35 [ label="=" shape="box" color="red" fontcolor="red" ];
+    36 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    37 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    38 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    39 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    40 [ label="<r>" shape="box" color="red" fontcolor="red" ];
+    41 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    42 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    43 [ label="double" shape="ellipse" color="red" fontcolor="red" ];
+    23 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    14 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    19 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    35 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    17 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    12 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    35 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    10 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    14 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    31 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    12 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    17 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    19 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    11 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    25 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    13 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    8 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    41 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    42 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    9 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    12 -> 4 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    14 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    30 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    17 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 4 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    34 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    19 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    32 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    28 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    35 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    14 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    19 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    35 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    17 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="def" style="solid" color="red" fontcolor="red" ];
+    19 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    14 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    35 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    29 -> 7 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    12 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    17 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 8 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 8 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 8 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    28 -> 8 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 8 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 8 [ label="order" style="bold" color="red" fontcolor="red" ];
+    22 -> 8 [ label="recv" style="solid" ];
+    9 -> 10 [ label="para" style="solid" color="red" fontcolor="red" ];
+    33 -> 10 [ label="para" style="solid" color="red" fontcolor="red" ];
+    25 -> 10 [ label="para" style="solid" color="red" fontcolor="red" ];
+    27 -> 10 [ label="para" style="solid" color="red" fontcolor="red" ];
+    28 -> 10 [ label="order" style="bold" color="red" fontcolor="red" ];
+    15 -> 10 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    11 -> 12 [ label="para" style="solid" color="red" fontcolor="red" ];
+    28 -> 12 [ label="order" style="bold" color="red" fontcolor="red" ];
+    25 -> 12 [ label="para" style="solid" color="red" fontcolor="red" ];
+    31 -> 12 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    10 -> 12 [ label="order" style="bold" color="red" fontcolor="red" ];
+    16 -> 13 [ label="def" style="solid" color="red" fontcolor="red" ];
+    14 -> 13 [ label="def" style="solid" color="red" fontcolor="red" ];
+    8 -> 14 [ label="order" style="bold" color="red" fontcolor="red" ];
+    16 -> 14 [ label="para" style="solid" color="red" fontcolor="red" ];
+    28 -> 14 [ label="order" style="bold" color="red" fontcolor="red" ];
+    21 -> 14 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    20 -> 14 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    12 -> 14 [ label="order" style="bold" color="red" fontcolor="red" ];
+    38 -> 14 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    10 -> 14 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 14 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 17 [ label="order" style="bold" color="red" fontcolor="red" ];
+    23 -> 17 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 17 [ label="order" style="bold" color="red" fontcolor="red" ];
+    20 -> 17 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    16 -> 17 [ label="para" style="solid" color="red" fontcolor="red" ];
+    8 -> 17 [ label="order" style="bold" color="red" fontcolor="red" ];
+    37 -> 17 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    12 -> 17 [ label="order" style="bold" color="red" fontcolor="red" ];
+    16 -> 18 [ label="para" style="solid" color="red" fontcolor="red" ];
+    32 -> 18 [ label="para" style="solid" color="red" fontcolor="red" ];
+    12 -> 18 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 18 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    20 -> 18 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    10 -> 19 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 19 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 19 [ label="order" style="bold" color="red" fontcolor="red" ];
+    26 -> 19 [ label="para" style="solid" color="red" fontcolor="red" ];
+    12 -> 19 [ label="order" style="bold" color="red" fontcolor="red" ];
+    18 -> 19 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 19 [ label="order" style="bold" color="red" fontcolor="red" ];
+    40 -> 19 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    16 -> 20 [ label="para" style="solid" color="red" fontcolor="red" ];
+    24 -> 20 [ label="para" style="solid" color="red" fontcolor="red" ];
+    38 -> 21 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    16 -> 21 [ label="para" style="solid" color="red" fontcolor="red" ];
+    23 -> 21 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 21 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    12 -> 21 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    20 -> 21 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    32 -> 21 [ label="para" style="solid" color="red" fontcolor="red" ];
+    12 -> 22 [ label="def" style="solid" color="red" fontcolor="red" ];
+    12 -> 23 [ label="order" style="bold" color="red" fontcolor="red" ];
+    22 -> 23 [ label="para" style="solid" color="red" fontcolor="red" ];
+    28 -> 23 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 23 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 27 [ label="def" style="solid" color="red" fontcolor="red" ];
+    29 -> 28 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    26 -> 30 [ label="def" style="solid" color="red" fontcolor="red" ];
+    35 -> 30 [ label="def" style="solid" color="red" fontcolor="red" ];
+    8 -> 32 [ label="def" style="solid" ];
+    37 -> 35 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 35 [ label="order" style="bold" color="red" fontcolor="red" ];
+    10 -> 35 [ label="order" style="bold" color="red" fontcolor="red" ];
+    39 -> 35 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    36 -> 35 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    26 -> 35 [ label="para" style="solid" color="red" fontcolor="red" ];
+    23 -> 35 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 35 [ label="order" style="bold" color="red" fontcolor="red" ];
+    28 -> 35 [ label="order" style="bold" color="red" fontcolor="red" ];
+    12 -> 36 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    26 -> 36 [ label="para" style="solid" color="red" fontcolor="red" ];
+    32 -> 36 [ label="para" style="solid" color="red" fontcolor="red" ];
+    37 -> 36 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 36 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    39 -> 36 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 36 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    20 -> 37 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 37 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    16 -> 37 [ label="para" style="solid" color="red" fontcolor="red" ];
+    12 -> 37 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    32 -> 37 [ label="para" style="solid" color="red" fontcolor="red" ];
+    26 -> 38 [ label="para" style="solid" color="red" fontcolor="red" ];
+    12 -> 38 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    32 -> 38 [ label="para" style="solid" color="red" fontcolor="red" ];
+    23 -> 38 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    39 -> 38 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    43 -> 39 [ label="para" style="solid" color="red" fontcolor="red" ];
+    26 -> 39 [ label="para" style="solid" color="red" fontcolor="red" ];
+    20 -> 39 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    32 -> 40 [ label="para" style="solid" color="red" fontcolor="red" ];
+    26 -> 40 [ label="para" style="solid" color="red" fontcolor="red" ];
+    18 -> 40 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 40 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    12 -> 40 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    23 -> 40 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    16 -> 41 [ label="def" style="solid" color="red" fontcolor="red" ];
+    17 -> 41 [ label="def" style="solid" color="red" fontcolor="red" ];
+    19 -> 42 [ label="def" style="solid" color="red" fontcolor="red" ];
+    26 -> 42 [ label="def" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getMaxPaintValue(Integer)" {
+  nslimit=10000;
+
+    1 [ label="Number" shape="ellipse" ];
+    2 [ label="Number.<cast> L378" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Number.doubleValue() L378" shape="box" ];
+    4 [ label="double" shape="ellipse" ];
+    5 [ label="Double.<init> L382" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Number.<cast> L377" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="<r> L377" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Entry.getKey() L377" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Iterator.next() L375" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Iterable.iterator() L374" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="Entry.getValue() L376" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Object.equals() L376" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Number.doubleValue() L377" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="Integer.<cast> L376" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="Iterator.hasNext() L374" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="Map.Entry.<cast> L375" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    15 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="def" style="solid" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.018970189701897018
+pattern_support: 7
+confidence_string: (overlap = 5.00 / 45.00)*(pattern support = 7 / 41)*(violation support = 1 / 1)
+pattern_examples:
+- dound/buffer_sizing/JFreeChart/src/org/jfree/chart/renderer/category/StatisticalBarRenderer.java#drawVerticalItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, StatisticalCategoryDataset, int, int)
+- apetresc/JFreeChart/src/main/java/org/jfree/chart/renderer/category/StatisticalBarRenderer.java#drawVerticalItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, StatisticalCategoryDataset, int, int, int)
+- TeAmigo/PeTraSys/lib/LibsLocal/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java#drawVerticalItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, StatisticalCategoryDataset, int, int, int)
+- laflechejonathan/EECE-419-Simulevator/Simulevator/lib/jfreechart-1.0.13/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java#drawHorizontalItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, StatisticalCategoryDataset, int, int, int)
+- robsonfpp/brproject/chart/src/main/java/org/jfree/chart/renderer/category/StatisticalBarRenderer.java#drawHorizontalItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, StatisticalCategoryDataset, int, int, int)
+startline: 378

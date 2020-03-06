@@ -1,0 +1,1854 @@
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/codegen/unicode/java/org/apache/fop/complexscripts/bidi/GenerateBidiTestData.java
+method: removeSurrogates(List)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L737" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.hasNext() L736" shape="box" ];
+    4 [ label="Iterable.iterator() L736" shape="box" ];
+    5 [ label="List" shape="ellipse" ];
+    6 [ label="Collection.size() L735" shape="box" ];
+    4 -> 1 [ label="order" style="bold" ];
+    4 -> 1 [ label="rep" style="bold" ];
+    6 -> 1 [ label="order" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    6 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" ];
+    3 -> 1 [ label="rep" style="bold" ];
+    4 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="order" style="bold" ];
+    6 -> 4 [ label="order" style="bold" ];
+    5 -> 4 [ label="recv" style="solid" ];
+    6 -> 4 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    5 -> 6 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "removeSurrogates(List)" {
+  nslimit=10000;
+
+    1 [ label="List" shape="ellipse" ];
+    2 [ label="Iterable.iterator() L736" shape="box" ];
+    3 [ label="Collection.size() L735" shape="box" ];
+    4 [ label="Iterator.hasNext() L736" shape="box" ];
+    5 [ label="Iterator" shape="ellipse" ];
+    6 [ label="GenerateBidiTestData.intersectsRange() L738" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Iterator.next() L737" shape="box" ];
+    8 [ label="int[].<cast> L737" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Collection.addAll() L739" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Collection.add() L741" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="GenerateBidiTestData.removeRange() L739" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    13 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    3 -> 2 [ label="order" style="bold" ];
+    2 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" ];
+    2 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="rep" style="bold" ];
+    2 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="def" style="solid" ];
+    2 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" ];
+    2 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" ];
+    5 -> 4 [ label="recv" style="solid" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="rep" style="bold" ];
+    4 -> 7 [ label="order" style="bold" ];
+    4 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="recv" style="solid" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.20562770562770563
+pattern_support: 10
+confidence_string: (overlap = 19.00 / 22.00)*(pattern support = 10 / 42)*(violation support = 1 / 1)
+pattern_examples:
+- yanglujuncc/SomeJavaCodes/src/main/java/util/ListUtil.java#strListToString(List, String)
+- jonasevcik/SmartLib-Android/src/cz/muni/fi/smartlib/fragment/BookAvailabilityFragment.java#setAvailability(List)
+- NCIP/cadsr-cgmdr-nci-uk/extensions/fluent/src/org/exist/fluent/Source.java#readReader(Reader, char[])
+- cloudera/hcatalog/storage-handlers/hbase/src/java/org/apache/hcatalog/hbase/snapshot/ZKUtil.java#deleteRecursively(String)
+- goodow/gwt/samples/showcase/src/com/google/gwt/sample/showcase/client/content/cell/CwCustomDataGrid.java#buildHeaderOrFooterImpl()
+startline: 735
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/svg/PDFANode.java
+method: paint(Graphics2D)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="StringTokenizer.nextToken() L84" shape="box" ];
+    2 [ label="StringTokenizer" shape="ellipse" ];
+    3 [ label="StringTokenizer.hasMoreTokens() L83" shape="box" ];
+    4 [ label="StringTokenizer.countTokens()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="StringTokenizer.<init> L82" shape="box" ];
+    6 [ label="String" shape="ellipse" ];
+    5 -> 1 [ label="rep" style="bold" ];
+    5 -> 1 [ label="order" style="bold" ];
+    3 -> 1 [ label="rep" style="bold" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 2 [ label="def" style="solid" ];
+    4 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    2 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "paint(Graphics2D)" {
+  nslimit=10000;
+
+    1 [ label="StringTokenizer.<init> L82" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    4 [ label="Float.parseFloat() L97" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Float.parseFloat() L91" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Float.parseFloat() L94" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="StringTokenizer" shape="ellipse" ];
+    8 [ label="Float.parseFloat() L88" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="StringTokenizer.nextToken() L84" shape="box" ];
+    10 [ label="StringTokenizer.hasMoreTokens() L83" shape="box" ];
+    11 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" ];
+    1 -> 7 [ label="def" style="solid" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="order" style="bold" ];
+    1 -> 9 [ label="rep" style="bold" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="recv" style="solid" ];
+    7 -> 9 [ label="recv" style="solid" ];
+    11 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="rep" style="bold" ];
+    10 -> 9 [ label="order" style="bold" ];
+    9 -> 11 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.17777777777777778
+pattern_support: 8
+confidence_string: (overlap = 14.00 / 15.00)*(pattern support = 8 / 42)*(violation support = 1 / 1)
+pattern_examples:
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/framework/util/StringTools.java#toArrayDouble(String, String)
+- inkblot/fit/src/fit/TypeAdapter.java#parse(String)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/io/mapinfoapi/MapInfoDataSource.java#readMifHeader(BufferedReader)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/ogcwebservices/wms/operation/GetFeatureInfo.java#create(Map)
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/target/TargetPlatformService.java#initializeImplicitInfo(MDEPreferencesManager, ITargetDefinition)
+startline: 82
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/codegen/unicode/java/org/apache/fop/complexscripts/bidi/GenerateBidiTestData.java
+method: removeSurrogates(List)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.add() L741" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Collection.size()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="Collection.toArray()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="IExecutionEnvironment[]" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="int[]" shape="ellipse" ];
+    7 [ label="ArrayList.<init> L735" shape="box" ];
+    8 [ label="int" shape="ellipse" ];
+    6 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="order" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    7 -> 2 [ label="def" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    8 -> 7 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "removeSurrogates(List)" {
+  nslimit=10000;
+
+    1 [ label="int[]" shape="ellipse" ];
+    2 [ label="int[].<cast> L737" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Collection.add() L741" shape="box" ];
+    4 [ label="GenerateBidiTestData.intersectsRange() L738" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="GenerateBidiTestData.removeRange() L739" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="List" shape="ellipse" ];
+    7 [ label="ArrayList.<init> L735" shape="box" ];
+    8 [ label="<return> L744" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Collection.addAll() L739" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="int" shape="ellipse" ];
+    11 [ label="Collection.size() L735" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Iterable.iterator() L736" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Iterator.next() L737" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="Iterator.hasNext() L736" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    1 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    14 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="recv" style="solid" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="def" style="solid" ];
+    6 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="para" style="solid" ];
+    11 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 10 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.1282051282051282
+pattern_support: 7
+confidence_string: (overlap = 10.00 / 13.00)*(pattern support = 7 / 42)*(violation support = 1 / 1)
+pattern_examples:
+- cojen/Cojen/src/main/java/org/cojen/classfile/ClassFile.java#getMethods()
+- cpnatwork/era_origodump_dev/sys-src/nebula.widgets.compositetable/src/org/eclipse/swt/nebula/widgets/compositetable/timeeditor/ModelObject.java#append(Object[], Object)
+- SiteView/com.siteview.mde/com.siteview.mde.launching/src/com/siteview/mde/internal/launching/launcher/LaunchValidationOperation.java#getMatchingEnvironments()
+- jeslopcru/PortletsDemos/brown-tasks-portlet/docroot/WEB-INF/service/com/jesuslc/demos/browntasks/model/TaskListSoap.java#toSoapModels(List)
+- SiteView/com.siteview.mde/com.siteview.mde.launching/src/com/siteview/mde/internal/launching/launcher/ProductValidationOperation.java#getMatchingEnvironments()
+startline: 735
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/layoutmgr/AbstractLayoutManager.java
+method: createChildLMs(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.add()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Collection.size() L214" shape="box" ];
+    4 [ label="Collection.toArray()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="IExecutionEnvironment[]" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="TaskItemSoap" shape="ellipse" color="red" fontcolor="red" ];
+    7 [ label="ArrayList.<init> L213" shape="box" ];
+    8 [ label="int" shape="ellipse" ];
+    6 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 2 [ label="def" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 3 [ label="order" style="bold" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    8 -> 7 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "createChildLMs(int)" {
+  nslimit=10000;
+
+    1 [ label="int" shape="ellipse" ];
+    2 [ label="ArrayList.<init> L213" shape="box" ];
+    3 [ label="<r> L214" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="List" shape="ellipse" ];
+    5 [ label="LayoutManagerMaker.makeLayoutManagers() L223" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="<return> L228" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Collection.size() L214" shape="box" ];
+    8 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    1 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" ];
+    2 -> 4 [ label="def" style="solid" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="recv" style="solid" ];
+    4 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.1111111111111111
+pattern_support: 7
+confidence_string: (overlap = 8.00 / 12.00)*(pattern support = 7 / 42)*(violation support = 1 / 1)
+pattern_examples:
+- cojen/Cojen/src/main/java/org/cojen/classfile/ClassFile.java#getMethods()
+- cpnatwork/era_origodump_dev/sys-src/nebula.widgets.compositetable/src/org/eclipse/swt/nebula/widgets/compositetable/timeeditor/ModelObject.java#append(Object[], Object)
+- SiteView/com.siteview.mde/com.siteview.mde.launching/src/com/siteview/mde/internal/launching/launcher/LaunchValidationOperation.java#getMatchingEnvironments()
+- jeslopcru/PortletsDemos/brown-tasks-portlet/docroot/WEB-INF/service/com/jesuslc/demos/browntasks/model/TaskListSoap.java#toSoapModels(List)
+- SiteView/com.siteview.mde/com.siteview.mde.launching/src/com/siteview/mde/internal/launching/launcher/ProductValidationOperation.java#getMatchingEnvironments()
+startline: 213
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/codegen/unicode/java/org/apache/fop/complexscripts/bidi/GenerateBidiTestData.java
+method: removeSurrogates(List)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.addAll() L739" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="List" shape="ellipse" ];
+    4 [ label="Collection.add()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="null" shape="ellipse" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "removeSurrogates(List)" {
+  nslimit=10000;
+
+    1 [ label="List" shape="ellipse" ];
+    2 [ label="ArrayList.<init> L735" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="<return> L744" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Collection.addAll() L739" shape="box" ];
+    5 [ label="Collection.add() L741" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="GenerateBidiTestData.intersectsRange() L738" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Iterator.next() L737" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="int[].<cast> L737" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Iterator.hasNext() L736" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Iterable.iterator() L736" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="List" shape="ellipse" ];
+    12 [ label="GenerateBidiTestData.removeRange() L739" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="para" style="solid" ];
+    10 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.10204081632653061
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 6 / 42)*(violation support = 1 / 1)
+pattern_examples:
+- ObeoNetwork/UML-Modeling/plugins/org.obeonetwork.dsl.uml2.design/src/org/obeonetwork/dsl/uml2/design/internal/services/ProfileServices.java#getAllSuperClasses(Class)
+- square/okhttp/benchmarks/src/main/java/okhttp3/benchmarks/Benchmark.java#main(String[])
+- goodow/gwt/dev/codeserver/java/com/google/gwt/dev/codeserver/SourceMap.java#getSourceDirectories()
+- ObeoNetwork/UML-Modeling/plugins/org.obeonetwork.dsl.uml2.design/src/org/obeonetwork/dsl/uml2/design/api/services/AbstractDiagramServices.java#getAllAvailableRootPackages(Element)
+- square/okhttp/okhttp/src/main/java/okhttp3/internal/http2/Http2Stream.java#receiveHeaders(List)
+startline: 739
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/fonts/FontCache.java
+method: saveTo(File)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ByteArrayOutputStream.toByteArray()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="OutputStream" shape="ellipse" ];
+    3 [ label="ByteArrayOutputStream.<init>" shape="box" color="red" fontcolor="red" ];
+    4 [ label="ObjectOutputStream.<init> L215" shape="box" ];
+    5 [ label="IOException" shape="ellipse" ];
+    6 [ label="ObjectOutput.writeObject() L217" shape="box" ];
+    7 [ label="AutoCloseable.close()" shape="box" color="red" fontcolor="red" ];
+    8 [ label="ObjectOutputStream" shape="ellipse" ];
+    9 [ label="ClusterEvent" shape="ellipse" color="red" fontcolor="red" ];
+    10 [ label="<catch>" shape="box" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" color="red" fontcolor="red" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 4 [ label="para" style="solid" ];
+    4 -> 5 [ label="throw" style="solid" ];
+    7 -> 5 [ label="throw" style="solid" color="red" fontcolor="red" ];
+    6 -> 5 [ label="throw" style="solid" color="red" fontcolor="red" ];
+    8 -> 6 [ label="recv" style="solid" ];
+    4 -> 6 [ label="order" style="bold" ];
+    3 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    9 -> 6 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 7 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    4 -> 8 [ label="def" style="solid" ];
+    4 -> 10 [ label="order" style="bold" ];
+    3 -> 10 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 10 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 10 [ label="para" style="solid" ];
+    7 -> 10 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "saveTo(File)" {
+  nslimit=10000;
+
+    1 [ label="<catch>" shape="box" ];
+    2 [ label="IOException" shape="ellipse" ];
+    3 [ label="LogUtil.handleException() L222" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="ObjectOutputStream" shape="ellipse" ];
+    5 [ label="ObjectOutputStream.<init> L215" shape="box" ];
+    6 [ label="ObjectOutput.writeObject() L217" shape="box" ];
+    7 [ label="IOUtils.closeQuietly() L219" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="FileOutputStream.<init> L213" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="File.getCanonicalPath() L212" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="OutputStream" shape="ellipse" ];
+    11 [ label="boolean[]" shape="ellipse" color="gray" fontcolor="gray" ];
+    12 [ label="FontCache" shape="ellipse" color="gray" fontcolor="gray" ];
+    13 [ label="BufferedOutputStream.<init> L214" shape="box" color="gray" fontcolor="gray" ];
+    13 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="order" style="bold" ];
+    2 -> 1 [ label="para" style="solid" ];
+    9 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="throw" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="throw" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="throw" style="solid" ];
+    2 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="sync" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="def" style="solid" ];
+    4 -> 6 [ label="recv" style="solid" ];
+    4 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="para" style="solid" ];
+    5 -> 6 [ label="order" style="bold" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="sync" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="finally" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.09774436090225563
+pattern_support: 6
+confidence_string: (overlap = 13.00 / 19.00)*(pattern support = 6 / 42)*(violation support = 1 / 1)
+pattern_examples:
+- SiteView/com.siteview.mde/com.siteview.mde.ui/src/com/siteview/mde/internal/ui/editor/ModelDataTransfer.java#javaToNative(Object, TransferData)
+- NCIP/cadsr-cgmdr-nci-uk/src/org/exist/cluster/journal/ClusterEventMarshaller.java#marshall(ClusterEvent)
+- cloudera/hcatalog/core/src/main/java/org/apache/hcatalog/common/HCatUtil.java#serialize(Serializable)
+- aldito2/findplaces2/src/winlab/findplaces2/serializeObject.java#serializeObject(ArrayList)
+- knime-ip/knip-imagej2/org.knime.knip.imagej2.core/src/org/knime/knip/imagej2/core/imagejdialog/SettingsModelImageJDlg.java#objectToString(Object)
+startline: 215
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/fo/FObj.java
+method: gatherContextInfo()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="FONode" shape="ellipse" ];
+    3 [ label="Iterator.next() L450" shape="box" ];
+    4 [ label="FONodeIterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L449" shape="box" ];
+    6 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    7 [ label="Collection" shape="ellipse" color="red" fontcolor="red" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    6 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "gatherContextInfo()" {
+  nslimit=10000;
+
+    1 [ label="FONodeIterator" shape="ellipse" ];
+    2 [ label="Iterator.hasNext() L449" shape="box" ];
+    3 [ label="<nullcheck> L445" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Iterator.next() L450" shape="box" ];
+    5 [ label="<nullcheck> L452" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="AbstractStringBuilder.append() L456" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="FONode.gatherContextInfo() L451" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="FONode" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    1 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" ];
+    3 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="rep" style="bold" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="def" style="solid" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.04120879120879121
+pattern_support: 5
+confidence_string: (overlap = 9.00 / 13.00)*(pattern support = 5 / 42)*(violation support = 1 / 2)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 449
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-sandbox/src/main/java/org/apache/fop/render/mif/MIFFile.java
+method: output(OutputStream)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Object" shape="ellipse" ];
+    3 [ label="Iterator.next() L139" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L138" shape="box" ];
+    6 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    7 [ label="Collection" shape="ellipse" color="red" fontcolor="red" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    5 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    6 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "output(OutputStream)" {
+  nslimit=10000;
+
+    1 [ label="Object" shape="ellipse" ];
+    2 [ label="Iterator.next() L139" shape="box" ];
+    3 [ label="MIFElement.<cast> L139" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L138" shape="box" ];
+    6 [ label="Iterator.remove() L142" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="<break> L145" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="MIFElement.output() L140" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" ];
+    1 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="order" style="bold" ];
+    5 -> 2 [ label="rep" style="bold" ];
+    4 -> 2 [ label="recv" style="solid" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    4 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.04120879120879121
+pattern_support: 5
+confidence_string: (overlap = 9.00 / 13.00)*(pattern support = 5 / 42)*(violation support = 1 / 2)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 138
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/render/rtf/rtflib/rtfdoc/RtfTableCell.java
+method: writeRtfSuffix()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L340" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Collection.add()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="Collection.toArray()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="String[][]" shape="ellipse" color="red" fontcolor="red" ];
+    7 [ label="ArrayList.<init>" shape="box" color="red" fontcolor="red" ];
+    8 [ label="{String}" shape="box" color="red" fontcolor="red" ];
+    9 [ label="int" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    7 -> 2 [ label="def" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="def" style="solid" color="red" fontcolor="red" ];
+    9 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 9 [ label="def" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "writeRtfSuffix()" {
+  nslimit=10000;
+
+    1 [ label="int" shape="ellipse" ];
+    2 [ label="Collection.size() L340" shape="box" ];
+    3 [ label="List.get() L340" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="List" shape="ellipse" ];
+    2 -> 1 [ label="def" style="solid" ];
+    1 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="recv" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.02164502164502164
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 11.00)*(pattern support = 6 / 42)*(violation support = 1 / 3)
+pattern_examples:
+- square/okhttp/benchmarks/src/main/java/okhttp3/benchmarks/Benchmark.java#main(String[])
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/font/effects/ShadowEffect.java#getValues()
+- JPMoresmau/eclipsefp/net.sf.eclipsefp.haskell.ui/src/net/sf/eclipsefp/haskell/ui/internal/editors/haskell/codeassist/HsTypeNameTemplateVariable.java#resolve(TemplateVariable, TemplateContext)
+- SiteView/com.siteview.mde/com.siteview.mde.ui/src/com/siteview/mde/internal/ui/shared/target/TargetContentsGroup.java#getRequiredPlugins(Collection, Object[])
+- JPMoresmau/eclipsefp/net.sf.eclipsefp.haskell.util/src/net/sf/eclipsefp/haskell/util/CommandLineUtil.java#parse(String)
+startline: 340
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/render/rtf/rtflib/rtfdoc/RtfTableCell.java
+method: writeRtfSuffix()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L339" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Collection.add()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="Collection.toArray()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="String[][]" shape="ellipse" color="red" fontcolor="red" ];
+    7 [ label="ArrayList.<init>" shape="box" color="red" fontcolor="red" ];
+    8 [ label="{String}" shape="box" color="red" fontcolor="red" ];
+    9 [ label="int" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    7 -> 2 [ label="def" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="def" style="solid" color="red" fontcolor="red" ];
+    9 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 9 [ label="def" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "writeRtfSuffix()" {
+  nslimit=10000;
+
+    1 [ label="List" shape="ellipse" ];
+    2 [ label="Collection.size() L339" shape="box" ];
+    3 [ label="int" shape="ellipse" ];
+    4 [ label="<r> L339" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    2 -> 3 [ label="def" style="solid" ];
+    3 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.02164502164502164
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 11.00)*(pattern support = 6 / 42)*(violation support = 1 / 3)
+pattern_examples:
+- square/okhttp/benchmarks/src/main/java/okhttp3/benchmarks/Benchmark.java#main(String[])
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/font/effects/ShadowEffect.java#getValues()
+- JPMoresmau/eclipsefp/net.sf.eclipsefp.haskell.ui/src/net/sf/eclipsefp/haskell/ui/internal/editors/haskell/codeassist/HsTypeNameTemplateVariable.java#resolve(TemplateVariable, TemplateContext)
+- SiteView/com.siteview.mde/com.siteview.mde.ui/src/com/siteview/mde/internal/ui/shared/target/TargetContentsGroup.java#getRequiredPlugins(Collection, Object[])
+- JPMoresmau/eclipsefp/net.sf.eclipsefp.haskell.util/src/net/sf/eclipsefp/haskell/util/CommandLineUtil.java#parse(String)
+startline: 339
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-events/src/main/java/org/apache/fop/tools/EventProducerCollector.java
+method: createMethodModel(JavaMethod)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="UNKNOWN" shape="ellipse" ];
+    3 [ label="Map.get() L170" shape="box" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Map" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "createMethodModel(JavaMethod)" {
+  nslimit=10000;
+
+    1 [ label="Map" shape="ellipse" ];
+    2 [ label="Map.get() L170" shape="box" ];
+    3 [ label="UNKNOWN" shape="ellipse" ];
+    4 [ label="JavaClass.getName() L170" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="<r> L165" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="JavaParameter.getType() L169" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="UNKNOWN.isVoid() L138" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="JavaMethod.getReturnType() L138" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Type.isPrimitive() L149" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="JavaMethod.getParameters() L143" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="JavaParameter[].arrayget() L149" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="UNKNOWN.isPrimitive() L169" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="<r> L164" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="<r> L144" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="UNKNOWN.getName() L149" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="UNKNOWN.getType() L148" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="JavaParameter[].arrayget() L166" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="Object.equals() L149" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="JavaParameter[].arrayget() L148" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="JavaClass.getName() L173" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="Class" shape="ellipse" color="gray" fontcolor="gray" ];
+    22 [ label="UnsupportedOperationException.<init> L172" shape="box" color="gray" fontcolor="gray" ];
+    23 [ label="<throw> L172" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    5 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="para" style="solid" ];
+    14 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 21 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.014172335600907028
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 5 / 42)*(violation support = 1 / 6)
+pattern_examples:
+- Sankore/Editeur_Sankore---LENUOS-/sources/lenuos/editor/src/com/paraschool/editor/server/rpc/EditorServiceImpl.java#initializeSample(ContentProvider)
+- JakeWharton/NineOldAndroids/sample/src/com/jakewharton/nineoldandroids/sample/Demos.java#getData(String)
+- cojen/Cojen/src/main/java/org/cojen/classfile/InstructionList.java#stackResolve(int, Instruction, Map)
+- jenkinsci/envinject-plugin/src/main/java/org/jenkinsci/plugins/envinject/EnvInjectBuildWrapper.java#setUp(AbstractBuild, Launcher, BuildListener)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 170
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/afp/AFPResourceLevelDefaults.java
+method: getResourceType(String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Map.get() L45" shape="box" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Map" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "getResourceType(String)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="String.toLowerCase() L45" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.get() L45" shape="box" ];
+    4 [ label="Map" shape="ellipse" ];
+    5 [ label="IllegalArgumentException.<init> L47" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="<throw> L47" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="<return> L49" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    3 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.014172335600907028
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 5 / 42)*(violation support = 1 / 6)
+pattern_examples:
+- Sankore/Editeur_Sankore---LENUOS-/sources/lenuos/editor/src/com/paraschool/editor/server/rpc/EditorServiceImpl.java#initializeSample(ContentProvider)
+- JakeWharton/NineOldAndroids/sample/src/com/jakewharton/nineoldandroids/sample/Demos.java#getData(String)
+- cojen/Cojen/src/main/java/org/cojen/classfile/InstructionList.java#stackResolve(int, Instruction, Map)
+- jenkinsci/envinject-plugin/src/main/java/org/jenkinsci/plugins/envinject/EnvInjectBuildWrapper.java#setUp(AbstractBuild, Launcher, BuildListener)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 45
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/util/text/ChoiceFieldPart.java
+method: isGenerated(Map)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Map.get() L52" shape="box" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Map" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "isGenerated(Map)" {
+  nslimit=10000;
+
+    1 [ label="Map.get() L52" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Map" shape="ellipse" ];
+    4 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    1 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.014172335600907028
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 5 / 42)*(violation support = 1 / 6)
+pattern_examples:
+- Sankore/Editeur_Sankore---LENUOS-/sources/lenuos/editor/src/com/paraschool/editor/server/rpc/EditorServiceImpl.java#initializeSample(ContentProvider)
+- JakeWharton/NineOldAndroids/sample/src/com/jakewharton/nineoldandroids/sample/Demos.java#getData(String)
+- cojen/Cojen/src/main/java/org/cojen/classfile/InstructionList.java#stackResolve(int, Instruction, Map)
+- jenkinsci/envinject-plugin/src/main/java/org/jenkinsci/plugins/envinject/EnvInjectBuildWrapper.java#setUp(AbstractBuild, Launcher, BuildListener)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 52
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/fonts/cff/CFFDataReader.java
+method: readLocalIndexSubrs()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Map.get() L628" shape="box" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Map" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "readLocalIndexSubrs()" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Map.get() L628" shape="box" ];
+    3 [ label="Map" shape="ellipse" ];
+    4 [ label="DICTEntry" shape="ellipse" color="gray" fontcolor="gray" ];
+    5 [ label="Number.intValue() L630" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="DICTEntry.getOperands() L630" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="List.get() L630" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+    2 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.014172335600907028
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 5 / 42)*(violation support = 1 / 6)
+pattern_examples:
+- Sankore/Editeur_Sankore---LENUOS-/sources/lenuos/editor/src/com/paraschool/editor/server/rpc/EditorServiceImpl.java#initializeSample(ContentProvider)
+- JakeWharton/NineOldAndroids/sample/src/com/jakewharton/nineoldandroids/sample/Demos.java#getData(String)
+- cojen/Cojen/src/main/java/org/cojen/classfile/InstructionList.java#stackResolve(int, Instruction, Map)
+- jenkinsci/envinject-plugin/src/main/java/org/jenkinsci/plugins/envinject/EnvInjectBuildWrapper.java#setUp(AbstractBuild, Launcher, BuildListener)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 628
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/test/java/org/apache/fop/render/pdf/PDFRendererConfigParserTestCase.java
+method: testFilterListImage()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Map.get() L123" shape="box" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Map" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "testFilterListImage()" {
+  nslimit=10000;
+
+    1 [ label="Map" shape="ellipse" ];
+    2 [ label="PDFRendererOptionsConfig.getFilterMap() L123" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.get() L123" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="List" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.014172335600907028
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 5 / 42)*(violation support = 1 / 6)
+pattern_examples:
+- Sankore/Editeur_Sankore---LENUOS-/sources/lenuos/editor/src/com/paraschool/editor/server/rpc/EditorServiceImpl.java#initializeSample(ContentProvider)
+- JakeWharton/NineOldAndroids/sample/src/com/jakewharton/nineoldandroids/sample/Demos.java#getData(String)
+- cojen/Cojen/src/main/java/org/cojen/classfile/InstructionList.java#stackResolve(int, Instruction, Map)
+- jenkinsci/envinject-plugin/src/main/java/org/jenkinsci/plugins/envinject/EnvInjectBuildWrapper.java#setUp(AbstractBuild, Launcher, BuildListener)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 123
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/test/java/org/apache/fop/render/pdf/PDFRendererConfigParserTestCase.java
+method: testFilterListImage()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Map.get() L124" shape="box" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Map" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "testFilterListImage()" {
+  nslimit=10000;
+
+    1 [ label="Map" shape="ellipse" ];
+    2 [ label="PDFRendererOptionsConfig.getFilterMap() L124" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.get() L124" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="List" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.014172335600907028
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 5 / 42)*(violation support = 1 / 6)
+pattern_examples:
+- Sankore/Editeur_Sankore---LENUOS-/sources/lenuos/editor/src/com/paraschool/editor/server/rpc/EditorServiceImpl.java#initializeSample(ContentProvider)
+- JakeWharton/NineOldAndroids/sample/src/com/jakewharton/nineoldandroids/sample/Demos.java#getData(String)
+- cojen/Cojen/src/main/java/org/cojen/classfile/InstructionList.java#stackResolve(int, Instruction, Map)
+- jenkinsci/envinject-plugin/src/main/java/org/jenkinsci/plugins/envinject/EnvInjectBuildWrapper.java#setUp(AbstractBuild, Launcher, BuildListener)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 124
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/fonts/cff/CFFDataReader.java
+method: readCharStringIndex()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.isEmpty()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="List.get() L465" shape="box" ];
+    4 [ label="<return>" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="boolean" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "readCharStringIndex()" {
+  nslimit=10000;
+
+    1 [ label="List" shape="ellipse" ];
+    2 [ label="DICTEntry.getOperands() L465" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="List.get() L465" shape="box" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="Number" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.011160714285714284
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 8.00)*(pattern support = 6 / 42)*(violation support = 1 / 8)
+pattern_examples:
+- jarryDk/todo/todo-store-file/src/main/java/dk/jarry/todo/store/file/boundary/ToDoService.java#list(Long, Long)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/io/datastore/sql/transaction/InsertRow.java#sortInsertRows(List)
+- jhonatanluiz/tccsglj/src/java/tcc/sglj/dao/DaoCarMark.java#validCarMark(String, CarMark)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/Ensemble/src/edu/stanford/nlp/parser/ensemble/utils/Eisner.java#attardiVote(List)
+- SiteView/com.siteview.mde/com.siteview.mde.ui/src/com/siteview/mde/internal/ui/wizards/imports/PluginImportHelper.java#folderContainsFileExtension(IImportStructureProvider, Object, String)
+startline: 465
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/fonts/cff/CFFDataReader.java
+method: readLocalIndexSubrs()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.isEmpty()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="List.get() L623" shape="box" ];
+    4 [ label="<return>" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="boolean" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "readLocalIndexSubrs()" {
+  nslimit=10000;
+
+    1 [ label="List" shape="ellipse" ];
+    2 [ label="DICTEntry.getOperands() L623" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="List.get() L623" shape="box" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<nullcheck> L622" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="List.get() L630" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Number" shape="ellipse" color="gray" fontcolor="gray" ];
+    8 [ label="Number.intValue() L630" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    5 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.011160714285714284
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 8.00)*(pattern support = 6 / 42)*(violation support = 1 / 8)
+pattern_examples:
+- jarryDk/todo/todo-store-file/src/main/java/dk/jarry/todo/store/file/boundary/ToDoService.java#list(Long, Long)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/io/datastore/sql/transaction/InsertRow.java#sortInsertRows(List)
+- jhonatanluiz/tccsglj/src/java/tcc/sglj/dao/DaoCarMark.java#validCarMark(String, CarMark)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/Ensemble/src/edu/stanford/nlp/parser/ensemble/utils/Eisner.java#attardiVote(List)
+- SiteView/com.siteview.mde/com.siteview.mde.ui/src/com/siteview/mde/internal/ui/wizards/imports/PluginImportHelper.java#folderContainsFileExtension(IImportStructureProvider, Object, String)
+startline: 623
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/fonts/cff/CFFDataReader.java
+method: readLocalIndexSubrs()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.isEmpty()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="List.get() L630" shape="box" ];
+    4 [ label="<return>" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="boolean" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "readLocalIndexSubrs()" {
+  nslimit=10000;
+
+    1 [ label="int" shape="ellipse" ];
+    2 [ label="List.get() L630" shape="box" ];
+    3 [ label="<nullcheck> L629" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Number.intValue() L623" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="List.get() L623" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Map.get() L628" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="List" shape="ellipse" ];
+    8 [ label="Number" shape="ellipse" color="gray" fontcolor="gray" ];
+    9 [ label="DICTEntry.getOperands() L630" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="recv" style="solid" ];
+    5 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.011160714285714284
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 8.00)*(pattern support = 6 / 42)*(violation support = 1 / 8)
+pattern_examples:
+- jarryDk/todo/todo-store-file/src/main/java/dk/jarry/todo/store/file/boundary/ToDoService.java#list(Long, Long)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/io/datastore/sql/transaction/InsertRow.java#sortInsertRows(List)
+- jhonatanluiz/tccsglj/src/java/tcc/sglj/dao/DaoCarMark.java#validCarMark(String, CarMark)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/Ensemble/src/edu/stanford/nlp/parser/ensemble/utils/Eisner.java#attardiVote(List)
+- SiteView/com.siteview.mde/com.siteview.mde.ui/src/com/siteview/mde/internal/ui/wizards/imports/PluginImportHelper.java#folderContainsFileExtension(IImportStructureProvider, Object, String)
+startline: 630
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/fonts/cff/CFFDataReader.java
+method: readLocalIndexSubrs()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.isEmpty()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="List.get() L624" shape="box" ];
+    4 [ label="<return>" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="boolean" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "readLocalIndexSubrs()" {
+  nslimit=10000;
+
+    1 [ label="List" shape="ellipse" ];
+    2 [ label="DICTEntry.getOperands() L624" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="List.get() L624" shape="box" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<nullcheck> L622" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Number" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    5 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.011160714285714284
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 8.00)*(pattern support = 6 / 42)*(violation support = 1 / 8)
+pattern_examples:
+- jarryDk/todo/todo-store-file/src/main/java/dk/jarry/todo/store/file/boundary/ToDoService.java#list(Long, Long)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/io/datastore/sql/transaction/InsertRow.java#sortInsertRows(List)
+- jhonatanluiz/tccsglj/src/java/tcc/sglj/dao/DaoCarMark.java#validCarMark(String, CarMark)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/Ensemble/src/edu/stanford/nlp/parser/ensemble/utils/Eisner.java#attardiVote(List)
+- SiteView/com.siteview.mde/com.siteview.mde.ui/src/com/siteview/mde/internal/ui/wizards/imports/PluginImportHelper.java#folderContainsFileExtension(IImportStructureProvider, Object, String)
+startline: 624
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/test/java/org/apache/fop/render/pdf/PDFRendererConfigParserTestCase.java
+method: testFilterListImage()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.isEmpty()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="List.get() L124" shape="box" ];
+    4 [ label="<return>" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="boolean" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "testFilterListImage()" {
+  nslimit=10000;
+
+    1 [ label="int" shape="ellipse" ];
+    2 [ label="List.get() L124" shape="box" ];
+    3 [ label="List" shape="ellipse" ];
+    4 [ label="Map.get() L124" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.011160714285714284
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 8.00)*(pattern support = 6 / 42)*(violation support = 1 / 8)
+pattern_examples:
+- jarryDk/todo/todo-store-file/src/main/java/dk/jarry/todo/store/file/boundary/ToDoService.java#list(Long, Long)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/io/datastore/sql/transaction/InsertRow.java#sortInsertRows(List)
+- jhonatanluiz/tccsglj/src/java/tcc/sglj/dao/DaoCarMark.java#validCarMark(String, CarMark)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/Ensemble/src/edu/stanford/nlp/parser/ensemble/utils/Eisner.java#attardiVote(List)
+- SiteView/com.siteview.mde/com.siteview.mde.ui/src/com/siteview/mde/internal/ui/wizards/imports/PluginImportHelper.java#folderContainsFileExtension(IImportStructureProvider, Object, String)
+startline: 124
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/test/java/org/apache/fop/render/pdf/PDFRendererConfigParserTestCase.java
+method: testFilterListImage()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.isEmpty()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="List.get() L123" shape="box" ];
+    4 [ label="<return>" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="boolean" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "testFilterListImage()" {
+  nslimit=10000;
+
+    1 [ label="List" shape="ellipse" ];
+    2 [ label="Map.get() L123" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="List.get() L123" shape="box" ];
+    4 [ label="int" shape="ellipse" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+  }
+confidence: 0.011160714285714284
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 8.00)*(pattern support = 6 / 42)*(violation support = 1 / 8)
+pattern_examples:
+- jarryDk/todo/todo-store-file/src/main/java/dk/jarry/todo/store/file/boundary/ToDoService.java#list(Long, Long)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/io/datastore/sql/transaction/InsertRow.java#sortInsertRows(List)
+- jhonatanluiz/tccsglj/src/java/tcc/sglj/dao/DaoCarMark.java#validCarMark(String, CarMark)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/Ensemble/src/edu/stanford/nlp/parser/ensemble/utils/Eisner.java#attardiVote(List)
+- SiteView/com.siteview.mde/com.siteview.mde.ui/src/com/siteview/mde/internal/ui/wizards/imports/PluginImportHelper.java#folderContainsFileExtension(IImportStructureProvider, Object, String)
+startline: 123
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/test/java/org/apache/fop/fonts/EmbedFontInfoTestCase.java
+method: testImmutableGetters()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.isEmpty()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="List.get() L69" shape="box" ];
+    4 [ label="<return>" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="boolean" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "testImmutableGetters()" {
+  nslimit=10000;
+
+    1 [ label="List.get() L69" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="int" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+  }
+confidence: 0.011160714285714284
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 8.00)*(pattern support = 6 / 42)*(violation support = 1 / 8)
+pattern_examples:
+- jarryDk/todo/todo-store-file/src/main/java/dk/jarry/todo/store/file/boundary/ToDoService.java#list(Long, Long)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/io/datastore/sql/transaction/InsertRow.java#sortInsertRows(List)
+- jhonatanluiz/tccsglj/src/java/tcc/sglj/dao/DaoCarMark.java#validCarMark(String, CarMark)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/Ensemble/src/edu/stanford/nlp/parser/ensemble/utils/Eisner.java#attardiVote(List)
+- SiteView/com.siteview.mde/com.siteview.mde.ui/src/com/siteview/mde/internal/ui/wizards/imports/PluginImportHelper.java#folderContainsFileExtension(IImportStructureProvider, Object, String)
+startline: 69
+---
+file: /mubench/checkouts/xmlgraphics-fop/1942336d7/fop-core/src/main/java/org/apache/fop/render/rtf/rtflib/rtfdoc/RtfTableCell.java
+method: writeRtfSuffix()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.isEmpty()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="List.get() L340" shape="box" ];
+    4 [ label="<return>" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="boolean" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "writeRtfSuffix()" {
+  nslimit=10000;
+
+    1 [ label="int" shape="ellipse" ];
+    2 [ label="Collection.size() L340" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="List.get() L340" shape="box" ];
+    4 [ label="List" shape="ellipse" ];
+    5 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    6 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.011160714285714284
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 8.00)*(pattern support = 6 / 42)*(violation support = 1 / 8)
+pattern_examples:
+- jarryDk/todo/todo-store-file/src/main/java/dk/jarry/todo/store/file/boundary/ToDoService.java#list(Long, Long)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/io/datastore/sql/transaction/InsertRow.java#sortInsertRows(List)
+- jhonatanluiz/tccsglj/src/java/tcc/sglj/dao/DaoCarMark.java#validCarMark(String, CarMark)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/Ensemble/src/edu/stanford/nlp/parser/ensemble/utils/Eisner.java#attardiVote(List)
+- SiteView/com.siteview.mde/com.siteview.mde.ui/src/com/siteview/mde/internal/ui/wizards/imports/PluginImportHelper.java#folderContainsFileExtension(IImportStructureProvider, Object, String)
+startline: 340

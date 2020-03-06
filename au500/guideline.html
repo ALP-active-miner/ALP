@@ -1,0 +1,213 @@
+<h1>Labeling guidelines</h1>
+
+<h2>Background: What is an API misuse?</h2>
+
+<p>Incorrect usage of APIs can cause software bugs. Such incorrect usages are also known as API misuses, and they can be identified through the violation of API usage constraints. API misuses do not necessarily cause bugs, but can be thought of as error-prone code. Usage constraints may be specified in the documentation of the API, but also arise from the expectations of developers and best practices adopted among developers.</p>
+<p>An example of such a constraint is to check for <em>hasNext() == true</em> before invoking next() on an iterator. Alternative patterns of managing these constraints, such as catching a <em>NoSuchElementException</em> when calling next(), is not idiomatic but they should be categorized as correct usage, as they do not lead to incorrect behaviour.</p>
+<p>There is a similar constraint for <em>StringTokenizer</em>. Here is an example of a misuse found in a previous study:<a href="http://webcache.googleusercontent.com/search?q=cache:f3vwjHQZVHMJ:www.st.informatik.tu-darmstadt.de/artifacts/mubench/reviews/tse17/index.php/ex3/GrouMiner/itext/5091/itext.dmmc-15+&cd=1&hl=en&ct=clnk&gl=sg">http://www.st.informatik.tu-darmstadt.de/artifacts/mubench/reviews/tse17/index.php/ex3/GrouMiner/itext/5091/itext.dmmc-15</a></p>
+ 
+<p>Another example of a misuse is code that is missing error handling for the API. For example, the usage of <em>Long.parseLong</em> on arbitrary strings (e.g. read from a file, from user input, or http request parameters) should be considered as a misuse unless a <em>NumberFormatException</em> is explicitly caught, as this may result in runtime exceptions. </p>
+
+<p>Other examples of usage constraints:</p>
+<p>1.	<em>close()</em> should be called on an <em>BufferedReader</em> after reading a file.</p>
+<p>2.	"DES" should not be passed as an argument to <em>Cipher.init</em>, as it is not cryptographically strong enough for practical use.</p>
+<p>3.	The method <em>getMeanValue</em> on <em>org.jfree.data.statistics.StatisticalCategoryDataset</em> may return <em>null</em>, therefore, any usage of it must first check that its return value is non-null before calling any methods on it.</p>
+
+
+
+<h2>Labeling objective</h2>
+
+<strong>Input: </strong>
+<p>1.	the API(s) of interest</p>
+<p>2.	the method that contains the API of interest</p>
+<p>3.	Github URL of a file that contains a use of the API (most of the time, clicking on the link in the spreadsheet should directly bring you to the position of the method using the API, but one should double-check that it is same method as the method indicated)</p>
+<strong>Output:</strong>
+<p>1.	An label indicating if the given method uses the API correctly. Label it with</p>
+<ul>
+<li>M : if the method is an example of a <strong>m</strong>isuse of the API</li>
+<li>C: if the method is an example of <strong>c</strong>orrect usage of the API</li>
+</ul>
+
+<p></p>
+<strong>Notes:</strong>
+<p>If the method uses the API(s) of interest correctly but uses another API wrongly, then it is <em>not</em> a misuse of the API(s) of interest, and should be labeled "C".</p>
+<p>We are interested in the usage of the API and the correctness of the usage, therefore the object that the API method is invoked on can be assumed to be non-null. e.g. for cases of "List.get(int)", we assume the list is non-null. </p>
+<p>Consider only the code provided in the same file.
+For example, consider the source code of invoked methods declared within the same file, however, do not consider the source code of methods invoked from third-party libraries or from other files within the same project. </p>
+<p>For classes and methods referenced from third-party libraries and other files in the project, consider their Javadoc (try to Google for it if necessary) documentation, annotations (e.g. @Nullable, @NotNull, etc...), and interfaces/superclasses they implement/extend. </p>
+<p>
+By default, if the Javadoc/annotation/subtyping information of an invoked method does not indicate that an argument can be null, 
+then it is incorrect to use null for that argument.
+If the usage of the API may cause the code to pass null as an argument, then this API usage is a misuse.
+We make an exception for the method <em>equals(obj)</em>, which is typically assumed to be null-safe and we do not consider passing null into <em>equals</em> as a misuse.
+</p>
+<p>For the method using the API of interest, read its Javadoc and consider its class hierarchy to understand its usage constraints. For example,
+<ul> 
+	<li>we assume that the method using the API of interest can be invoked with any parameter value, unless its Javadoc explicitly indicates otherwise or if it overrides/extends an interface/superclass with well-understood usage constraints. 
+	</li>
+
+	<li>If the Javadoc indicates constraints on its return value in any way (such as whether or not null may be returned), and if the usage of the API of interest causes the method to violate the constraint (e.g. returning null if the method's Javadoc indicates that the return value is non-null), then it is a misuse. However, by default, we assume that null can be returned as part of correct behaviour. Therefore, usage of an API which causes null to be returned is not necessarily a misuse (note that, however, null cannot be casted to a primitive type, i.e. if the return type is a primitive value, then null can't be returned). </li>
+	<li>If the method's Javadoc indicates that a specific exception can be thrown, then it is not a misuse if the usage of the API causes the specified exception to be thrown. It is, however, a misuse if the throwing the exception wasn't specified.</li>
+</ul>
+</p>
+<p>Generally, regarding inheritance/subtyping of uncommon classes and interfaces, we fall back to an assumption that developers have adhered to Liskov's Substition Principle: "Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it.". In the context of API misuses, derived classes should inherit the usage constraints of its parents. </p>
+<p>Heuristically, if the API usage is in a test case, and a misuse of the API would have thrown an exception (e.g. invoking methods on null), then the API usage is unlikely to be a misuse. 
+But this heuristic does not hold for APIs where misuses have other consequences, such as resource leaks (e.g. not closing a file).
+It also does not hold for methods called by tests, but not annotated by `@Test`, since these methods can be invoked by other files.</p>
+<p>In situations where it is difficult to assign a label even after considering the Javadocs, annotation, inheritance/subtyping information, and it is not obvious that the code is corect, be conservative and label it a misuse.</p>
+<p>Finally, if the method (excluding other methods it calls) does not use the API, mark it as a correct usage "C". However, beside the label, additionally indicate an "X".</p>
+<p></p>
+<p>One objective is to be consistent with the findings of prior studies. Before labeling instances of the following API, it will be helpful to skim through the API's official Javadoc as well as the following descriptions of misuses that were identified in prior studies:</p>
+<p></p>
+<ul>
+<li>
+	Map: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/master/data/jfreechart/misuses/7a/misuse.yml">https://github.com/stg-tud/MUBench/blob/master/data/jfreechart/misuses/7a/misuse.yml</a> </li>
+		<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">https://docs.oracle.com/javase/8/docs/api/java/util/Map.html</a></li>
+		<li>Take note of the differences between Map classes: See point 13 on <a href="https://alibaba.github.io/Alibaba-Java-Coding-Guidelines/#collection">https://alibaba.github.io/Alibaba-Java-Coding-Guidelines/#collection</a></li>
+		
+	</ul>
+
+<li>
+	List: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/closure/misuses/mudetectxp-13/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/closure/misuses/mudetectxp-13/misuse.yml</a></li>
+		<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">https://docs.oracle.com/javase/8/docs/api/java/util/List.html</a></li>
+	</ul>
+</li>
+
+<li>
+	Writer: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/synthetic_survey/misuses/close-1/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/synthetic_survey/misuses/close-1/misuse.yml</a></li>
+		<li><a href="https://docs.oracle.com/javase/7/docs/api/java/io/PrintWriter.html">https://docs.oracle.com/javase/7/docs/api/java/io/PrintWriter.html</a></li>
+		<li><a href="https://www.quora.com/Why-dont-the-methods-from-PrintWriter-Class-in-Java-throw-any-I-O-exceptions">https://www.quora.com/Why-dont-the-methods-from-PrintWriter-Class-in-Java-throw-any-I-O-exceptions</a></li>
+	</ul>
+</li>
+
+<li>
+	JFrame: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/synthetic_survey/misuses/pack-1/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/synthetic_survey/misuses/pack-1/misuse.yml</a></li>
+		<li><a href="https://docs.oracle.com/javase/7/docs/api/javax/swing/JFrame.html">https://docs.oracle.com/javase/7/docs/api/javax/swing/JFrame.html</a></li>
+		<li><a href="https://stackoverflow.com/questions/34159898/why-calling-jframe-pack-after-jframe-setvisibletrue-affect-the-location-wher">https://stackoverflow.com/questions/34159898/why-calling-jframe-pack-after-jframe-setvisibletrue-affect-the-location-wher</a></li>
+	</ul>
+</li>
+
+<li>
+	ResultSet: <ul>
+		<li>
+			<a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/chensun/misuses/jadet-5/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/chensun/misuses/jadet-5/misuse.yml</a>
+		</li>
+		<li>
+			<a href="https://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html">https://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html</a>
+		</li>
+		<li>
+			To be consistent with prior studies on API misuse, not closing a ResultSet is a misuse: 
+			<a href="https://stackoverflow.com/questions/4507440/must-jdbc-resultsets-and-statements-be-closed-separately-although-the-connection">https://stackoverflow.com/questions/4507440/must-jdbc-resultsets-and-statements-be-closed-separately-although-the-connection</a>. 
+			There are a few reasons for this: 1. ResultSet implements the Closeable interface.
+			2. Based on the Stackoverflow post, it appears to be considered best practice among Java developers to explicitly close a ResultSet.
+		</li>
+	</ul>
+</li>
+
+<li>
+	Iterator: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/closure/misuses/mudetect-13/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/closure/misuses/mudetect-13/misuse.yml</a></li>
+		<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html"> https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html</a></li>
+	</ul>
+</li>
+
+
+<li>
+	Enumeration: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/jigsaw/misuses/mudetect-10/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/jigsaw/misuses/mudetect-10/misuse.yml</a></li>
+		<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Enumeration.html"> https://docs.oracle.com/javase/8/docs/api/java/util/Enumeration.html</a></li>
+	</ul>
+</li>
+
+
+<li>
+	PdfArray: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/itext/misuses/mudetect-10/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/itext/misuses/mudetect-10/misuse.yml</a></li>
+		<li> <a href="http://javadox.com/com.itextpdf/itextpdf/5.5.0/com/itextpdf/text/pdf/PdfArray.html">http://javadox.com/com.itextpdf/itextpdf/5.5.0/com/itextpdf/text/pdf/PdfArray.html</a></li>
+	</ul>
+
+</li>
+<li>
+	Long: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/asterisk-java/misuses/194/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/asterisk-java/misuses/194/misuse.yml</a></li>
+		<li><a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Long.html">https://docs.oracle.com/javase/7/docs/api/java/lang/Long.html</a></li>
+	</ul>
+</li>
+<li>
+	Short: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/ivantrendafilov-confucius/misuses/100/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/ivantrendafilov-confucius/misuses/100/misuse.yml</a></li>
+		<li><a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Short.html">https://docs.oracle.com/javase/7/docs/api/java/lang/Short.html</a></li>
+	</ul>
+</li>
+
+<li>
+	PdfLayer/PdfDictionary: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/itext/misuses/mudetect-38/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/itext/misuses/mudetect-38/misuse.yml</a></li>
+		<li><a href="https://www.javadoc.io/static/com.itextpdf/itextpdf/5.5.1/com/itextpdf/text/pdf/PdfLayer.html">https://www.javadoc.io/static/com.itextpdf/itextpdf/5.5.1/com/itextpdf/text/pdf/PdfLayer.html</a></li>
+	</ul>
+</li>
+
+<li>
+	ObjectOutputStream: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/jodatime/misuses/269/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/jodatime/misuses/269/misuse.yml</a></li>
+		<li><a href="https://docs.oracle.com/javase/7/docs/api/java/io/ObjectOutputStream.html">https://docs.oracle.com/javase/7/docs/api/java/io/ObjectOutputStream.html</a></li>
+	</ul>
+</li>
+
+<li>
+	StatisticalCategoryDataset: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/jfreechart/misuses/3a/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/jfreechart/misuses/3a/misuse.yml</a></li>
+		<li><a href="http://www.jfree.org/jfreechart/api/javadoc/org/jfree/data/statistics/StatisticalCategoryDataset.html">http://www.jfree.org/jfreechart/api/javadoc/org/jfree/data/statistics/StatisticalCategoryDataset.html</a></li>
+	</ul>
+</li>
+
+<li>
+	PlotRenderingInfo: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/jfreechart/misuses/2/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/jfreechart/misuses/2/misuse.yml</a></li>
+		<li><a href="http://www.jfree.org/jfreechart/api/javadoc/org/jfree/chart/plot/PlotRenderingInfo.html">http://www.jfree.org/jfreechart/api/javadoc/org/jfree/chart/plot/PlotRenderingInfo.html</a></li>
+	</ul>
+</li>
+<li>
+	String: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/itext/misuses/3/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/itext/misuses/3/misuse.yml</a></li>
+		<li><a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.htm">https://docs.oracle.com/javase/7/docs/api/java/lang/String.htm</a></li>
+	</ul>
+</li>
+<li>
+	org.apache.commons.lang.text.StrBuilder: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/aclang/misuses/2/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/aclang/misuses/2/misuse.yml</a></li>
+		
+	</ul>
+</li>
+<li>
+	org.apache.commons.math3.geometry.euclidean.threed.Line: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/aclang/misuses/2/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/aclang/misuses/2/misuse.yml</a></li>
+		
+	</ul>
+</li>
+<li>
+	org.apache.commons.math3.geometry.euclidean.twod.Line: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/acmath/misuses/2/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/acmath/misuses/2/misuse.yml</a></li>
+		
+	</ul>
+</li>
+<li>
+	Shape: <ul>
+		<li><a href="https://docs.oracle.com/javase/7/docs/api/java/awt/Shape.html">https://docs.oracle.com/javase/7/docs/api/java/awt/Shape.html</a></li>
+		
+	</ul>
+</li>
+<li>
+	XYPlot: <ul>
+		<li><a href="https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/jfreechart/misuses/5/misuse.yml">https://github.com/stg-tud/MUBench/blob/8f1f1a52e82bad51ffe2487daa28b9eec641f774/data/jfreechart/misuses/5/misuse.yml</a></li>
+		
+	</ul>
+</li>
+
+</ul>
+
+

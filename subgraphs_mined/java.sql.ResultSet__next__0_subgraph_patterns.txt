@@ -1,0 +1,40 @@
+t # 123909 * 213
+v 0 <return>
+v 1 AutoCloseable.close()
+v 2 ResultSet.next()
+v 3 AutoCloseable.close()
+e 0 1 order_rev
+e 0 3 order_rev
+e 1 2 order_rev
+
+t # 234315 * 331
+v 0 ResultSet.next()
+v 1 AutoCloseable.close()
+v 2 AutoCloseable.close()
+v 3 AutoCloseable.close()
+e 0 1 order
+e 0 2 order
+e 0 3 order
+
+t # 32 * 1232
+v 0 SQLException
+
+t # 108519 * 487
+v 0 <return>
+v 1 ResultSet.next()
+v 2 AutoCloseable.close()
+e 0 1 order_rev
+e 1 2 order
+
+t # 68 * 312
+v 0 param:ResultSet
+
+t # 243257 * 10
+v 0 ResultSet.next()
+v 1 ResultSet.getString()
+v 2 PrintStream.println()
+v 3 DataSource.getConnection()
+e 0 1 order
+e 1 2 order
+e 2 3 order_rev
+

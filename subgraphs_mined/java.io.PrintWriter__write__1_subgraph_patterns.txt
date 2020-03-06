@@ -1,0 +1,85 @@
+t # 68 * 4367
+v 0 AutoCloseable.close()
+
+t # 90 * 640
+v 0 HttpServletResponse.getWriter()
+
+t # 46 * 426
+v 0 InputStream
+
+t # 7012 * 217
+v 0 Flushable.flush()
+v 1 PrintWriter.<init>
+v 2 <return>
+e 0 1 order_rev
+e 1 2 order
+
+t # 34 * 565
+v 0 OutputStream
+
+t # 326 * 371
+v 0 Map.get()
+
+t # 37140 * 240
+v 0 Object.toString()
+v 1 PrintWriter.<init>
+v 2 AbstractStringBuilder.append()
+e 0 1 order_rev
+e 0 2 order_rev
+
+t # 7006 * 848
+v 0 Flushable.flush()
+v 1 PrintWriter.<init>
+v 2 PrintWriter
+e 0 1 order_rev
+e 1 2 def
+
+t # 119 * 297
+v 0 Object
+
+t # 361 * 360
+v 0 HttpServletResponse.setContentType()
+
+t # 158 * 1561
+v 0 AbstractStringBuilder.append()
+
+t # 5174 * 234
+v 0 Flushable.flush()
+v 1 Writer.write()
+v 2 <nullcheck>
+e 0 1 order_rev
+e 1 2 order
+
+t # 11944 * 434
+v 0 Writer.write()
+v 1 <nullcheck>
+e 0 1 order
+
+t # 16446 * 1238
+v 0 Writer.write()
+v 1 Writer.write()
+e 0 1 order_rev
+
+t # 5159 * 320
+v 0 Flushable.flush()
+v 1 Writer.write()
+v 2 <return>
+e 0 1 order_rev
+e 1 2 order
+
+t # 210 * 470
+v 0 param:PrintWriter
+
+t # 132 * 701
+v 0 Iterable.iterator()
+
+t # 1 * 602
+v 0 this.PrintWriter
+
+t # 6229 * 104
+v 0 Flushable.flush()
+v 1 Object.toString()
+v 2 AbstractStringBuilder.append()
+e 0 1 order_rev
+e 1 2 order_rev
+

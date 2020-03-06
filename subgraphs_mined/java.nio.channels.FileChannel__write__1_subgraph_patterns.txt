@@ -1,0 +1,29 @@
+t # 11592 * 287
+v 0 FileChannel
+v 1 WritableByteChannel.write()
+v 2 IOException
+e 0 1 recv
+e 1 2 throw
+
+t # 4992 * 119
+v 0 String.getBytes()
+v 1 WritableByteChannel.write()
+v 2 <catch>
+e 0 1 order
+e 1 2 order
+
+t # 37492 * 186
+v 0 String:rw
+v 1 RandomAccessFile.<init>
+e 0 1 para
+
+t # 17190 * 369
+v 0 WritableByteChannel.write()
+v 1 Buffer.clear()
+e 0 1 order
+
+t # 16151 * 320
+v 0 WritableByteChannel.write()
+v 1 AutoCloseable.close()
+e 0 1 finally
+

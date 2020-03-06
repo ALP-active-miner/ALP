@@ -1,0 +1,5 @@
+t # 5164 * 422
+v 0 Short.parseShort()
+v 1 <catch>
+e 0 1 order
+

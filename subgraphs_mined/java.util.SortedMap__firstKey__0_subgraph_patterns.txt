@@ -1,0 +1,47 @@
+t # 6 * 2787
+v 0 <return>
+
+t # 274820 * 951
+v 0 Map.get()
+v 1 <return>
+e 0 1 order
+
+t # 337307 * 1218
+v 0 Map.get()
+v 1 SortedMap.firstKey()
+e 0 1 order_rev
+
+t # 5 * 2349
+v 0 Map.get()
+
+t # 29 * 1211
+v 0 :null
+
+t # 410275 * 840
+v 0 int
+v 1 <r>
+e 0 1 para
+
+t # 18 * 2273
+v 0 UNKNOWN
+
+t # 17 * 863
+v 0 Object
+
+t # 350529 * 638
+v 0 <return>
+v 1 SortedMap.tailMap()
+e 0 1 order_rev
+
+t # 802824 * 155
+v 0 SortedMap.firstKey()
+v 1 Iterable.iterator()
+v 2 Iterator
+v 3 Iterator.next()
+v 4 Iterator.next()
+e 0 1 order_rev
+e 1 2 def
+e 1 4 order
+e 2 3 recv
+e 3 1 order_rev
+

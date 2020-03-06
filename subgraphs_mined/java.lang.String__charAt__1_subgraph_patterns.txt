@@ -1,0 +1,18 @@
+t # 4001 * 1504
+v 0 <r>
+v 1 CharSequence.charAt()
+v 2 CharSequence.length()
+e 0 1 sel
+e 1 2 order_rev
+e 2 0 rep
+
+t # 17 * 6145
+v 0 int:1
+
+t # 407 * 1724
+v 0 char
+v 1 <r>
+v 2 <r>
+e 0 1 para
+e 1 2 sel
+

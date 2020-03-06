@@ -1,0 +1,2739 @@
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/MarkedSection.java
+method: process(ElementListener)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Element" shape="ellipse" ];
+    3 [ label="Iterator.next() L118" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L117" shape="box" ];
+    6 [ label="Iterable.iterator() L117" shape="box" ];
+    7 [ label="Section" shape="ellipse" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="order" style="bold" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="order" style="bold" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 3 [ label="rep" style="bold" ];
+    6 -> 4 [ label="def" style="solid" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    6 -> 5 [ label="order" style="bold" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "process(ElementListener)" {
+  nslimit=10000;
+
+    1 [ label="Section" shape="ellipse" ];
+    2 [ label="Section.<cast> L117" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Iterable.iterator() L117" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.next() L118" shape="box" ];
+    6 [ label="ElementListener.add() L119" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Iterator.hasNext() L117" shape="box" ];
+    8 [ label="Element" shape="ellipse" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="def" style="solid" ];
+    3 -> 7 [ label="order" style="bold" ];
+    3 -> 5 [ label="rep" style="bold" ];
+    3 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    4 -> 7 [ label="recv" style="solid" ];
+    7 -> 5 [ label="rep" style="bold" ];
+    7 -> 5 [ label="order" style="bold" ];
+    5 -> 8 [ label="def" style="solid" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.10335917312661498
+pattern_support: 5
+confidence_string: (overlap = 16.00 / 18.00)*(pattern support = 5 / 43)*(violation support = 1 / 1)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 117
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/PdfPageLabels.java
+method: getPageLabelFormats(PdfReader)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.toArray() L267" shape="box" ];
+    2 [ label="Set" shape="ellipse" ];
+    3 [ label="Collection.add()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="Integer[]" shape="ellipse" ];
+    5 [ label="Role" shape="ellipse" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getPageLabelFormats(PdfReader)" {
+  nslimit=10000;
+
+    1 [ label="Integer[]" shape="ellipse" ];
+    2 [ label="{Integer} L266" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Collection.toArray() L267" shape="box" ];
+    4 [ label="Set" shape="ellipse" ];
+    5 [ label="Map.keySet() L267" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="PdfDictionary.get() L262" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="PdfDictionary.<cast> L262" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="PdfReader.getCatalog() L261" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="<nullcheck> L263" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="PdfReader.getPdfObjectRelease() L262" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="PdfDictionary.get() L287" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="PdfDictionary.get() L277" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="PdfString.toUnicodeString() L282" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="CharSequence.charAt() L287" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="Integer[]" shape="ellipse" color="gray" fontcolor="gray" ];
+    16 [ label="PdfString.<cast> L282" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="PdfName.<cast> L287" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="PdfNumber.intValue() L277" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="PdfDictionary.get() L282" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="Object.toString() L287" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="PdfNumber.<cast> L277" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    7 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    10 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.08305647840531562
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 5 / 43)*(violation support = 1 / 1)
+pattern_examples:
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/SearchablePluginsManager.java#computeContainerClasspathEntries()
+- zonedabone/Alice/src/main/java/edu/cmu/cs/stage3/alice/authoringtool/AuthoringTool.java#animateAddModel(Transformable, ReferenceFrame, SymmetricPerspectiveCamera)
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/target/TargetPlatformService.java#getTargets(IProgressMonitor)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/DependencyParser/src/ir/ac/iust/nlp/dependencyparser/evaluation/EvalPanel.java#btnEval_Click(ActionEvent)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/security/drm/SecurityAccess.java#getAllRolesForGroup(Group)
+startline: 267
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/xtra/src/main/java/com/itextpdf/text/pdf/pdfcleanup/PdfCleanUpProcessor.java
+method: deleteRedactAnnots(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.isEmpty() L332" shape="box" ];
+    2 [ label="Set" shape="ellipse" ];
+    3 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "deleteRedactAnnots(int)" {
+  nslimit=10000;
+
+    1 [ label="Set" shape="ellipse" ];
+    2 [ label="<nullcheck> L332" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Collection.isEmpty() L332" shape="box" ];
+    4 [ label="Collection.contains() L347" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Collection.contains() L347" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="<return> L333" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.046511627906976744
+pattern_support: 8
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 8 / 43)*(violation support = 1 / 3)
+pattern_examples:
+- goodow/gwt/dev/core/src/com/google/gwt/dev/jjs/ast/JProgram.java#generalizeTypes(Collection)
+- jak786/VASE/editor/server/src/de/hpi/bpmn2bpel/factories/SupportingFactory.java#createCorrelationsElement(List)
+- ist-dsi/expenditures/working-capital/src/main/java/module/workingCapital/presentationTier/renderers/WorkingCapitalTransactionFiles.java#getLayout(Object, Class)
+- jak786/VASE/editor/server/src/de/hpi/bpel4chor/transformation/factories/BasicActivityFactory.java#createAssignElement(AssignTask)
+- rump0054/Diary-Card/lib/Apache_Click/src/org/apache/click/control/AbstractControl.java#removeStyleClass(String)
+startline: 332
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/parser/clipper/Paths.java
+method: getBounds()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.isEmpty() L163" shape="box" ];
+    2 [ label="Path" shape="ellipse" ];
+    3 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getBounds()" {
+  nslimit=10000;
+
+    1 [ label="Collection.isEmpty() L163" shape="box" ];
+    2 [ label="Path" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" ];
+  }
+confidence: 0.046511627906976744
+pattern_support: 8
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 8 / 43)*(violation support = 1 / 3)
+pattern_examples:
+- goodow/gwt/dev/core/src/com/google/gwt/dev/jjs/ast/JProgram.java#generalizeTypes(Collection)
+- jak786/VASE/editor/server/src/de/hpi/bpmn2bpel/factories/SupportingFactory.java#createCorrelationsElement(List)
+- ist-dsi/expenditures/working-capital/src/main/java/module/workingCapital/presentationTier/renderers/WorkingCapitalTransactionFiles.java#getLayout(Object, Class)
+- jak786/VASE/editor/server/src/de/hpi/bpel4chor/transformation/factories/BasicActivityFactory.java#createAssignElement(AssignTask)
+- rump0054/Diary-Card/lib/Apache_Click/src/org/apache/click/control/AbstractControl.java#removeStyleClass(String)
+startline: 163
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/PdfReader.java
+method: eliminateSharedStreams()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L2752" shape="box" ];
+    2 [ label="ArrayList" shape="ellipse" ];
+    3 [ label="Collection.add() L2743" shape="box" ];
+    4 [ label="Collection.toArray()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="File[]" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="PRStream" shape="ellipse" ];
+    7 [ label="ArrayList.<init> L2717" shape="box" ];
+    7 -> 1 [ label="order" style="bold" ];
+    3 -> 1 [ label="order" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    7 -> 2 [ label="def" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    7 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="para" style="solid" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "eliminateSharedStreams()" {
+  nslimit=10000;
+
+    1 [ label="ArrayList.<init> L2717" shape="box" ];
+    2 [ label="Collection.size() L2752" shape="box" ];
+    3 [ label="List.get() L2753" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="<return> L2751" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="<r> L2752" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="ArrayList" shape="ellipse" ];
+    7 [ label="Collection.add() L2743" shape="box" ];
+    8 [ label="Collection.isEmpty() L2750" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Collection.add() L2731" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="PdfIndirectReference.getNumber() L2740" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="PdfArray.getPdfObject() L2739" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="PdfObject.isStream() L2726" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="<nullcheck> L2721" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="PRIndirectReference.<cast> L2739" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="PdfObject.isArray() L2736" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="<nullcheck> L2724" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="PdfArray.<cast> L2737" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="PdfReader.getPdfObject() L2723" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="IntHashtable.containsKey() L2740" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="<r> L2738" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="PdfDictionary.get() L2723" shape="box" color="gray" fontcolor="gray" ];
+    22 [ label="PdfArray.size() L2738" shape="box" color="gray" fontcolor="gray" ];
+    23 [ label="PRStream" shape="ellipse" ];
+    24 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    25 [ label="PRStream.<init> L2743" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="order" style="bold" ];
+    1 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="def" style="solid" ];
+    1 -> 2 [ label="order" style="bold" ];
+    1 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="order" style="bold" ];
+    19 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="recv" style="solid" ];
+    8 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 24 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="recv" style="solid" ];
+    6 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 7 [ label="para" style="solid" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 23 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.02990033222591362
+pattern_support: 6
+confidence_string: (overlap = 12.00 / 14.00)*(pattern support = 6 / 43)*(violation support = 1 / 4)
+pattern_examples:
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/project/ProjectModifyOperation.java#configureJavaProject(IBundleProjectDescription, IBundleProjectDescription, boolean)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/DependencyParser/src/ir/ac/iust/nlp/dependencyparser/FileDrop.java#createFileArray(BufferedReader, PrintStream)
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/font/effects/ShadowEffect.java#getValues()
+- cojen/Cojen/src/main/java/org/cojen/util/AnnotationDescParser.java#parseArray(Annotation, char, TypeDesc)
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/target/TargetPersistence36Helper.java#deserializeBundleContainer(Element)
+startline: 2717
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/TrueTypeFont.java
+method: getNames(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L731" shape="box" ];
+    2 [ label="ArrayList" shape="ellipse" ];
+    3 [ label="Collection.add() L726" shape="box" ];
+    4 [ label="Collection.toArray()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="File[]" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="String[]" shape="ellipse" ];
+    7 [ label="ArrayList.<init> L709" shape="box" ];
+    7 -> 1 [ label="order" style="bold" ];
+    3 -> 1 [ label="order" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    7 -> 2 [ label="def" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    7 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="para" style="solid" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getNames(int)" {
+  nslimit=10000;
+
+    1 [ label="Collection.add() L726" shape="box" ];
+    2 [ label="ArrayList" shape="ellipse" ];
+    3 [ label="String[]" shape="ellipse" ];
+    4 [ label="{String} L726" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="ArrayList.<init> L709" shape="box" ];
+    6 [ label="List.get() L733" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="String[][].arrayset() L733" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Collection.size() L732" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Collection.size() L731" shape="box" ];
+    10 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="order" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 9 [ label="order" style="bold" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="def" style="solid" ];
+    2 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="recv" style="solid" ];
+    2 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="order" style="bold" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.02990033222591362
+pattern_support: 6
+confidence_string: (overlap = 12.00 / 14.00)*(pattern support = 6 / 43)*(violation support = 1 / 4)
+pattern_examples:
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/project/ProjectModifyOperation.java#configureJavaProject(IBundleProjectDescription, IBundleProjectDescription, boolean)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/DependencyParser/src/ir/ac/iust/nlp/dependencyparser/FileDrop.java#createFileArray(BufferedReader, PrintStream)
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/font/effects/ShadowEffect.java#getValues()
+- cojen/Cojen/src/main/java/org/cojen/util/AnnotationDescParser.java#parseArray(Annotation, char, TypeDesc)
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/target/TargetPersistence36Helper.java#deserializeBundleContainer(Element)
+startline: 709
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/PdfPageLabels.java
+method: getPageLabelFormats(PdfReader)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.size() L266" shape="box" ];
+    2 [ label="HashMap" shape="ellipse" ];
+    3 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Geometry" shape="ellipse" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getPageLabelFormats(PdfReader)" {
+  nslimit=10000;
+
+    1 [ label="HashMap" shape="ellipse" ];
+    2 [ label="PdfNumberTree.readTree() L265" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.size() L269" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Map.size() L266" shape="box" ];
+    5 [ label="Map.keySet() L267" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Map.get() L275" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="PdfDictionary.<cast> L262" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="PdfReader.getPdfObjectRelease() L262" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="PdfReader.getCatalog() L261" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="PdfDictionary.get() L262" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="<nullcheck> L263" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="PdfString.toUnicodeString() L282" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="PdfDictionary.get() L287" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="CharSequence.charAt() L287" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="PdfDictionary.get() L277" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="PdfString.<cast> L282" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="PdfNumber.<cast> L277" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    19 [ label="PdfDictionary.get() L282" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="Object.toString() L287" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="PdfNumber.intValue() L277" shape="box" color="gray" fontcolor="gray" ];
+    22 [ label="PdfName.<cast> L287" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 18 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.029069767441860465
+pattern_support: 5
+confidence_string: (overlap = 3.00 / 6.00)*(pattern support = 5 / 43)*(violation support = 1 / 2)
+pattern_examples:
+- sirvaliance/netlib/src/main/java/org/silvertunnel/netlib/layer/tor/directory/Directory.java#fetchDescriptors(Map, DirectoryConsensus)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFFile.java#readKerning(FontFileReader)
+- orbeon/flyingsaucer-old/src/java/org/xhtmlrenderer/layout/Layer.java#collectCollapsedTableBorders(RenderingContext, List)
+- NCIP/cadsr-cgmdr-nci-uk/extensions/indexes/spatial/src/org/exist/indexing/spatial/AbstractGMLJDBCIndexWorker.java#scanIndex(XQueryContext, DocumentSet, NodeSet, Map)
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/target/TargetDefinition.java#getAllFeatures()
+startline: 266
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/PdfPageLabels.java
+method: getPageLabelFormats(PdfReader)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.size() L269" shape="box" ];
+    2 [ label="HashMap" shape="ellipse" ];
+    3 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Geometry" shape="ellipse" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getPageLabelFormats(PdfReader)" {
+  nslimit=10000;
+
+    1 [ label="HashMap" shape="ellipse" ];
+    2 [ label="PdfNumberTree.readTree() L265" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.size() L269" shape="box" ];
+    4 [ label="Map.size() L266" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Map.keySet() L267" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Map.get() L275" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="PdfReader.getCatalog() L261" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="<nullcheck> L263" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="PdfDictionary.<cast> L262" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="PdfReader.getPdfObjectRelease() L262" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="PdfDictionary.get() L262" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.029069767441860465
+pattern_support: 5
+confidence_string: (overlap = 3.00 / 6.00)*(pattern support = 5 / 43)*(violation support = 1 / 2)
+pattern_examples:
+- sirvaliance/netlib/src/main/java/org/silvertunnel/netlib/layer/tor/directory/Directory.java#fetchDescriptors(Map, DirectoryConsensus)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFFile.java#readKerning(FontFileReader)
+- orbeon/flyingsaucer-old/src/java/org/xhtmlrenderer/layout/Layer.java#collectCollapsedTableBorders(RenderingContext, List)
+- NCIP/cadsr-cgmdr-nci-uk/extensions/indexes/spatial/src/org/exist/indexing/spatial/AbstractGMLJDBCIndexWorker.java#scanIndex(XQueryContext, DocumentSet, NodeSet, Map)
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/target/TargetDefinition.java#getAllFeatures()
+startline: 269
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/CFFFontSubset.java
+method: BuildNewFile(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Item" shape="ellipse" ];
+    3 [ label="Iterator.next() L1260" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L1259" shape="box" ];
+    6 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    7 [ label="Collection" shape="ellipse" color="red" fontcolor="red" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="order" style="bold" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    6 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "BuildNewFile(int)" {
+  nslimit=10000;
+
+    1 [ label="Iterator" shape="ellipse" ];
+    2 [ label="Iterator.next() L1260" shape="box" ];
+    3 [ label="Iterator.hasNext() L1259" shape="box" ];
+    4 [ label="Item.emit() L1261" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Item" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    3 -> 2 [ label="order" style="bold" ];
+    3 -> 2 [ label="rep" style="bold" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="def" style="solid" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.026833631484794274
+pattern_support: 5
+confidence_string: (overlap = 9.00 / 13.00)*(pattern support = 5 / 43)*(violation support = 1 / 3)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 1259
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/CFFFontSubset.java
+method: BuildNewFile(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Item" shape="ellipse" ];
+    3 [ label="Iterator.next() L1250" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L1249" shape="box" ];
+    6 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    7 [ label="Collection" shape="ellipse" color="red" fontcolor="red" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="order" style="bold" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    6 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "BuildNewFile(int)" {
+  nslimit=10000;
+
+    1 [ label="Iterator.hasNext() L1249" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Item.xref() L1251" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Iterator.next() L1250" shape="box" ];
+    5 [ label="Item" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="order" style="bold" ];
+    1 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="rep" style="bold" ];
+    2 -> 4 [ label="recv" style="solid" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="def" style="solid" ];
+  }
+confidence: 0.026833631484794274
+pattern_support: 5
+confidence_string: (overlap = 9.00 / 13.00)*(pattern support = 5 / 43)*(violation support = 1 / 3)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 1249
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/CFFFontSubset.java
+method: BuildNewFile(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="JSONObject.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Item" shape="ellipse" ];
+    3 [ label="Iterator.next() L1244" shape="box" ];
+    4 [ label="Iterator" shape="ellipse" ];
+    5 [ label="Iterator.hasNext() L1243" shape="box" ];
+    6 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    7 [ label="Collection" shape="ellipse" color="red" fontcolor="red" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    5 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    8 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    8 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="order" style="bold" ];
+    5 -> 3 [ label="rep" style="bold" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    6 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    8 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 6 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 6 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    8 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "BuildNewFile(int)" {
+  nslimit=10000;
+
+    1 [ label="Iterator.hasNext() L1243" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.next() L1244" shape="box" ];
+    4 [ label="Item.increment() L1245" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Item" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="rep" style="bold" ];
+    1 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    3 -> 5 [ label="def" style="solid" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.026833631484794274
+pattern_support: 5
+confidence_string: (overlap = 9.00 / 13.00)*(pattern support = 5 / 43)*(violation support = 1 / 3)
+pattern_examples:
+- qframework/qframework-java/Q/src/org/json/JSONArray.java#JSONArray(Collection)
+- buptzzl/MR-codes/src/java/org/json/JSONArray.java#JSONArray(Collection)
+- raypp/traintools/src/org/json/JSONArray.java#JSONArray(Collection)
+- fmaste/defensor/src/org/json/JSONArray.java#JSONArray(Collection)
+- jaakan/AndroidProjects/qinglu/src/ext/org/json/JSONArray.java#JSONArray(Collection)
+startline: 1243
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/PdfReader.java
+method: eliminateSharedStreams()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="ArrayList" shape="ellipse" ];
+    3 [ label="Collection.add() L2742" shape="box" ];
+    4 [ label="Collection.toArray()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="File[]" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="PRIndirectReference" shape="ellipse" ];
+    7 [ label="ArrayList.<init> L2716" shape="box" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 2 [ label="def" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    7 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="para" style="solid" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "eliminateSharedStreams()" {
+  nslimit=10000;
+
+    1 [ label="PRIndirectReference" shape="ellipse" ];
+    2 [ label="PRIndirectReference.<cast> L2739" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Collection.add() L2742" shape="box" ];
+    4 [ label="PdfIndirectReference.getNumber() L2740" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="PdfIndirectReference.getNumber() L2746" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="PdfReader.getPdfObject() L2743" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="ArrayList" shape="ellipse" ];
+    8 [ label="PdfObject.isStream() L2726" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="PdfArray.<cast> L2737" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="PdfDictionary.get() L2723" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="IntHashtable.containsKey() L2740" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="<nullcheck> L2721" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="PdfReader.getPdfObject() L2723" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="PdfArray.size() L2738" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="<r> L2738" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="PdfArray.getPdfObject() L2739" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="PdfObject.isArray() L2736" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="<nullcheck> L2724" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="ArrayList.<init> L2716" shape="box" ];
+    20 [ label="Collection.add() L2730" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="List.get() L2754" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    13 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="recv" style="solid" ];
+    8 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 3 [ label="order" style="bold" ];
+    16 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 7 [ label="def" style="solid" ];
+    7 -> 20 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 21 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    19 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.02536997885835095
+pattern_support: 6
+confidence_string: (overlap = 8.00 / 11.00)*(pattern support = 6 / 43)*(violation support = 1 / 4)
+pattern_examples:
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/project/ProjectModifyOperation.java#configureJavaProject(IBundleProjectDescription, IBundleProjectDescription, boolean)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/DependencyParser/src/ir/ac/iust/nlp/dependencyparser/FileDrop.java#createFileArray(BufferedReader, PrintStream)
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/font/effects/ShadowEffect.java#getValues()
+- cojen/Cojen/src/main/java/org/cojen/util/AnnotationDescParser.java#parseArray(Annotation, char, TypeDesc)
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/target/TargetPersistence36Helper.java#deserializeBundleContainer(Element)
+startline: 2716
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/parser/BezierCurve.java
+method: getPiecewiseLinearApproximation()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Collection.add() L121" shape="box" ];
+    4 [ label="Collection.toArray()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="File[]" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="Point2D" shape="ellipse" ];
+    7 [ label="ArrayList.<init> L113" shape="box" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 2 [ label="def" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    7 -> 3 [ label="order" style="bold" ];
+    6 -> 3 [ label="para" style="solid" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getPiecewiseLinearApproximation()" {
+  nslimit=10000;
+
+    1 [ label="Collection.add() L121" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Point2D" shape="ellipse" ];
+    4 [ label="ArrayList.<init> L113" shape="box" ];
+    5 [ label="Collection.add() L114" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="<return> L122" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="order" style="bold" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="def" style="solid" ];
+    2 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.02536997885835095
+pattern_support: 6
+confidence_string: (overlap = 8.00 / 11.00)*(pattern support = 6 / 43)*(violation support = 1 / 4)
+pattern_examples:
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/project/ProjectModifyOperation.java#configureJavaProject(IBundleProjectDescription, IBundleProjectDescription, boolean)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/DependencyParser/src/ir/ac/iust/nlp/dependencyparser/FileDrop.java#createFileArray(BufferedReader, PrintStream)
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/font/effects/ShadowEffect.java#getValues()
+- cojen/Cojen/src/main/java/org/cojen/util/AnnotationDescParser.java#parseArray(Annotation, char, TypeDesc)
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/target/TargetPersistence36Helper.java#deserializeBundleContainer(Element)
+startline: 113
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/xmlworker/src/main/java/com/itextpdf/tool/xml/css/apply/MaxLeadingAndSize.java
+method: calculateLeading(Tag)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Map.get() L151" shape="box" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Map" shape="ellipse" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "calculateLeading(Tag)" {
+  nslimit=10000;
+
+    1 [ label="Map.get() L151" shape="box" ];
+    2 [ label="Map" shape="ellipse" ];
+    3 [ label="<nullcheck> L150" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Tag.getCSS() L148" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Map.get() L150" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="String" shape="ellipse" ];
+    7 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    8 [ label="Float.parseFloat() L153" shape="box" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="para" style="solid" ];
+    1 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.024916943521594685
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 6 / 43)*(violation support = 1 / 4)
+pattern_examples:
+- Sankore/Editeur_Sankore---LENUOS-/sources/lenuos/editor/src/com/paraschool/editor/server/rpc/EditorServiceImpl.java#initializeSample(ContentProvider)
+- jenkinsci/envinject-plugin/src/main/java/org/jenkinsci/plugins/envinject/EnvInjectBuildWrapper.java#setUp(AbstractBuild, Launcher, BuildListener)
+- cojen/Cojen/src/main/java/org/cojen/util/BeanIntrospector.java#fillInProperties(Class, Map)
+- NCIP/cadsr-cgmdr-nci-uk/extensions/indexes/spatial/src/org/exist/indexing/spatial/AbstractGMLJDBCIndexWorker.java#scanIndex(XQueryContext, DocumentSet, NodeSet, Map)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 151
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/xmlworker/src/main/java/com/itextpdf/tool/xml/css/apply/MaxLeadingAndSize.java
+method: calculateLeading(Tag)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Map.get() L150" shape="box" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Map" shape="ellipse" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "calculateLeading(Tag)" {
+  nslimit=10000;
+
+    1 [ label="Map.get() L150" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Map" shape="ellipse" ];
+    4 [ label="Float.parseFloat() L153" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="<r> L160" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    7 [ label="Map.get() L151" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Tag.getCSS() L148" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    8 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.024916943521594685
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 6 / 43)*(violation support = 1 / 4)
+pattern_examples:
+- Sankore/Editeur_Sankore---LENUOS-/sources/lenuos/editor/src/com/paraschool/editor/server/rpc/EditorServiceImpl.java#initializeSample(ContentProvider)
+- jenkinsci/envinject-plugin/src/main/java/org/jenkinsci/plugins/envinject/EnvInjectBuildWrapper.java#setUp(AbstractBuild, Launcher, BuildListener)
+- cojen/Cojen/src/main/java/org/cojen/util/BeanIntrospector.java#fillInProperties(Class, Map)
+- NCIP/cadsr-cgmdr-nci-uk/extensions/indexes/spatial/src/org/exist/indexing/spatial/AbstractGMLJDBCIndexWorker.java#scanIndex(XQueryContext, DocumentSet, NodeSet, Map)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 150
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/ColumnText.java
+method: findLimitsPoint(ArrayList)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L648" shape="box" ];
+    2 [ label="ArrayList" shape="ellipse" ];
+    3 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "findLimitsPoint(ArrayList)" {
+  nslimit=10000;
+
+    1 [ label="Collection.size() L648" shape="box" ];
+    2 [ label="ArrayList" shape="ellipse" ];
+    3 [ label="List.get() L649" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="<return> L653" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="float[].arrayget() L650" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="float[].arrayget() L650" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="<r> L650" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="<continue> L651" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="float[].arrayget() L653" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    11 [ label="float[].arrayget() L653" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="<r> L650" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.024916943521594685
+pattern_support: 10
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 10 / 43)*(violation support = 1 / 7)
+pattern_examples:
+- idega/com.idega.faces/src/java/com/idega/faces/navigation/IWNavigationHandlerImpl.java#getNavigationCases(FacesContext)
+- amartgon/mahout/core/src/main/java/org/apache/mahout/cf/taste/impl/recommender/TreeClusteringRecommender.java#computeClustersPerUserID(Collection)
+- cojen/Cojen/src/main/java/org/cojen/util/WeakIdentityMap.java#toString(Collection)
+- davidou123/java_resource/./arraylist.java#main(String[])
+- amartgon/mahout/core/src/main/java/org/apache/mahout/common/iterator/FixedSizeSamplingIterator.java#FixedSizeSamplingIterator(int, Iterator)
+startline: 648
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/parser/clipper/Paths.java
+method: getBounds()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L175" shape="box" ];
+    2 [ label="Path" shape="ellipse" ];
+    3 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getBounds()" {
+  nslimit=10000;
+
+    1 [ label="Collection.size() L175" shape="box" ];
+    2 [ label="Path" shape="ellipse" ];
+    3 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.024916943521594685
+pattern_support: 10
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 10 / 43)*(violation support = 1 / 7)
+pattern_examples:
+- idega/com.idega.faces/src/java/com/idega/faces/navigation/IWNavigationHandlerImpl.java#getNavigationCases(FacesContext)
+- amartgon/mahout/core/src/main/java/org/apache/mahout/cf/taste/impl/recommender/TreeClusteringRecommender.java#computeClustersPerUserID(Collection)
+- cojen/Cojen/src/main/java/org/cojen/util/WeakIdentityMap.java#toString(Collection)
+- davidou123/java_resource/./arraylist.java#main(String[])
+- amartgon/mahout/core/src/main/java/org/apache/mahout/common/iterator/FixedSizeSamplingIterator.java#FixedSizeSamplingIterator(int, Iterator)
+startline: 175
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/PdfPageLabels.java
+method: getPageLabelFormats(PdfReader)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Integer" shape="ellipse" ];
+    3 [ label="Map.get() L275" shape="box" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="HashMap" shape="ellipse" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "getPageLabelFormats(PdfReader)" {
+  nslimit=10000;
+
+    1 [ label="Integer" shape="ellipse" ];
+    2 [ label="Integer[].arrayget() L274" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.get() L275" shape="box" ];
+    4 [ label="Number.intValue() L298" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="<nullcheck> L263" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="PdfReader.getPdfObjectRelease() L262" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="PdfDictionary.get() L262" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="PdfReader.getCatalog() L261" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="<r> L273" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="HashMap" shape="ellipse" ];
+    11 [ label="PdfDictionary.<cast> L262" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Object.toString() L287" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="PdfDictionary.get() L287" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="PdfDictionary.get() L282" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="PdfString.<cast> L282" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="PdfObject" shape="ellipse" color="gray" fontcolor="gray" ];
+    17 [ label="PdfString.toUnicodeString() L282" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="PdfNumber.<cast> L277" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="PdfDictionary.get() L277" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="CharSequence.charAt() L287" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="PdfName.<cast> L287" shape="box" color="gray" fontcolor="gray" ];
+    22 [ label="PdfNumber.intValue() L277" shape="box" color="gray" fontcolor="gray" ];
+    23 [ label="PdfNumberTree.readTree() L265" shape="box" color="gray" fontcolor="gray" ];
+    24 [ label="Map.size() L269" shape="box" color="gray" fontcolor="gray" ];
+    25 [ label="Map.size() L266" shape="box" color="gray" fontcolor="gray" ];
+    26 [ label="Map.keySet() L267" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="recv" style="solid" ];
+    11 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 10 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 24 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 25 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 26 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    11 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.024916943521594685
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 6 / 43)*(violation support = 1 / 4)
+pattern_examples:
+- Sankore/Editeur_Sankore---LENUOS-/sources/lenuos/editor/src/com/paraschool/editor/server/rpc/EditorServiceImpl.java#initializeSample(ContentProvider)
+- jenkinsci/envinject-plugin/src/main/java/org/jenkinsci/plugins/envinject/EnvInjectBuildWrapper.java#setUp(AbstractBuild, Launcher, BuildListener)
+- cojen/Cojen/src/main/java/org/cojen/util/BeanIntrospector.java#fillInProperties(Class, Map)
+- NCIP/cadsr-cgmdr-nci-uk/extensions/indexes/spatial/src/org/exist/indexing/spatial/AbstractGMLJDBCIndexWorker.java#scanIndex(XQueryContext, DocumentSet, NodeSet, Map)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 275
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/html/simpleparser/ChainedProperties.java
+method: getProperty(String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.put()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Map.get() L98" shape="box" ];
+    4 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Map" shape="ellipse" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "getProperty(String)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Map.get() L98" shape="box" ];
+    3 [ label="Map" shape="ellipse" ];
+    4 [ label="Map" shape="ellipse" color="gray" fontcolor="gray" ];
+    5 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    6 [ label="<return> L100" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+    2 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.024916943521594685
+pattern_support: 6
+confidence_string: (overlap = 5.00 / 7.00)*(pattern support = 6 / 43)*(violation support = 1 / 4)
+pattern_examples:
+- Sankore/Editeur_Sankore---LENUOS-/sources/lenuos/editor/src/com/paraschool/editor/server/rpc/EditorServiceImpl.java#initializeSample(ContentProvider)
+- jenkinsci/envinject-plugin/src/main/java/org/jenkinsci/plugins/envinject/EnvInjectBuildWrapper.java#setUp(AbstractBuild, Launcher, BuildListener)
+- cojen/Cojen/src/main/java/org/cojen/util/BeanIntrospector.java#fillInProperties(Class, Map)
+- NCIP/cadsr-cgmdr-nci-uk/extensions/indexes/spatial/src/org/exist/indexing/spatial/AbstractGMLJDBCIndexWorker.java#scanIndex(XQueryContext, DocumentSet, NodeSet, Map)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 98
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/languages/BanglaGlyphRepositioner.java
+method: repositionGlyphs(List)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L72" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "repositionGlyphs(List)" {
+  nslimit=10000;
+
+    1 [ label="List" shape="ellipse" ];
+    2 [ label="Collection.size() L72" shape="box" ];
+    3 [ label="List.get() L73" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.024916943521594685
+pattern_support: 10
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 10 / 43)*(violation support = 1 / 7)
+pattern_examples:
+- idega/com.idega.faces/src/java/com/idega/faces/navigation/IWNavigationHandlerImpl.java#getNavigationCases(FacesContext)
+- amartgon/mahout/core/src/main/java/org/apache/mahout/cf/taste/impl/recommender/TreeClusteringRecommender.java#computeClustersPerUserID(Collection)
+- cojen/Cojen/src/main/java/org/cojen/util/WeakIdentityMap.java#toString(Collection)
+- davidou123/java_resource/./arraylist.java#main(String[])
+- amartgon/mahout/core/src/main/java/org/apache/mahout/common/iterator/FixedSizeSamplingIterator.java#FixedSizeSamplingIterator(int, Iterator)
+startline: 72
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/PdfContentByte.java
+method: saveMCBlocks()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L4308" shape="box" ];
+    2 [ label="ArrayList" shape="ellipse" ];
+    3 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "saveMCBlocks()" {
+  nslimit=10000;
+
+    1 [ label="ArrayList" shape="ellipse" ];
+    2 [ label="<return> L4313" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="List.get() L4309" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Collection.size() L4308" shape="box" ];
+    5 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.024916943521594685
+pattern_support: 10
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 10 / 43)*(violation support = 1 / 7)
+pattern_examples:
+- idega/com.idega.faces/src/java/com/idega/faces/navigation/IWNavigationHandlerImpl.java#getNavigationCases(FacesContext)
+- amartgon/mahout/core/src/main/java/org/apache/mahout/cf/taste/impl/recommender/TreeClusteringRecommender.java#computeClustersPerUserID(Collection)
+- cojen/Cojen/src/main/java/org/cojen/util/WeakIdentityMap.java#toString(Collection)
+- davidou123/java_resource/./arraylist.java#main(String[])
+- amartgon/mahout/core/src/main/java/org/apache/mahout/common/iterator/FixedSizeSamplingIterator.java#FixedSizeSamplingIterator(int, Iterator)
+startline: 4308
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/PdfReader.java
+method: eliminateSharedStreams()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.add() L2730" shape="box" ];
+    2 [ label="ArrayList" shape="ellipse" ];
+    3 [ label="Collection.size()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="PRIndirectReference" shape="ellipse" ];
+    4 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "eliminateSharedStreams()" {
+  nslimit=10000;
+
+    1 [ label="PRIndirectReference" shape="ellipse" ];
+    2 [ label="PRIndirectReference.<cast> L2727" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="PdfIndirectReference.getNumber() L2728" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="PdfIndirectReference.getNumber() L2734" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Collection.add() L2730" shape="box" ];
+    6 [ label="<nullcheck> L2721" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="PdfDictionary.get() L2723" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="ArrayList" shape="ellipse" ];
+    9 [ label="PdfDictionary.get() L2727" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="IntHashtable.containsKey() L2728" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="PdfObject.isStream() L2726" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="PdfReader.getPdfObject() L2723" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="<nullcheck> L2724" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="ArrayList.<init> L2716" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="Collection.add() L2742" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="List.get() L2754" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="para" style="solid" ];
+    7 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="recv" style="solid" ];
+    14 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 8 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.02422480620155039
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 6.00)*(pattern support = 5 / 43)*(violation support = 1 / 4)
+pattern_examples:
+- orbeon/flyingsaucer-old/src/java/org/xhtmlrenderer/layout/InlineBoxing.java#layoutContent(LayoutContext, BlockBox, int, int)
+- cojen/Cojen/src/main/java/org/cojen/util/BeanPropertyAccessor.java#getBeanProperties(Class, PropertySet)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/ogcwebservices/wmps/operation/PrintMap.java#retrieveTextAreas(Map)
+- sirvaliance/netlib/src/main/java/org/silvertunnel/netlib/layer/tor/directory/DirectoryConsensus.java#DirectoryConsensus(String, AuthorityKeyCertificates, Date)
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/ClasspathHelper.java#findLibrary(String, IProject, Map, IBuild)
+startline: 2730
+---
+file: /mubench/checkouts/itextpdf/2d5b6a212/itext/src/main/java/com/itextpdf/text/pdf/parser/BezierCurve.java
+method: getPiecewiseLinearApproximation()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.add() L114" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Collection.size()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="Point2D" shape="ellipse" ];
+    4 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getPiecewiseLinearApproximation()" {
+  nslimit=10000;
+
+    1 [ label="Collection.add() L114" shape="box" ];
+    2 [ label="Point2D" shape="ellipse" ];
+    3 [ label="List" shape="ellipse" ];
+    4 [ label="ArrayList.<init> L113" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Collection.add() L121" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="<return> L122" shape="box" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.02422480620155039
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 6.00)*(pattern support = 5 / 43)*(violation support = 1 / 4)
+pattern_examples:
+- orbeon/flyingsaucer-old/src/java/org/xhtmlrenderer/layout/InlineBoxing.java#layoutContent(LayoutContext, BlockBox, int, int)
+- cojen/Cojen/src/main/java/org/cojen/util/BeanPropertyAccessor.java#getBeanProperties(Class, PropertySet)
+- camptocamp/secureOWS/owsproxyserver/src/org/deegree/ogcwebservices/wmps/operation/PrintMap.java#retrieveTextAreas(Map)
+- sirvaliance/netlib/src/main/java/org/silvertunnel/netlib/layer/tor/directory/DirectoryConsensus.java#DirectoryConsensus(String, AuthorityKeyCertificates, Date)
+- SiteView/com.siteview.mde/com.siteview.mde.core/src/com/siteview/mde/internal/core/ClasspathHelper.java#findLibrary(String, IProject, Map, IBuild)
+startline: 114

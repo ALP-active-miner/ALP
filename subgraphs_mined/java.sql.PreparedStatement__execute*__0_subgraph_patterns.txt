@@ -1,0 +1,25 @@
+t # 13282 * 1362
+v 0 PreparedStatement
+v 1 AutoCloseable.close()
+e 0 1 recv
+
+t # 17389 * 1753
+v 0 SQLException
+v 1 <catch>
+e 0 1 para
+
+t # 20759 * 292
+v 0 <catch>
+v 1 PrintStream.println()
+e 0 1 order
+
+t # 14155 * 1538
+v 0 PreparedStatement
+v 1 PreparedStatement.executeQuery()
+e 0 1 recv
+
+t # 20070 * 308
+v 0 <catch>
+v 1 <throw>
+e 0 1 hdl
+

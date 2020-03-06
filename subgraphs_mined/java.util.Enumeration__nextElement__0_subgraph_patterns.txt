@@ -1,0 +1,31 @@
+t # 14 * 4708
+v 0 Enumeration.hasMoreElements()
+
+t # 10 * 3013
+v 0 <return>
+
+t # 1590 * 1174
+v 0 Enumeration.nextElement()
+v 1 Enumeration.hasMoreElements()
+e 0 1 order
+
+t # 45 * 651
+v 0 int:1
+
+t # 7 * 894
+v 0 <catch>
+
+t # 4772 * 777
+v 0 Enumeration.hasMoreElements()
+v 1 Vector.elements()
+e 0 1 order_rev
+
+t # 88 * 130
+v 0 int:2
+
+t # 90 * 190
+v 0 
+
+t # 157 * 173
+v 0 interface_Enumeration
+

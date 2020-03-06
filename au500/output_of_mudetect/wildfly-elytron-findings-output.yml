@@ -1,0 +1,127 @@
+file: /mubench/checkouts/wildfly-elytron/a73bbba0f0/src/main/java/org/wildfly/security/http/impl/NonceManager.java
+method: generateNonce(byte[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ByteBuffer.put() L123" shape="box" ];
+    2 [ label="byte[]" shape="ellipse" ];
+    3 [ label="ByteBuffer" shape="ellipse" ];
+    4 [ label="ByteBuffer.allocate() L120" shape="box" ];
+    5 [ label="Buffer.array() L123" shape="box" ];
+    6 [ label="int" shape="ellipse" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    2 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="order" style="bold" ];
+    4 -> 3 [ label="def" style="solid" ];
+    6 -> 4 [ label="para" style="solid" ];
+    3 -> 5 [ label="recv" style="solid" ];
+    4 -> 5 [ label="order" style="bold" ];
+    1 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "generateNonce(byte[])" {
+  nslimit=10000;
+
+    1 [ label="ByteBuffer.put() L123" shape="box" ];
+    2 [ label="ByteBuffer" shape="ellipse" ];
+    3 [ label="byte[]" shape="ellipse" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="MessageDigest.getDigestLength() L120" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="ByteBuffer.allocate() L120" shape="box" ];
+    7 [ label="Buffer.array() L123" shape="box" ];
+    8 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    9 [ label="Buffer.array() L125" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="ByteBuffer.putInt() L121" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="ByteBuffer.putLong() L122" shape="box" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="order" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="def" style="solid" ];
+    2 -> 7 [ label="recv" style="solid" ];
+    2 -> 9 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="para" style="solid" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" ];
+    6 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.12896825396825398
+pattern_support: 5
+confidence_string: (overlap = 13.00 / 14.00)*(pattern support = 5 / 36)*(violation support = 1 / 1)
+pattern_examples:
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/imageout/ImageIOWriter.java#saveImage(Image, String, OutputStream, boolean)
+- yanglujuncc/SomeJavaCodes/src/main/java/Client.java#main(String[])
+- amartgon/mahout/integration/src/main/java/org/apache/mahout/cf/taste/impl/model/hbase/HBaseDataModel.java#itemToBytes(long)
+- tefino/blackadder-cinc/lib/bindings/java-binding/src/eu/pursuit/core/ItemName.java#toByteArray()
+- amartgon/mahout/integration/src/main/java/org/apache/mahout/cf/taste/impl/model/hbase/HBaseDataModel.java#userToBytes(long)
+startline: 120
+---
+file: /mubench/checkouts/wildfly-elytron/a73bbba0f0/src/main/java/org/wildfly/security/sasl/scram/ScramUtil.java
+method: getSecureRandom(Map)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.keySet()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Map" shape="ellipse" ];
+    3 [ label="Map.get() L42" shape="box" ];
+    4 [ label="<return>" shape="box" color="red" fontcolor="red" ];
+    5 [ label="Set" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    6 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    3 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getSecureRandom(Map)" {
+  nslimit=10000;
+
+    1 [ label="Map" shape="ellipse" ];
+    2 [ label="Map.get() L42" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    4 [ label="SecureRandom.getInstance() L47" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    6 [ label="String.<cast> L43" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+    2 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.08680555555555555
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 8.00)*(pattern support = 5 / 36)*(violation support = 1 / 1)
+pattern_examples:
+- EMLab/emlab-generation/emlab-generation/src/main/java/emlab/gen/role/AbstractEnergyProducerRole.java#calculateFuelMix(PowerPlant, Map, double)
+- jenkinsci/shiningpanda-plugin/src/main/java/jenkins/plugins/shiningpanda/tools/PythonInstallationFinder.java#getInstallations()
+- NCIP/cadsr-cgmdr-nci-uk/src/org/exist/xmldb/ResourceSetHelper.java#intersection(ResourceSet, ResourceSet)
+- EMLab/emlab-generation/emlab-generation/src/main/java/emlab/gen/role/market/AbstractClearElectricitySpotMarketRole.java#determineTotalLoadFromLoadMap(Map)
+- jaakan/AndroidProjects/qinglu/src/zjg/qinglu/util/net/HttpUtil.java#postRequest(String, Map)
+startline: 42

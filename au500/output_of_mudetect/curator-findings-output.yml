@@ -1,0 +1,407 @@
+file: /mubench/checkouts/curator/2af84b9f/curator-x-discovery/src/test/java/org/apache/curator/x/discovery/TestUriSpec.java
+method: testBasic()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.next() L90" shape="box" ];
+    4 [ label="Iterable.iterator() L89" shape="box" ];
+    5 [ label="UriSpec" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 2 [ label="def" style="solid" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="order" style="bold" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    4 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "testBasic()" {
+  nslimit=10000;
+
+    1 [ label="Iterable.iterator() L89" shape="box" ];
+    2 [ label="UriSpec" shape="ellipse" ];
+    3 [ label="Iterator" shape="ellipse" ];
+    4 [ label="Iterator.next() L92" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Iterator.next() L91" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterator.next() L93" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Iterator.next() L95" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Iterator.next() L94" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Iterator.next() L90" shape="box" ];
+    10 [ label="UriSpec.<init> L88" shape="box" color="gray" fontcolor="gray" ];
+    10 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="def" style="solid" ];
+    1 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" ];
+    10 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="recv" style="solid" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.12713178294573643
+pattern_support: 41
+confidence_string: (overlap = 8.00 / 10.00)*(pattern support = 41 / 43)*(violation support = 1 / 6)
+pattern_examples:
+- cloudera/hcatalog/core/src/main/java/org/apache/hcatalog/mapreduce/HCatOutputFormat.java#setOutput(Configuration, Credentials, OutputJobInfo)
+- jbosstools/jbosstools-portlet/plugins/org.jboss.tools.portlet.core/src/org/jboss/tools/portlet/core/JBossWebUtil25.java#getFacesConfig(IProject, IProgressMonitor)
+- nutzam/nutzlib/Nutz-Aop-Cglib/src/org/nutz/lang/segment/CharSegment.java#render()
+- ObeoNetwork/UML-Modeling/plugins/org.obeonetwork.dsl.uml2.design/src/org/obeonetwork/dsl/uml2/design/internal/services/EditLabelSwitch.java#editTransitionTrigger(Transition, String)
+- mojtaba-khallash/dependency-parsing-toolbox/Source/mate-tools/src/is2/parserR2/Parser.java#parse(SentenceData09, ParametersFloat)
+startline: 89
+---
+file: /mubench/checkouts/curator/2af84b9f/curator-x-discovery/src/test/java/org/apache/curator/x/discovery/TestUriSpec.java
+method: testBasic()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L91" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "testBasic()" {
+  nslimit=10000;
+
+    1 [ label="Iterator" shape="ellipse" ];
+    2 [ label="Iterable.iterator() L89" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Iterator.next() L92" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Iterator.next() L91" shape="box" ];
+    5 [ label="Iterator.next() L93" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterator.next() L95" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Iterator.next() L94" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Iterator.next() L90" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.125
+pattern_support: 43
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 43 / 43)*(violation support = 1 / 6)
+pattern_examples:
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/UnicodeFont.java#clearGlyphs()
+- EdvardEakins/FB2OnlineConverter/epubgen/com.adobe.dp.epub/src/com/adobe/dp/epub/ops/Element.java#getEstimatedSize()
+- zonedabone/Alice/src/main/java/edu/cmu/cs/stage3/alice/authoringtool/util/WatcherPanel.java#refreshGUI()
+- kenu/jpetstore/src/main/java/org/springframework/samples/jpetstore/domain/Order.java#initOrder(Account, Cart)
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/UnicodeFont.java#loadGlyphs(int)
+startline: 91
+---
+file: /mubench/checkouts/curator/2af84b9f/curator-x-discovery/src/test/java/org/apache/curator/x/discovery/TestUriSpec.java
+method: testBasic()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L94" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "testBasic()" {
+  nslimit=10000;
+
+    1 [ label="Iterator.next() L94" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterable.iterator() L89" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Iterator.next() L92" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Iterator.next() L91" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterator.next() L93" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Iterator.next() L95" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Iterator.next() L90" shape="box" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.125
+pattern_support: 43
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 43 / 43)*(violation support = 1 / 6)
+pattern_examples:
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/UnicodeFont.java#clearGlyphs()
+- EdvardEakins/FB2OnlineConverter/epubgen/com.adobe.dp.epub/src/com/adobe/dp/epub/ops/Element.java#getEstimatedSize()
+- zonedabone/Alice/src/main/java/edu/cmu/cs/stage3/alice/authoringtool/util/WatcherPanel.java#refreshGUI()
+- kenu/jpetstore/src/main/java/org/springframework/samples/jpetstore/domain/Order.java#initOrder(Account, Cart)
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/UnicodeFont.java#loadGlyphs(int)
+startline: 94
+---
+file: /mubench/checkouts/curator/2af84b9f/curator-x-discovery/src/test/java/org/apache/curator/x/discovery/TestUriSpec.java
+method: testBasic()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L92" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "testBasic()" {
+  nslimit=10000;
+
+    1 [ label="Iterator" shape="ellipse" ];
+    2 [ label="Iterable.iterator() L89" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Iterator.next() L92" shape="box" ];
+    4 [ label="Iterator.next() L91" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Iterator.next() L93" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterator.next() L95" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Iterator.next() L94" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Iterator.next() L90" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.125
+pattern_support: 43
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 43 / 43)*(violation support = 1 / 6)
+pattern_examples:
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/UnicodeFont.java#clearGlyphs()
+- EdvardEakins/FB2OnlineConverter/epubgen/com.adobe.dp.epub/src/com/adobe/dp/epub/ops/Element.java#getEstimatedSize()
+- zonedabone/Alice/src/main/java/edu/cmu/cs/stage3/alice/authoringtool/util/WatcherPanel.java#refreshGUI()
+- kenu/jpetstore/src/main/java/org/springframework/samples/jpetstore/domain/Order.java#initOrder(Account, Cart)
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/UnicodeFont.java#loadGlyphs(int)
+startline: 92
+---
+file: /mubench/checkouts/curator/2af84b9f/curator-x-discovery/src/test/java/org/apache/curator/x/discovery/TestUriSpec.java
+method: testBasic()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L93" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "testBasic()" {
+  nslimit=10000;
+
+    1 [ label="Iterator.next() L93" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterable.iterator() L89" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Iterator.next() L92" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Iterator.next() L91" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterator.next() L95" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Iterator.next() L94" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Iterator.next() L90" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.125
+pattern_support: 43
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 43 / 43)*(violation support = 1 / 6)
+pattern_examples:
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/UnicodeFont.java#clearGlyphs()
+- EdvardEakins/FB2OnlineConverter/epubgen/com.adobe.dp.epub/src/com/adobe/dp/epub/ops/Element.java#getEstimatedSize()
+- zonedabone/Alice/src/main/java/edu/cmu/cs/stage3/alice/authoringtool/util/WatcherPanel.java#refreshGUI()
+- kenu/jpetstore/src/main/java/org/springframework/samples/jpetstore/domain/Order.java#initOrder(Account, Cart)
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/UnicodeFont.java#loadGlyphs(int)
+startline: 93
+---
+file: /mubench/checkouts/curator/2af84b9f/curator-x-discovery/src/test/java/org/apache/curator/x/discovery/TestUriSpec.java
+method: testBasic()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L95" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "testBasic()" {
+  nslimit=10000;
+
+    1 [ label="Iterator" shape="ellipse" ];
+    2 [ label="Iterable.iterator() L89" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Iterator.next() L92" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Iterator.next() L91" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Iterator.next() L93" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterator.next() L95" shape="box" ];
+    7 [ label="Iterator.next() L94" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Iterator.next() L90" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="recv" style="solid" ];
+    1 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.125
+pattern_support: 43
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 43 / 43)*(violation support = 1 / 6)
+pattern_examples:
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/UnicodeFont.java#clearGlyphs()
+- EdvardEakins/FB2OnlineConverter/epubgen/com.adobe.dp.epub/src/com/adobe/dp/epub/ops/Element.java#getEstimatedSize()
+- zonedabone/Alice/src/main/java/edu/cmu/cs/stage3/alice/authoringtool/util/WatcherPanel.java#refreshGUI()
+- kenu/jpetstore/src/main/java/org/springframework/samples/jpetstore/domain/Order.java#initOrder(Account, Cart)
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/UnicodeFont.java#loadGlyphs(int)
+startline: 95

@@ -1,0 +1,7 @@
+t # 7076 * 378
+v 0 boolean:true
+v 1 Component.setVisible()
+v 2 Window.pack()
+e 0 1 para
+e 1 2 order_rev
+

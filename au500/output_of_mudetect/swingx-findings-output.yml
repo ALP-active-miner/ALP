@@ -1,0 +1,214 @@
+file: /mubench/checkouts/swingx/820656c/swingx-action/src/main/java/org/jdesktop/swingx/action/CompositeAction.java
+method: itemStateChanged(ItemEvent)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.add()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Iterator.next() L132" shape="box" ];
+    4 [ label="List" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Iterator" shape="ellipse" ];
+    6 [ label="Iterator.hasNext() L131" shape="box" ];
+    7 [ label="Iterable.iterator() L130" shape="box" ];
+    8 [ label="List" shape="ellipse" ];
+    9 [ label="ArrayList.<init>" shape="box" color="red" fontcolor="red" ];
+    7 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    9 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    6 -> 3 [ label="order" style="bold" ];
+    5 -> 3 [ label="recv" style="solid" ];
+    7 -> 3 [ label="rep" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" ];
+    7 -> 3 [ label="order" style="bold" ];
+    9 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    9 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    7 -> 5 [ label="def" style="solid" ];
+    9 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 6 [ label="recv" style="solid" ];
+    7 -> 6 [ label="order" style="bold" ];
+    9 -> 7 [ label="order" style="bold" color="red" fontcolor="red" ];
+    8 -> 7 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "itemStateChanged(ItemEvent)" {
+  nslimit=10000;
+
+    1 [ label="Iterator.hasNext() L131" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="<nullcheck> L134" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="AbstractActionExt.<cast> L135" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="AbstractActionExt.<instanceof> L134" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterator.next() L132" shape="box" ];
+    7 [ label="ActionManager.getAction() L133" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="ItemListener.itemStateChanged() L135" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="List" shape="ellipse" ];
+    10 [ label="Iterable.iterator() L130" shape="box" ];
+    11 [ label="String" shape="ellipse" ];
+    10 -> 1 [ label="order" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="rep" style="bold" ];
+    1 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" ];
+    1 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="def" style="solid" ];
+    2 -> 6 [ label="recv" style="solid" ];
+    10 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" ];
+    10 -> 6 [ label="rep" style="bold" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="def" style="solid" ];
+    6 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="recv" style="solid" ];
+  }
+confidence: 0.12814645308924486
+pattern_support: 7
+confidence_string: (overlap = 16.00 / 19.00)*(pattern support = 7 / 46)*(violation support = 1 / 1)
+pattern_examples:
+- goodow/gwt/tools/cldr-import/src/com/google/gwt/tools/cldr/LocalizedNamesProcessor.java#cleanupData()
+- nkcsgexi/RefactoringConditionPrecomputing/src/dlf/refactoring/precondition/util/ListOperations.java#Select(List, IPredicate)
+- ObeoNetwork/UML-Modeling/plugins/org.obeonetwork.dsl.uml2.design/src/org/obeonetwork/dsl/uml2/design/internal/dialogs/ExtraAssociationSelectionDialog.java#getAllSubClasses(Class)
+- ObeoNetwork/UML-Modeling/plugins/org.eclipse.umlgen.gen.java/src/org/eclipse/umlgen/gen/java/services/ImportServices.java#reqImport(Classifier)
+- goodow/gwt/tools/cldr-import/src/com/google/gwt/tools/cldr/LocalizedNamesProcessor.java#writeOutputFiles()
+startline: 130
+---
+file: /mubench/checkouts/swingx/820656c/swingx-demos/swingx-demos-content/src/main/java/org/jdesktop/swingx/demos/graph/GraphDemo.java
+method: main(String[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Container.add() L76" shape="box" ];
+    2 [ label="Container" shape="ellipse" ];
+    3 [ label="Container.setLayout()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="GraphDemo" shape="ellipse" ];
+    5 [ label="BorderLayout" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="BorderLayout.<init>" shape="box" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    5 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    6 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="def" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "main(String[])" {
+  nslimit=10000;
+
+    1 [ label="Container.add() L76" shape="box" ];
+    2 [ label="Container" shape="ellipse" ];
+    3 [ label="run()" shape="ellipse" color="gray" fontcolor="gray" ];
+    4 [ label="GraphDemo" shape="ellipse" ];
+    5 [ label="RootPaneContainer.getContentPane() L76" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="GraphDemo.<init> L76" shape="box" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="para" style="solid" ];
+    5 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.04755434782608696
+pattern_support: 7
+confidence_string: (overlap = 5.00 / 8.00)*(pattern support = 7 / 46)*(violation support = 1 / 2)
+pattern_examples:
+- tjpalmer/stackiter/src/stackiter/sim/Stackiter.java#main(String[])
+- chikoski/sqs/sqs-reader/src/main/java/net/sqs2/swing/ImageViewApp.java#ImageViewApp(int, File, BufferedImage, Rectangle, int)
+- nroduit/Weasis/weasis-dicom/weasis-dicom-explorer/src/main/java/org/weasis/dicom/explorer/DicomFieldsView.java#displayHeader(ImageViewerPlugin)
+- zonedabone/Alice/src/main/java/movieMaker/SoundExplorer.java#createWindow()
+- nroduit/Weasis/weasis-dicom/weasis-dicom-explorer/src/main/java/org/weasis/dicom/explorer/DicomFieldsView.java#displayHeaderForSpecialElement(ViewerPlugin, Series)
+startline: 76
+---
+file: /mubench/checkouts/swingx/820656c/swingx-demos/swingx-demos-content/src/main/java/org/jdesktop/swingx/demos/tipoftheday/TipOfTheDayDemo.java
+method: main(String[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Container.add() L79" shape="box" ];
+    2 [ label="Container" shape="ellipse" ];
+    3 [ label="Container.setLayout()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="TipOfTheDayDemo" shape="ellipse" ];
+    5 [ label="BorderLayout" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="BorderLayout.<init>" shape="box" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    5 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    6 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    6 -> 5 [ label="def" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "main(String[])" {
+  nslimit=10000;
+
+    1 [ label="Container" shape="ellipse" ];
+    2 [ label="RootPaneContainer.getContentPane() L79" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Container.add() L79" shape="box" ];
+    4 [ label="TipOfTheDayDemo" shape="ellipse" ];
+    5 [ label="TipOfTheDayDemo.<init> L79" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="run()" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    6 -> 2 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    6 -> 3 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.04755434782608696
+pattern_support: 7
+confidence_string: (overlap = 5.00 / 8.00)*(pattern support = 7 / 46)*(violation support = 1 / 2)
+pattern_examples:
+- tjpalmer/stackiter/src/stackiter/sim/Stackiter.java#main(String[])
+- chikoski/sqs/sqs-reader/src/main/java/net/sqs2/swing/ImageViewApp.java#ImageViewApp(int, File, BufferedImage, Rectangle, int)
+- nroduit/Weasis/weasis-dicom/weasis-dicom-explorer/src/main/java/org/weasis/dicom/explorer/DicomFieldsView.java#displayHeader(ImageViewerPlugin)
+- zonedabone/Alice/src/main/java/movieMaker/SoundExplorer.java#createWindow()
+- nroduit/Weasis/weasis-dicom/weasis-dicom-explorer/src/main/java/org/weasis/dicom/explorer/DicomFieldsView.java#displayHeaderForSpecialElement(ViewerPlugin, Series)
+startline: 79

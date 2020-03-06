@@ -1,0 +1,62 @@
+t # 22139 * 1151
+v 0 Scanner.<init>
+v 1 Scanner
+v 2 <return>
+e 0 1 def
+e 0 2 order
+
+t # 39066 * 1577
+v 0 Scanner
+v 1 Iterator.hasNext()
+e 0 1 recv
+
+t # 44565 * 910
+v 0 PrintStream
+v 1 PrintStream.println()
+v 2 PrintStream.println()
+e 0 1 recv
+e 0 2 recv
+
+t # 5703 * 1134
+v 0 Iterator.next()
+v 1 PrintStream.println()
+e 0 1 order
+
+t # 12297 * 461
+v 0 Iterator.next()
+v 1 Collection.add()
+v 2 ArrayList.<init>
+e 0 1 order
+e 0 2 order_rev
+
+t # 19361 * 291
+v 0 Iterator.next()
+v 1 ArrayList.<init>
+v 2 ArrayList
+e 0 1 order_rev
+e 1 2 def
+
+t # 14076 * 137
+v 0 Iterator.next()
+v 1 CharSequence.charAt()
+e 0 1 order
+
+t # 51887 * 198
+v 0 Iterator.hasNext()
+v 1 Iterator.hasNext()
+v 2 <return>
+e 0 1 order
+e 1 2 order
+
+t # 55897 * 697
+v 0 Iterator.hasNext()
+v 1 Scanner.useDelimiter()
+e 0 1 order_rev
+
+t # 41254 * 246
+v 0 File.<init>
+v 1 File
+v 2 Collection.add()
+e 0 1 def
+e 0 2 rep
+

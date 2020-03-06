@@ -1,0 +1,84 @@
+t # 256117 * 793
+v 0 StringTokenizer.nextToken()
+v 1 StringTokenizer.hasMoreTokens()
+e 0 1 order_rev
+
+t # 196186 * 1921
+v 0 StringTokenizer
+v 1 StringTokenizer.nextToken()
+v 2 StringTokenizer.nextToken()
+e 0 1 recv
+e 0 2 recv
+
+t # 189289 * 1891
+v 0 StringTokenizer
+v 1 StringTokenizer.nextToken()
+v 2 String
+v 3 StringTokenizer.nextToken()
+e 0 1 recv
+e 0 3 recv
+e 1 2 def
+
+t # 274663 * 986
+v 0 int
+v 1 <r>
+v 2 <a>
+e 0 1 para
+e 1 2 rep
+
+t # 2579 * 2060
+v 0 StringTokenizer.<init>
+v 1 StringTokenizer
+v 2 StringTokenizer.nextToken()
+v 3 StringTokenizer.nextToken()
+e 0 1 def
+e 0 3 order
+e 1 2 recv
+
+t # 104242 * 203
+v 0 StringTokenizer.<init>
+v 1 StringTokenizer.nextToken()
+v 2 <return>
+v 3 StringTokenizer.hasMoreTokens()
+e 0 1 order
+e 0 3 order
+e 1 2 order
+
+t # 256116 * 2054
+v 0 StringTokenizer.nextToken()
+v 1 StringTokenizer.nextToken()
+e 0 1 order_rev
+
+t # 209036 * 1371
+v 0 String
+v 1 Integer.parseInt()
+e 0 1 para
+
+t # 190987 * 1014
+v 0 StringTokenizer
+v 1 StringTokenizer.nextToken()
+v 2 PrintStream.println()
+v 3 StringTokenizer.nextToken()
+e 0 1 recv
+e 0 3 recv
+e 1 2 order
+
+t # 223688 * 1338
+v 0 StringTokenizer.nextToken()
+v 1 Integer.parseInt()
+e 0 1 order
+
+t # 274269 * 1121
+v 0 int
+v 1 <a>
+e 0 1 para
+
+t # 188929 * 1899
+v 0 StringTokenizer
+v 1 StringTokenizer.nextToken()
+v 2 String
+v 3 StringTokenizer.nextToken()
+e 0 1 recv
+e 1 2 def
+e 1 3 order
+

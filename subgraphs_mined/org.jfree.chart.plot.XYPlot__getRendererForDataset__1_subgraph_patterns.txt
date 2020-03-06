@@ -1,0 +1,12 @@
+t # 10291 * 13
+v 0 Throwable.printStackTrace()
+v 1 ValueAxis.setLabelFont()
+v 2 NumberAxis.<cast>
+e 0 1 order_rev
+e 1 2 def
+
+t # 18432 * 9
+v 0 ChartFactory.createTimeSeriesChart()
+v 1 Range
+e 0 1 order
+

@@ -1,0 +1,95 @@
+t # 24 * 1055
+v 0 List.listIterator()
+
+t # 12570 * 737
+v 0 Iterator.next()
+v 1 Iterator.next()
+v 2 Iterable.iterator()
+e 0 1 order_rev
+e 1 2 order_rev
+
+t # 4 * 1980
+v 0 Object
+
+t # 14911 * 590
+v 0 Iterator.next()
+v 1 Iterable.iterator()
+v 2 Iterable.iterator()
+e 0 1 order_rev
+e 1 2 order_rev
+
+t # 86 * 203
+v 0 Stack.<init>
+
+t # 10091 * 817
+v 0 Iterator.next()
+v 1 Iterator.hasNext()
+v 2 Iterator.hasNext()
+e 0 1 order
+e 1 2 order_rev
+
+t # 13342 * 908
+v 0 Iterator.next()
+v 1 Iterator.hasNext()
+v 2 Iterator.hasNext()
+e 0 1 order_rev
+e 1 2 order
+
+t # 2 * 5931
+v 0 String
+
+t # 13220 * 2657
+v 0 Iterator.next()
+v 1 Iterator.hasNext()
+e 0 1 order_rev
+
+t # 14341 * 1881
+v 0 Iterator.next()
+v 1 Iterable.iterator()
+v 2 Iterator.hasNext()
+e 0 1 order_rev
+e 1 2 order
+
+t # 11783 * 227
+v 0 Iterator.next()
+v 1 <return>
+v 2 Iterator.hasNext()
+e 0 1 order
+e 1 2 order_rev
+e 2 0 order_rev
+
+t # 12 * 284
+v 0 null:null
+
+t # 19837 * 850
+v 0 Iterator.hasNext()
+v 1 PrintStream.print()
+e 0 1 order_rev
+
+t # 27 * 325
+v 0 ListIterator.hasPrevious()
+
+t # 15941 * 32
+v 0 Iterator.next()
+v 1 int:12
+e 0 1 order_rev
+
+t # 35 * 492
+v 0 this.Predicate
+
+t # 82 * 325
+v 0 CopyOnWriteArrayList.<init>
+
+t # 25 * 421
+v 0 int:1
+
+t # 129 * 113
+v 0 Properties
+
+t # 13017 * 666
+v 0 Iterator.next()
+v 1 Collection.add()
+v 2 Collection.add()
+e 0 1 order_rev
+e 0 2 order_rev
+

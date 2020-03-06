@@ -1,0 +1,5 @@
+t # 10292 * 145
+v 0 NumberFormatException
+v 1 <catch>
+e 0 1 para
+

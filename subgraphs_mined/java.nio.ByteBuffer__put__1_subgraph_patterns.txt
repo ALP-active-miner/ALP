@@ -1,0 +1,35 @@
+t # 1689 * 78
+v 0 int
+v 1 ByteBuffer.get()
+e 0 1 para
+
+t # 834 * 1682
+v 0 ByteBuffer
+v 1 Buffer.flip()
+e 0 1 recv
+
+t # 1965 * 1380
+v 0 ByteBuffer.put()
+v 1 String.getBytes()
+e 0 1 order_rev
+
+t # 1685 * 231
+v 0 int
+v 1 byte.<cast>
+e 0 1 para
+
+t # 6857 * 215
+v 0 Buffer.position()
+v 1 Buffer.position()
+e 0 1 order
+
+t # 1984 * 242
+v 0 ByteBuffer.put()
+v 1 Buffer.position()
+e 0 1 order_rev
+
+t # 1751 * 1046
+v 0 ByteBuffer.put()
+v 1 WritableByteChannel.write()
+e 0 1 order
+

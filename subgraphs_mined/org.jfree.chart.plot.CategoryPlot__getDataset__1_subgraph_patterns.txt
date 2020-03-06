@@ -1,0 +1,27 @@
+t # 55263 * 4
+v 0 HashMap.<init>
+v 1 Map.get()
+e 0 1 order
+
+t # 3313 * 75
+v 0 CategoryDataset.getColumnCount()
+v 1 <nullcheck>
+e 0 1 order_rev
+
+t # 643 * 50
+v 0 int
+v 1 <a>
+e 0 1 para
+
+t # 11494 * 156
+v 0 <nullcheck>
+v 1 CategoryPlot.getDataset()
+v 2 CategoryDataset
+e 0 1 order_rev
+e 1 2 def
+
+t # 7318 * 121
+v 0 <return>
+v 1 <nullcheck>
+e 0 1 order_rev
+

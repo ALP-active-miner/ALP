@@ -1,0 +1,2417 @@
+file: /mubench/checkouts/pdfbox/72249f6ff/pdfbox/src/test/java/org/apache/pdfbox/pdmodel/graphics/image/CCITTFactoryTest.java
+method: testCreateFromRandomAccessMulti()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L102" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "testCreateFromRandomAccessMulti()" {
+  nslimit=10000;
+
+    1 [ label="Iterator.next() L102" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="ImageReader" shape="ellipse" color="gray" fontcolor="gray" ];
+    4 [ label="ImageIO.getImageReaders() L102" shape="box" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.75
+pattern_support: 41
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 41 / 41)*(violation support = 1 / 1)
+pattern_examples:
+- taylorrobert/ProjectM2O/lib/slick/src/org/newdawn/slick/UnicodeFont.java#clearGlyphs()
+- nutzam/nutzlib/Nutz-Aop-Cglib/src/org/nutz/lang/segment/CharSegment.java#render()
+- kenu/jpetstore/src/main/java/org/springframework/samples/jpetstore/domain/Order.java#initOrder(Account, Cart)
+- JPMoresmau/eclipsefp/net.sf.eclipsefp.haskell.ui/src/net/sf/eclipsefp/haskell/ui/properties/ImportLibrariesViewerPart.java#handleDelete()
+- sddjeremy/mlz/Client/src/minecraft_server/net/minecraft/src/ServerConfigurationManager.java#savePlayerStates()
+startline: 102
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/fontbox/src/main/java/org/apache/fontbox/ttf/CmapSubtable.java
+method: getCharCodes(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.toArray()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Collection.size()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="Collection.add() L672" shape="box" ];
+    5 [ label="TaskListSoap[]" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="ArrayList.<init> L671" shape="box" ];
+    8 [ label="int" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 2 [ label="def" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 4 [ label="recv" style="solid" ];
+    7 -> 4 [ label="order" style="bold" ];
+    6 -> 4 [ label="para" style="solid" ];
+    8 -> 7 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "getCharCodes(int)" {
+  nslimit=10000;
+
+    1 [ label="int" shape="ellipse" ];
+    2 [ label="ArrayList.<init> L671" shape="box" ];
+    3 [ label="int" shape="ellipse" ];
+    4 [ label="<r> L654" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Collection.add() L672" shape="box" ];
+    6 [ label="<r> L659" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="List" shape="ellipse" ];
+    8 [ label="<return> L674" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    4 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" ];
+    2 -> 7 [ label="def" style="solid" ];
+    3 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="para" style="solid" ];
+    3 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="recv" style="solid" ];
+    6 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.1125703564727955
+pattern_support: 6
+confidence_string: (overlap = 10.00 / 13.00)*(pattern support = 6 / 41)*(violation support = 1 / 1)
+pattern_examples:
+- SiteView/com.siteview.mde/com.siteview.mde.runtime/src/com/siteview/mde/internal/runtime/registry/model/RegistryModel.java#getFragments(Bundle)
+- cojen/Cojen/src/main/java/org/cojen/classfile/ClassFile.java#getMethods()
+- cpnatwork/era_origodump_dev/sys-src/nebula.widgets.compositetable/src/org/eclipse/swt/nebula/widgets/compositetable/timeeditor/ModelObject.java#append(Object[], Object)
+- jeslopcru/PortletsDemos/brown-tasks-portlet/docroot/WEB-INF/service/com/jesuslc/demos/browntasks/model/TaskItemSoap.java#toSoapModels(List)
+- jeslopcru/PortletsDemos/brown-tasks-portlet/docroot/WEB-INF/service/com/jesuslc/demos/browntasks/model/TaskListSoap.java#toSoapModels(List)
+startline: 671
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/debugger/src/main/java/org/apache/pdfbox/debugger/fontencodingpane/FontEncodingView.java
+method: getHeaderPanel(Map)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.keySet() L107" shape="box" ];
+    2 [ label="Map" shape="ellipse" ];
+    3 [ label="Map.get() L114" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "getHeaderPanel(Map)" {
+  nslimit=10000;
+
+    1 [ label="Map.get() L114" shape="box" ];
+    2 [ label="Map" shape="ellipse" ];
+    3 [ label="Iterator.hasNext() L109" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="<nullcheck> L105" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="String" shape="ellipse" ];
+    6 [ label="Map.keySet() L107" shape="box" ];
+    7 [ label="Iterable.iterator() L107" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    9 [ label="JLabel.<init> L114" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Iterator.next() L113" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="JComponent.setBorder() L116" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Component.setFont() L115" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Set" shape="ellipse" color="gray" fontcolor="gray" ];
+    14 [ label="Container.add() L124" shape="box" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="para" style="solid" ];
+    10 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="recv" style="solid" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.10670731707317073
+pattern_support: 5
+confidence_string: (overlap = 7.00 / 8.00)*(pattern support = 5 / 41)*(violation support = 1 / 1)
+pattern_examples:
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/MyGoodClassify.java#GetHighestGrade(Vector)
+- goodow/gwt/user/src/com/google/gwt/user/client/rpc/core/java/util/LinkedHashMap_CustomFieldSerializer.java#getAccessOrderNoReflection(LinkedHashMap)
+- SiteView/com.siteview.mde/com.siteview.mde.core/text/com/siteview/mde/internal/core/text/bundle/Bundle.java#load(Map)
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/IclassifyMapper.java#GetHighestGrade(Vector)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 107
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/debugger/src/main/java/org/apache/pdfbox/debugger/fontencodingpane/FontEncodingView.java
+method: getHeaderPanel(Map)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.add()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Iterator.next() L113" shape="box" ];
+    4 [ label="TreeSet" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Iterator" shape="ellipse" ];
+    6 [ label="Iterator.hasNext() L109" shape="box" ];
+    7 [ label="Iterable.iterator() L107" shape="box" ];
+    8 [ label="Set" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    7 -> 3 [ label="order" style="bold" ];
+    5 -> 3 [ label="recv" style="solid" ];
+    7 -> 3 [ label="rep" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" ];
+    6 -> 3 [ label="order" style="bold" ];
+    7 -> 5 [ label="def" style="solid" ];
+    7 -> 6 [ label="order" style="bold" ];
+    5 -> 6 [ label="recv" style="solid" ];
+    8 -> 7 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "getHeaderPanel(Map)" {
+  nslimit=10000;
+
+    1 [ label="Set" shape="ellipse" ];
+    2 [ label="Map.keySet() L107" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Iterable.iterator() L107" shape="box" ];
+    4 [ label="<nullcheck> L105" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Container.add() L124" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterator.next() L113" shape="box" ];
+    7 [ label="Component.setFont() L115" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="JLabel.<init> L114" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Map.get() L114" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Iterator" shape="ellipse" ];
+    11 [ label="JComponent.setBorder() L116" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Iterator.hasNext() L109" shape="box" ];
+    13 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="rep" style="bold" ];
+    3 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="order" style="bold" ];
+    3 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" ];
+    3 -> 10 [ label="def" style="solid" ];
+    3 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="rep" style="bold" ];
+    10 -> 6 [ label="recv" style="solid" ];
+    12 -> 6 [ label="order" style="bold" ];
+    6 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="def" style="solid" ];
+    12 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="recv" style="solid" ];
+    12 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.07588075880758807
+pattern_support: 7
+confidence_string: (overlap = 16.00 / 18.00)*(pattern support = 7 / 41)*(violation support = 1 / 2)
+pattern_examples:
+- mojtaba-khallash/dependency-parsing-toolbox/Source/maltParser/src/org/maltparser/parser/guide/instance/FeatureDivideModel.java#noMoreInstances()
+- waywardgeek/openmary-4.3.0/java/marytts/language/de/JPhonemiser.java#shutdown()
+- sidseth/h2-container-reuse/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/LeaseManager.java#findLeaseWithPrefixPath(String, SortedMap)
+- yuifan/pexus4_sdk/eclipse/plugins/com.android.ide.eclipse.adt/src/com/android/ide/eclipse/adt/internal/sdk/LayoutParamsParser.java#getInstantiables(SortedMap)
+- 4knahs/ndby/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/LeaseManager.java#findLeaseWithPrefixPath(String, SortedMap)
+startline: 107
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/examples/src/main/java/org/apache/pdfbox/examples/pdmodel/PrintURLs.java
+method: main(String[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.add()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="PDPage" shape="ellipse" ];
+    3 [ label="Iterator.next()" shape="box" ];
+    4 [ label="TreeSet" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Iterator" shape="ellipse" ];
+    6 [ label="Iterator.hasNext()" shape="box" ];
+    7 [ label="Iterable.iterator()" shape="box" ];
+    8 [ label="PDPageTree" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    7 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    7 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    7 -> 3 [ label="order" style="bold" ];
+    5 -> 3 [ label="recv" style="solid" ];
+    7 -> 3 [ label="rep" style="bold" ];
+    6 -> 3 [ label="rep" style="bold" ];
+    6 -> 3 [ label="order" style="bold" ];
+    7 -> 5 [ label="def" style="solid" ];
+    7 -> 6 [ label="order" style="bold" ];
+    5 -> 6 [ label="recv" style="solid" ];
+    8 -> 7 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "main(String[])" {
+  nslimit=10000;
+
+    1 [ label="Iterator.hasNext()" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="PDFTextStripperByArea.addRegion() L104" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="List.get() L112" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="PrintStream.println() L117" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="PDPage.getMediaBox() L93" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="<r> L110" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="<nullcheck> L114" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="PDRectangle.getHeight() L95" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="<a> L74" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="PDRectangle.getHeight() L89" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Collection.size() L78" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Collection.size() L110" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="PDPage.getAnnotations() L76" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="PrintURLs.getActionURI() L113" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="<nullcheck> L82" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="List.get() L80" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="PDAnnotation.getRectangle() L84" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="PDActionURI.getURI() L117" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="PDRectangle.getLowerLeftX() L86" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="PDRectangle.getUpperRightY() L87" shape="box" color="gray" fontcolor="gray" ];
+    22 [ label="PDPage.getRotation() L90" shape="box" color="gray" fontcolor="gray" ];
+    23 [ label="PrintURLs.getActionURI() L82" shape="box" color="gray" fontcolor="gray" ];
+    24 [ label="PDFTextStripperByArea.extractRegions() L108" shape="box" color="gray" fontcolor="gray" ];
+    25 [ label="<a> L78" shape="box" color="gray" fontcolor="gray" ];
+    26 [ label="Iterator.next()" shape="box" ];
+    27 [ label="PDRectangle.getWidth() L88" shape="box" color="gray" fontcolor="gray" ];
+    28 [ label="PDFTextStripperByArea.getTextForRegion() L116" shape="box" color="gray" fontcolor="gray" ];
+    29 [ label="String.trim() L117" shape="box" color="gray" fontcolor="gray" ];
+    30 [ label="<a> L110" shape="box" color="gray" fontcolor="gray" ];
+    31 [ label="<r> L78" shape="box" color="gray" fontcolor="gray" ];
+    32 [ label="<r> L91" shape="box" color="gray" fontcolor="gray" ];
+    33 [ label="Float.<init> L103" shape="box" color="gray" fontcolor="gray" ];
+    34 [ label="Iterable.iterator()" shape="box" ];
+    35 [ label="PDPageTree" shape="ellipse" ];
+    36 [ label="PDDocument.getPages() L72" shape="box" color="gray" fontcolor="gray" ];
+    37 [ label="PDDocument.load() L70" shape="box" color="gray" fontcolor="gray" ];
+    38 [ label="File.<init> L70" shape="box" color="gray" fontcolor="gray" ];
+    39 [ label="String[].arrayget() L70" shape="box" color="gray" fontcolor="gray" ];
+    40 [ label="PDPage" shape="ellipse" ];
+    36 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    37 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 1 [ label="order" style="bold" ];
+    1 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 26 [ label="rep" style="bold" ];
+    1 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 26 [ label="order" style="bold" ];
+    1 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 29 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 30 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 31 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 32 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 33 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 2 [ label="def" style="solid" ];
+    2 -> 26 [ label="recv" style="solid" ];
+    38 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 29 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    29 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    17 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    32 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 29 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 30 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 29 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    32 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 32 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 33 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 30 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 29 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 14 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    37 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 33 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 29 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 33 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 32 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 32 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 30 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 29 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 29 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 32 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 33 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 33 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 32 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 22 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    34 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 33 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 32 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 24 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    37 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 26 [ label="rep" style="bold" ];
+    38 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 26 [ label="order" style="bold" ];
+    39 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 29 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 33 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 29 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 30 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 40 [ label="def" style="solid" ];
+    26 -> 32 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 32 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 33 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 29 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 29 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 29 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 29 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 29 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 29 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 29 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 29 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 29 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 29 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 30 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 30 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 30 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 30 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 30 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 31 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 31 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 31 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 31 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 31 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 32 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 33 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 32 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 32 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 32 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 32 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 32 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 32 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 32 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 32 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 32 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 32 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 33 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 33 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 33 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 33 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 33 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 33 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 33 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 33 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 33 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 33 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 34 [ label="recv" style="solid" ];
+    36 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 35 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    38 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 37 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.07588075880758807
+pattern_support: 7
+confidence_string: (overlap = 16.00 / 18.00)*(pattern support = 7 / 41)*(violation support = 1 / 2)
+pattern_examples:
+- mojtaba-khallash/dependency-parsing-toolbox/Source/maltParser/src/org/maltparser/parser/guide/instance/FeatureDivideModel.java#noMoreInstances()
+- waywardgeek/openmary-4.3.0/java/marytts/language/de/JPhonemiser.java#shutdown()
+- sidseth/h2-container-reuse/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/LeaseManager.java#findLeaseWithPrefixPath(String, SortedMap)
+- yuifan/pexus4_sdk/eclipse/plugins/com.android.ide.eclipse.adt/src/com/android/ide/eclipse/adt/internal/sdk/LayoutParamsParser.java#getInstantiables(SortedMap)
+- 4knahs/ndby/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/LeaseManager.java#findLeaseWithPrefixPath(String, SortedMap)
+startline: -1
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/examples/src/main/java/org/apache/pdfbox/examples/pdmodel/PrintURLs.java
+method: main(String[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Collection.size() L78" shape="box" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "main(String[])" {
+  nslimit=10000;
+
+    1 [ label="List" shape="ellipse" ];
+    2 [ label="PDPage.getAnnotations() L76" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Collection.size() L78" shape="box" ];
+    4 [ label="List.get() L112" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="List.get() L80" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Collection.size() L110" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="String[].arrayget() L70" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="File.<init> L70" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Iterator.hasNext()" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="PDDocument.getPages() L72" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="Iterable.iterator()" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="PDDocument.load() L70" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="PDPage.getRotation() L90" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="PDAnnotation.getRectangle() L84" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="PDRectangle.getHeight() L95" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="PDPage.getMediaBox() L93" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="PrintURLs.getActionURI() L82" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="PDFTextStripperByArea.addRegion() L104" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="PDRectangle.getLowerLeftX() L86" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="<r> L91" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="<a> L78" shape="box" color="gray" fontcolor="gray" ];
+    22 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    23 [ label="<nullcheck> L82" shape="box" color="gray" fontcolor="gray" ];
+    24 [ label="PDRectangle.getHeight() L89" shape="box" color="gray" fontcolor="gray" ];
+    25 [ label="PDRectangle.getWidth() L88" shape="box" color="gray" fontcolor="gray" ];
+    26 [ label="Float.<init> L103" shape="box" color="gray" fontcolor="gray" ];
+    27 [ label="PDRectangle.getUpperRightY() L87" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 22 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.07317073170731708
+pattern_support: 8
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 8 / 41)*(violation support = 1 / 2)
+pattern_examples:
+- yanglujuncc/SomeJavaCodes/src/main/java/util/ListUtil.java#strListToString(List, String)
+- jonasevcik/SmartLib-Android/src/cz/muni/fi/smartlib/fragment/BookAvailabilityFragment.java#setAvailability(List)
+- NCIP/cadsr-cgmdr-nci-uk/extensions/fluent/src/org/exist/fluent/Source.java#readReader(Reader, char[])
+- ObeoNetwork/UML-Modeling/plugins/org.obeonetwork.dsl.uml2.design/src/org/obeonetwork/dsl/uml2/design/internal/services/AssociationServices.java#addAssociationEnd(Association)
+- cloudera/hcatalog/storage-handlers/hbase/src/java/org/apache/hcatalog/hbase/snapshot/ZKUtil.java#deleteRecursively(String)
+startline: 78
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/examples/src/main/java/org/apache/pdfbox/examples/pdmodel/PrintURLs.java
+method: main(String[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Collection.size() L110" shape="box" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "main(String[])" {
+  nslimit=10000;
+
+    1 [ label="Collection.size() L110" shape="box" ];
+    2 [ label="Iterator.hasNext()" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="File.<init> L70" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="PDDocument.load() L70" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="PDDocument.getPages() L72" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="String[].arrayget() L70" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Iterable.iterator()" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="List" shape="ellipse" ];
+    9 [ label="PrintStream.println() L117" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="<a> L110" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    12 [ label="PrintURLs.getActionURI() L113" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="<nullcheck> L114" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="List.get() L112" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="PDFTextStripperByArea.getTextForRegion() L116" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="String.trim() L117" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="PDActionURI.getURI() L117" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="PDPage.getAnnotations() L76" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="Collection.size() L78" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="List.get() L80" shape="box" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 1 [ label="recv" style="solid" ];
+    1 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 8 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    18 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 17 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.07317073170731708
+pattern_support: 8
+confidence_string: (overlap = 3.00 / 4.00)*(pattern support = 8 / 41)*(violation support = 1 / 2)
+pattern_examples:
+- yanglujuncc/SomeJavaCodes/src/main/java/util/ListUtil.java#strListToString(List, String)
+- jonasevcik/SmartLib-Android/src/cz/muni/fi/smartlib/fragment/BookAvailabilityFragment.java#setAvailability(List)
+- NCIP/cadsr-cgmdr-nci-uk/extensions/fluent/src/org/exist/fluent/Source.java#readReader(Reader, char[])
+- ObeoNetwork/UML-Modeling/plugins/org.obeonetwork.dsl.uml2.design/src/org/obeonetwork/dsl/uml2/design/internal/services/AssociationServices.java#addAssociationEnd(Association)
+- cloudera/hcatalog/storage-handlers/hbase/src/java/org/apache/hcatalog/hbase/snapshot/ZKUtil.java#deleteRecursively(String)
+startline: 110
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/fontbox/src/test/java/org/apache/fontbox/cff/CFFParserTest.java
+method: testDeltaLists()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.keySet()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Map" shape="ellipse" ];
+    3 [ label="Map.get() L49" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "testDeltaLists()" {
+  nslimit=10000;
+
+    1 [ label="Map" shape="ellipse" ];
+    2 [ label="CFFType1Font.getPrivateDict() L49" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.get() L49" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.016937669376693765
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 6.00)*(pattern support = 5 / 41)*(violation support = 1 / 6)
+pattern_examples:
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/MyGoodClassify.java#GetHighestGrade(Vector)
+- goodow/gwt/user/src/com/google/gwt/user/client/rpc/core/java/util/LinkedHashMap_CustomFieldSerializer.java#getAccessOrderNoReflection(LinkedHashMap)
+- SiteView/com.siteview.mde/com.siteview.mde.core/text/com/siteview/mde/internal/core/text/bundle/Bundle.java#load(Map)
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/IclassifyMapper.java#GetHighestGrade(Vector)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 49
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/fontbox/src/test/java/org/apache/fontbox/cff/CFFParserTest.java
+method: testDeltaLists()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.keySet()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Map" shape="ellipse" ];
+    3 [ label="Map.get() L65" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "testDeltaLists()" {
+  nslimit=10000;
+
+    1 [ label="Map" shape="ellipse" ];
+    2 [ label="CFFType1Font.getPrivateDict() L65" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.get() L65" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.016937669376693765
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 6.00)*(pattern support = 5 / 41)*(violation support = 1 / 6)
+pattern_examples:
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/MyGoodClassify.java#GetHighestGrade(Vector)
+- goodow/gwt/user/src/com/google/gwt/user/client/rpc/core/java/util/LinkedHashMap_CustomFieldSerializer.java#getAccessOrderNoReflection(LinkedHashMap)
+- SiteView/com.siteview.mde/com.siteview.mde.core/text/com/siteview/mde/internal/core/text/bundle/Bundle.java#load(Map)
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/IclassifyMapper.java#GetHighestGrade(Vector)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 65
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/fontbox/src/test/java/org/apache/fontbox/cff/CFFParserTest.java
+method: testDeltaLists()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.keySet()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Map" shape="ellipse" ];
+    3 [ label="Map.get() L57" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "testDeltaLists()" {
+  nslimit=10000;
+
+    1 [ label="Map" shape="ellipse" ];
+    2 [ label="CFFType1Font.getPrivateDict() L57" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.get() L57" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.016937669376693765
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 6.00)*(pattern support = 5 / 41)*(violation support = 1 / 6)
+pattern_examples:
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/MyGoodClassify.java#GetHighestGrade(Vector)
+- goodow/gwt/user/src/com/google/gwt/user/client/rpc/core/java/util/LinkedHashMap_CustomFieldSerializer.java#getAccessOrderNoReflection(LinkedHashMap)
+- SiteView/com.siteview.mde/com.siteview.mde.core/text/com/siteview/mde/internal/core/text/bundle/Bundle.java#load(Map)
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/IclassifyMapper.java#GetHighestGrade(Vector)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 57
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/fontbox/src/test/java/org/apache/fontbox/cff/CFFParserTest.java
+method: testDeltaLists()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.keySet()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Map" shape="ellipse" ];
+    3 [ label="Map.get() L61" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "testDeltaLists()" {
+  nslimit=10000;
+
+    1 [ label="Map" shape="ellipse" ];
+    2 [ label="CFFType1Font.getPrivateDict() L61" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.get() L61" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.016937669376693765
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 6.00)*(pattern support = 5 / 41)*(violation support = 1 / 6)
+pattern_examples:
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/MyGoodClassify.java#GetHighestGrade(Vector)
+- goodow/gwt/user/src/com/google/gwt/user/client/rpc/core/java/util/LinkedHashMap_CustomFieldSerializer.java#getAccessOrderNoReflection(LinkedHashMap)
+- SiteView/com.siteview.mde/com.siteview.mde.core/text/com/siteview/mde/internal/core/text/bundle/Bundle.java#load(Map)
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/IclassifyMapper.java#GetHighestGrade(Vector)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 61
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/fontbox/src/test/java/org/apache/fontbox/cff/CFFParserTest.java
+method: testDeltaLists()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.keySet()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Map" shape="ellipse" ];
+    3 [ label="Map.get() L53" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "testDeltaLists()" {
+  nslimit=10000;
+
+    1 [ label="Map" shape="ellipse" ];
+    2 [ label="CFFType1Font.getPrivateDict() L53" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.get() L53" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.016937669376693765
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 6.00)*(pattern support = 5 / 41)*(violation support = 1 / 6)
+pattern_examples:
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/MyGoodClassify.java#GetHighestGrade(Vector)
+- goodow/gwt/user/src/com/google/gwt/user/client/rpc/core/java/util/LinkedHashMap_CustomFieldSerializer.java#getAccessOrderNoReflection(LinkedHashMap)
+- SiteView/com.siteview.mde/com.siteview.mde.core/text/com/siteview/mde/internal/core/text/bundle/Bundle.java#load(Map)
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/IclassifyMapper.java#GetHighestGrade(Vector)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 53
+---
+file: /mubench/checkouts/pdfbox/72249f6ff/fontbox/src/test/java/org/apache/fontbox/cff/CFFParserTest.java
+method: testDeltaLists()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Map.keySet()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Map" shape="ellipse" ];
+    3 [ label="Map.get() L43" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "testDeltaLists()" {
+  nslimit=10000;
+
+    1 [ label="Map" shape="ellipse" ];
+    2 [ label="CFFType1Font.getPrivateDict() L43" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Map.get() L43" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.016937669376693765
+pattern_support: 5
+confidence_string: (overlap = 5.00 / 6.00)*(pattern support = 5 / 41)*(violation support = 1 / 6)
+pattern_examples:
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/MyGoodClassify.java#GetHighestGrade(Vector)
+- goodow/gwt/user/src/com/google/gwt/user/client/rpc/core/java/util/LinkedHashMap_CustomFieldSerializer.java#getAccessOrderNoReflection(LinkedHashMap)
+- SiteView/com.siteview.mde/com.siteview.mde.core/text/com/siteview/mde/internal/core/text/bundle/Bundle.java#load(Map)
+- buptzzl/MR-codes/src/java/com/emar/recsys/user/util/itemclassify/IclassifyMapper.java#GetHighestGrade(Vector)
+- taylorrobert/ProjectM2O/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java#scanGlyphs(FontFileReader, Map)
+startline: 43

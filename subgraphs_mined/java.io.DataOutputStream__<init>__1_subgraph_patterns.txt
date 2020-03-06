@@ -1,0 +1,45 @@
+t # 65571 * 749
+v 0 DataOutputStream
+v 1 AutoCloseable.close()
+e 0 1 recv
+
+t # 25398 * 905
+v 0 DataOutputStream.<init>
+v 1 DataOutputStream
+v 2 AutoCloseable.close()
+e 0 1 def
+e 0 2 order
+
+t # 65574 * 577
+v 0 DataOutputStream
+v 1 Flushable.flush()
+e 0 1 recv
+
+t # 24081 * 641
+v 0 DataOutputStream.<init>
+v 1 DataOutputStream
+v 2 Throwable.printStackTrace()
+e 0 1 def
+e 0 2 order
+
+t # 92222 * 422
+v 0 ByteArrayOutputStream.<init>
+v 1 AutoCloseable.close()
+v 2 <return>
+e 0 1 order
+e 0 2 order
+
+t # 31458 * 702
+v 0 DataOutputStream.<init>
+v 1 ByteArrayOutputStream.toByteArray()
+v 2 byte[]
+v 3 AutoCloseable.close()
+e 0 1 order
+e 0 3 order
+e 1 2 def
+
+t # 3546 * 811
+v 0 <catch>
+v 1 Throwable.printStackTrace()
+e 0 1 order
+
