@@ -8,14 +8,14 @@ The document optim.pdf is an accompanying report to describe some optimizations 
 
 
 Apart from that, this repository contains several major components:
-1. github-code-search: we modify the code from https://github.com/mhilmiasyrofi/AUsearch (from the paper Muhammad Hilmi Asyrofi, Ferdian Thung, David Lo, and Lingxiao Jiang. 2020. AUSearch: Accurate API Usage Search in GitHub Repositories with Type Resolution. In IEEE International Conference on Software Analysis, Evolution and Reengineering.) in order to perform deduplication of code-clones.
+1. github-code-search: we modify the code from https://github.com/mhilmiasyrofi/AUsearch ([1]) in order to perform deduplication of code-clones.
 	This is used to search for examples on Github to mine patterns from.
 
-2. MUDetect: modified from https://github.com/stg-tud/MUDetect (from the paper Sven Amann, Hoan Anh Nguyen, Sarah Nadi, Tien N Nguyen, and Mira Mezini. 2019. Investigating next steps in static API-misuse detection. In 2019 IEEE/ACM 16th International Conference on Mining Software Repositories (MSR)). 
-3. gSpan.Java: modified from https://github.com/TonyZZX/gSpan.Java (which is a port of earlier implementations of the well-known gSpan algorithm).
+2. MUDetect: modified from https://github.com/stg-tud/MUDetect ([2] ). 
+3. gSpan.Java: modified from https://github.com/TonyZZX/gSpan.Java (which is a port of earlier implementations of the well-known gSpan algorithm [3]).
 	This is modified to incorporate labels on the graphs, and while performing frequent subgraph mining, it mines discriminative subgraphs together.
 4. networkx
-	we include modifications we performed on the networkx package (https://github.com/networkx), to fix a bug that has been reported and fixed by the project maintainers.
+	we include modifications we performed on the networkx[4] package (https://github.com/networkx), to fix a bug that has been reported to the project maintainers.
 5. graph-classification
 	misc scripts, including the scripts for running the evaluation
 6. patterns-mined
