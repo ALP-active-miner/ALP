@@ -78,8 +78,9 @@ Reading the graphs and subgraphs
 =================
 
 Below is an example of a text file containing 2 graphs. Each line denodes a vertex (v) or edge (e) with a given label (end of line).
-t denotes the start of the graph. # <id> just denotes an id of the subgraph, mainly used for bookkeeping internally. "* <count>" indicates the number of the times the subgraph appears.
+t denotes the start of the graph. # <id> just denotes an id of the subgraph, mainly used for bookkeeping internally. "\* <count>" indicates the number of the times the subgraph appears.
 
+```
 t # 0 * 10
 v 0 2
 v 1 2
@@ -97,6 +98,7 @@ v 2 6
 e 0 1 2
 e 0 2 2
 
+```
 
 Running on a new input
 ==============
@@ -114,6 +116,9 @@ We have provided models for the APIs in the `models` directory
 
 
 [1] Muhammad Hilmi Asyrofi, Ferdian Thung, David Lo, and Lingxiao Jiang. 2020. AUSearch: Accurate API Usage Search in GitHub Repositories with Type Resolution. In IEEE International Conference on Software Analysis, Evolution and Reengineering.
+
 [2] Sven Amann, Hoan Anh Nguyen, Sarah Nadi, Tien N Nguyen, and Mira Mezini. 2019. Investigating next steps in static API-misuse detection. In 2019 IEEE/ACM 16th International Conference on Mining Software Repositories (MSR)
+
 [3] Xifeng Yan and Jiawei Han. 2002. gspan: Graph-based substructure pattern mining. In 2002 IEEE International Conference on Data Mining, 2002.
+
 [4] Aric Hagberg, Pieter Swart, and Daniel S Chult. 2008. Exploring network structure, dynamics, and function using NetworkX.
