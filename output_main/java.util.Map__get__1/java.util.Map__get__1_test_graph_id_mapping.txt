@@ -1,0 +1,14 @@
+testFile,0,testFile - SimpleDefinitionFinder.removeReferences#Node#
+testFile,1,testFile - SimpleDefinitionFinder.getDefinitionAt#Node#
+testFile,2,testFile - JcrDavException.JcrDavException#RepositoryException#
+testFile,3,testFile - CategoryPlot.addRangeMarker#int#Marker#Layer#boolean#
+testFile,4,testFile - CategoryPlot.clearDomainMarkers#int#
+testFile,5,testFile - CategoryPlot.draw#Graphics2D#Rectangle2D#Point2D#PlotState#PlotRenderingInfo#
+testFile,6,testFile - CategoryPlot.clearRangeMarkers#int#
+testFile,7,testFile - CategoryPlot.removeDomainMarker#int#Marker#Layer#boolean#
+testFile,8,testFile - CategoryPlot.removeRangeMarker#int#Marker#Layer#boolean#
+testFile,9,testFile - CategoryPlot.getDomainMarkers#int#Layer#
+testFile,10,testFile - CategoryPlot.addDomainMarker#int#CategoryMarker#Layer#boolean#
+testFile,11,testFile - CategoryPlot.getRangeMarkers#int#Layer#
+testFile,12,testFile - FieldCacheImpl.Cache.get#IndexReader#Object#
+testFile,13,testFile - Maps.keyMayBeNull#HashMap#String#

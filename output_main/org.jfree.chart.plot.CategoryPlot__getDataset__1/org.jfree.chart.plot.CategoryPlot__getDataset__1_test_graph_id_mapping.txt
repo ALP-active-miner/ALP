@@ -1,0 +1,4 @@
+testFile,0,testFile - AbstractCategoryItemRenderer.AbstractCategoryItemRenderer#
+testFile,1,testFile - AbstractCategoryItemRenderer.getLegendItem#int#int#
+testFile,2,testFile - AbstractCategoryItemRenderer.getLegendItems#
+testFile,3,testFile - AbstractCategoryItemRenderer.drawDomainMarker#Graphics2D#CategoryPlot#CategoryAxis#CategoryMarker#Rectangle2D#

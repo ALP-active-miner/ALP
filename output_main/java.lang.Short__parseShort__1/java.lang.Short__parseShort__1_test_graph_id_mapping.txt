@@ -1,0 +1,3 @@
+testFile,0,testFile - AbstractConfiguration.getShortList#String#String#
+testFile,1,testFile - AbstractConfiguration.getShortValue#String#short#
+testFile,2,testFile - AbstractConfiguration.getShortValue#String#

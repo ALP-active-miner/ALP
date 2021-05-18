@@ -1,0 +1,3 @@
+testFile,0,testFile - ObjArray.writeObject#ObjectOutputStream#
+testFile,1,testFile - ObjToIntMap.writeObject#ObjectOutputStream#
+testFile,2,testFile - UintMap.writeObject#ObjectOutputStream#

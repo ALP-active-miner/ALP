@@ -1,0 +1,2 @@
+/Users/kanghongjin/repos_for_misuses/h2database/h2/src/main/org/h2/util/JdbcUtils.java,0,/Users/kanghongjin/repos_for_misuses/h2database/h2/src/main/org/h2/util/JdbcUtils.java - JdbcUtils.serialize#Object#DataHandler#
+/Users/kanghongjin/repos_for_misuses/h2database/h2/src/main/org/h2/mvstore/type/ObjectDataType.java,1,/Users/kanghongjin/repos_for_misuses/h2database/h2/src/main/org/h2/mvstore/type/ObjectDataType.java - ObjectDataType.serialize#Object#

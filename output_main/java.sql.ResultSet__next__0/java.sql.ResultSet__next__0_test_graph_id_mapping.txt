@@ -1,0 +1,15 @@
+testFile,0,testFile - SocialNetworkDatabasePosts.postExists#Connection#String#String#int#
+testFile,1,testFile - SocialNetworkDatabasePosts.createReply#Connection#String#String#String#String#int#
+testFile,2,testFile - SocialNetworkDatabasePosts.getPostListFreeForAll#Connection#String#
+testFile,3,testFile - SocialNetworkDatabasePosts.authorizedFFAPost#Connection#String#int#String#
+testFile,4,testFile - SocialNetworkDatabasePosts.isFFAPostCreator#Connection#String#int#
+testFile,5,testFile - SocialNetworkDatabasePosts.createPost#Connection#String#String#String#String#
+testFile,6,testFile - SocialNetworkDatabasePosts.authorizedToPostNotFFA#Connection#String#String#String#
+testFile,7,testFile - SocialNetworkDatabasePosts.getPost#Connection#String#String#String#int#
+testFile,8,testFile - SocialNetworkDatabasePosts.getPostList#Connection#String#String#String#
+testFile,9,testFile - SocialNetworkDatabaseBoards.boardExists#Connection#String#
+testFile,10,testFile - SocialNetworkDatabaseBoards.getBoardList#Connection#String#
+testFile,11,testFile - SocialNetworkDatabaseBoards.authorizedGoToBoard#Connection#String#String#
+testFile,12,testFile - SocialNetworkDatabaseBoards.getBoardAdmins#Connection#String#
+testFile,13,testFile - SocialNetworkDatabaseBoards.isBoardManager#Connection#String#String#
+testFile,14,testFile - SocialNetworkDatabaseBoards.isBoardAdmin#Connection#String#String#

@@ -1,0 +1,11 @@
+testFile,0,testFile - TestDurationFieldType.doSerialization#DurationFieldType#
+testFile,1,testFile - TestDays.testSerialization#
+testFile,2,testFile - TestDateTimeZone.testSerialization2#
+testFile,3,testFile - TestDateTimeZone.testSerialization1#
+testFile,4,testFile - TestDateTimeFieldType.doSerialization#DateTimeFieldType#
+testFile,5,testFile - TestDateTimeComparator.testSerialization1#
+testFile,6,testFile - TestDateTimeComparator.testSerialization2#
+testFile,7,testFile - TestDateMidnight_Basics.testSerialization#
+testFile,8,testFile - StorageUtil.writeObject#Context#String#Object#
+testFile,9,testFile - Result.toBytes#
+testFile,10,testFile - DefaultSerializer.serialize#Object#

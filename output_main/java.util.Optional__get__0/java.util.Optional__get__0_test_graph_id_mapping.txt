@@ -1,0 +1,2 @@
+testFile,0,testFile - HundredAndOneApproach.UsingMapWithUncheckedGet.getPersonCarInsuranceName#Person#
+testFile,1,testFile - HundredAndOneApproach.SameOldImperativeStyle.getPersonCarInsuranceName#Person#

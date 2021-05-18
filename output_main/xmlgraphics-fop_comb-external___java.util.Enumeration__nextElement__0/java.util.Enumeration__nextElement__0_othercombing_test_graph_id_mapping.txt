@@ -1,0 +1,2 @@
+/Users/kanghongjin/repos_for_misuses/xmlgraphics-fop/fop-core/src/main/java/org/apache/fop/hyphenation/TernaryTree.java,0,/Users/kanghongjin/repos_for_misuses/xmlgraphics-fop/fop-core/src/main/java/org/apache/fop/hyphenation/TernaryTree.java - TernaryTree.balance#
+/Users/kanghongjin/repos_for_misuses/xmlgraphics-fop/fop-util/src/main/java/org/apache/fop/util/XMLResourceBundle.java,1,/Users/kanghongjin/repos_for_misuses/xmlgraphics-fop/fop-util/src/main/java/org/apache/fop/util/XMLResourceBundle.java - XMLResourceBundle.getKeys#

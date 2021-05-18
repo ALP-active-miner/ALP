@@ -1,0 +1,1 @@
+/Users/kanghongjin/repos/MUBench/mubench-checkouts/asterisk-java/304421c/checkout/src/main/java/org/asteriskjava/util/internal/SocketConnectionFacadeImpl.java,0,/Users/kanghongjin/repos/MUBench/mubench-checkouts/asterisk-java/304421c/checkout/src/main/java/org/asteriskjava/util/internal/SocketConnectionFacadeImpl.java - SocketConnectionFacadeImpl.write#String#

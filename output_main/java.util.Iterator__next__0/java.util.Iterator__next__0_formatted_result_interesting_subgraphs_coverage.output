@@ -1,0 +1,36 @@
+clingo version 5.2.2
+Reading from ...ult_interesting_subgraphs_coverage.txt
+Solving...
+Answer: 1
+selected(1433) selected(1561) selected(2511) selected(1092) selected(2246) selected(349) selected(817) selected(2497) selected(348) selected(1164) selected(2102) selected(80) selected(1116) selected(1355) selected(844) selected(510) selected(2960) selected(1549) selected(1186) selected(175) covered_count(19)
+Optimization: -19
+Answer: 2
+selected(1561) selected(2363) selected(97) selected(1092) selected(349) selected(249) selected(817) selected(2497) selected(348) selected(2094) selected(2102) selected(80) selected(1116) selected(1355) selected(844) selected(510) selected(2960) selected(1570) selected(1549) selected(1186) selected(175) covered_count(20)
+Optimization: -20
+Answer: 3
+selected(261) selected(2363) selected(2511) selected(461) selected(1039) selected(349) selected(817) selected(348) selected(1005) selected(2102) selected(80) selected(1355) selected(1241) selected(1256) selected(2960) selected(1703) selected(1704) selected(2120) selected(2176) selected(1129) covered_count(25)
+Optimization: -25
+Answer: 4
+selected(261) selected(2363) selected(2511) selected(461) selected(1877) selected(349) selected(817) selected(348) selected(1164) selected(2102) selected(80) selected(1355) selected(844) selected(1241) selected(1256) selected(2960) selected(1703) selected(1704) selected(2120) selected(2176) selected(1129) covered_count(26)
+Optimization: -26
+Answer: 5
+selected(1433) selected(2363) selected(636) selected(2496) selected(1092) selected(349) selected(817) selected(348) selected(2730) selected(2102) selected(80) selected(1355) selected(844) selected(1241) selected(1256) selected(2960) selected(1703) selected(1704) selected(2120) selected(2176) selected(1129) covered_count(27)
+Optimization: -27
+Answer: 6
+selected(2511) selected(636) selected(1092) selected(349) selected(691) selected(817) selected(2497) selected(348) selected(2043) selected(2102) selected(80) selected(1116) selected(1355) selected(844) selected(1256) selected(510) selected(2960) selected(2120) selected(2176) selected(1549) selected(1129) selected(1186) selected(175) covered_count(28)
+Optimization: -28
+Answer: 7
+selected(261) selected(1433) selected(636) selected(1092) selected(1877) selected(349) selected(817) selected(2497) selected(348) selected(2043) selected(2102) selected(80) selected(1116) selected(1355) selected(844) selected(1256) selected(510) selected(2960) selected(2120) selected(2176) selected(1549) selected(1129) selected(1186) selected(175) covered_count(29)
+Optimization: -29
+Answer: 8
+selected(261) selected(2363) selected(2511) selected(1092) selected(1877) selected(349) selected(247) selected(817) selected(2497) selected(348) selected(2043) selected(2102) selected(80) selected(1116) selected(1355) selected(844) selected(1241) selected(510) selected(2960) selected(2120) selected(2176) selected(1549) selected(1186) selected(175) covered_count(30)
+Optimization: -30
+OPTIMUM FOUND
+
+Models       : 8
+  Optimum    : yes
+Optimization : -30
+Calls        : 1
+Time         : 0.195s (Solving: 0.19s 1st Model: 0.00s Unsat: 0.19s)
+CPU Time     : 1.340s
+Threads      : 7        (Winner: 2)

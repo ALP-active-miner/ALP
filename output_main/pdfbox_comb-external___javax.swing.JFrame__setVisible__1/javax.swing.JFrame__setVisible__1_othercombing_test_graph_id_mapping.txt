@@ -1,0 +1,2 @@
+/Users/kanghongjin/repos_for_misuses/pdfbox/debugger/src/main/java/org/apache/pdfbox/debugger/ui/ReaderBottomPanel.java,0,/Users/kanghongjin/repos_for_misuses/pdfbox/debugger/src/main/java/org/apache/pdfbox/debugger/ui/ReaderBottomPanel.java - ReaderBottomPanel.ReaderBottomPanel#
+/Users/kanghongjin/repos_for_misuses/pdfbox/debugger/src/main/java/org/apache/pdfbox/debugger/PDFDebugger.java,1,/Users/kanghongjin/repos_for_misuses/pdfbox/debugger/src/main/java/org/apache/pdfbox/debugger/PDFDebugger.java - PDFDebugger.initComponents#

@@ -1,0 +1,4 @@
+/Users/kanghongjin/repos_for_misuses/commons-bcel/src/test/java/org/apache/bcel/util/InstructionFinderTest.java,0,/Users/kanghongjin/repos_for_misuses/commons-bcel/src/test/java/org/apache/bcel/util/InstructionFinderTest.java - InstructionFinderTest.testSearch#
+/Users/kanghongjin/repos_for_misuses/commons-bcel/src/test/java/org/apache/bcel/InstructionFinderTestCase.java,1,/Users/kanghongjin/repos_for_misuses/commons-bcel/src/test/java/org/apache/bcel/InstructionFinderTestCase.java - InstructionFinderTestCase.testSearchAll#
+/Users/kanghongjin/repos_for_misuses/commons-bcel/src/examples/Peephole.java,2,/Users/kanghongjin/repos_for_misuses/commons-bcel/src/examples/Peephole.java - Peephole.removeNOPs#MethodGen#
+/Users/kanghongjin/repos_for_misuses/commons-bcel/src/examples/Mini/ASTFunDecl.java,3,/Users/kanghongjin/repos_for_misuses/commons-bcel/src/examples/Mini/ASTFunDecl.java - ASTFunDecl.optimizeIFs#InstructionList#

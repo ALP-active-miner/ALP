@@ -1,0 +1,6 @@
+testFile,0,testFile - Examiner.jumpOverJavaToken#String#Scanner#
+testFile,1,testFile - Examiner.scanAfterClosedParenthesis#String#Scanner#
+testFile,2,testFile - Examiner.scanAfterQuote#String#Scanner#
+testFile,3,testFile - Examiner.getClassBody#String#
+testFile,4,testFile - Examiner.findAndSetPackage#JavaSource#
+testFile,5,testFile - Examiner.examine#JavaSource#

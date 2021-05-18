@@ -1,0 +1,21 @@
+digraph "putInternal(K, V)" {
+
+  1 [ label="Map" shape="ellipse" ];
+  2 [ label="<return> L26" shape="box" ];
+  3 [ label="param:K" shape="ellipse" ];
+  4 [ label="param:V" shape="ellipse" ];
+  5 [ label="Map" shape="ellipse" ];
+  6 [ label="Map.put() L24" shape="box" ];
+  7 [ label="V" shape="ellipse" ];
+  8 [ label="HashMap.<init> L23" shape="box" ];
+  8 -> 1 [ label="def" style="solid" ];
+  6 -> 7 [ label="def" style="solid" ];
+  6 -> 2 [ label="order" style="bold" ];
+  7 -> 2 [ label="para" style="solid" ];
+  4 -> 6 [ label="para" style="solid" ];
+  1 -> 6 [ label="recv" style="solid" ];
+  5 -> 8 [ label="para" style="solid" ];
+  8 -> 2 [ label="order" style="bold" ];
+  3 -> 6 [ label="para" style="solid" ];
+  8 -> 6 [ label="order" style="bold" ];
+}

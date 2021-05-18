@@ -1,0 +1,36 @@
+clingo version 5.2.2
+Reading from ...ult_interesting_subgraphs_coverage.txt
+Solving...
+Answer: 1
+covered_count(0) coverage(0)
+Optimization: 0
+Answer: 2
+selected(32) selected(73) selected(56) covered_count(1) coverage(3)
+Optimization: -3
+Answer: 3
+selected(32) selected(18) selected(53) covered_count(2) coverage(7)
+Optimization: -7
+Answer: 4
+selected(39) selected(18) selected(30) covered_count(1) coverage(8)
+Optimization: -8
+Answer: 5
+selected(2) selected(44) selected(69) covered_count(4) coverage(18)
+Optimization: -18
+Answer: 6
+selected(2) selected(13) selected(67) covered_count(17) coverage(19)
+Optimization: -19
+Answer: 7
+selected(10) selected(15) selected(72) covered_count(8) coverage(20)
+Optimization: -20
+Answer: 8
+selected(10) selected(15) selected(53) covered_count(15) coverage(22)
+Optimization: -22
+OPTIMUM FOUND
+
+Models       : 8
+  Optimum    : yes
+Optimization : -22
+Calls        : 1
+Time         : 0.056s (Solving: 0.04s 1st Model: 0.00s Unsat: 0.01s)
+CPU Time     : 0.272s
+Threads      : 7        (Winner: 1)

@@ -1,0 +1,40 @@
+clingo version 5.2.2
+Reading from ...ult_interesting_subgraphs_coverage.txt
+Solving...
+Answer: 1
+selected(2027) covered_count(0) num_selected(1)
+Optimization: 0 1
+Answer: 2
+selected(122) selected(2190) selected(169) selected(170) selected(2267) selected(245) selected(276) selected(2354) selected(325) selected(367) selected(820) selected(857) selected(872) selected(1036) selected(1217) selected(2027) covered_count(93) num_selected(16)
+Optimization: -93 16
+Answer: 3
+selected(122) selected(2190) selected(169) selected(170) selected(2267) selected(245) selected(276) selected(2354) selected(325) selected(367) selected(820) selected(857) selected(872) selected(1036) selected(1217) selected(2027) selected(136) selected(137) covered_count(94) num_selected(18)
+Optimization: -94 18
+Answer: 4
+selected(2190) selected(162) selected(276) selected(543) selected(1031) selected(1036) selected(1216) selected(1608) selected(2027) selected(762) selected(1359) selected(1750) selected(1597) selected(2106) selected(2107) selected(2237) selected(1903) selected(1986) covered_count(277) num_selected(18)
+Optimization: -277 18
+Answer: 5
+selected(2190) selected(2267) selected(2284) selected(276) selected(972) selected(1608) selected(2027) selected(1877) selected(907) selected(267) selected(1362) selected(631) selected(1858) selected(145) selected(696) selected(59) selected(1597) selected(854) covered_count(348) num_selected(18)
+Optimization: -348 18
+Answer: 6
+selected(2190) selected(2267) selected(2284) selected(276) selected(972) selected(1036) selected(1608) selected(2027) selected(907) selected(267) selected(1362) selected(631) selected(1858) selected(145) selected(696) selected(59) selected(1597) selected(854) covered_count(357) num_selected(18)
+Optimization: -357 18
+Answer: 7
+selected(2190) selected(2267) selected(2284) selected(276) selected(972) selected(1608) selected(2027) selected(907) selected(75) selected(267) selected(1362) selected(631) selected(1858) selected(145) selected(696) selected(59) selected(1597) selected(854) covered_count(374) num_selected(18)
+Optimization: -374 18
+Answer: 8
+selected(2190) selected(165) selected(2267) selected(276) selected(818) selected(820) selected(872) selected(1216) selected(2027) selected(1362) selected(1858) selected(1859) selected(145) selected(146) selected(696) selected(1750) selected(1597) selected(1143) covered_count(391) num_selected(18)
+Optimization: -391 18
+*** Info : (clingo): Sending shutdown signal...
+*** ERROR: (clingo): solving stopped by signal
+*** Info : (clingo): Shutdown completed in 0.081 seconds
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 8+
+  Optimum    : unknown
+Optimization : -391 18
+Calls        : 1
+Time         : 3600.080s (Solving: 3597.33s 1st Model: 0.27s Unsat: 0.00s)
+CPU Time     : 28300.203s
+Threads      : 8        (Winner: 8)

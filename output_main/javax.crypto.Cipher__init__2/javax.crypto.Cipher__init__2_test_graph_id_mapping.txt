@@ -1,0 +1,17 @@
+testFile,0,testFile - DESCypher.setEncryptKey#byte[]#
+testFile,1,testFile - DESCypher.setDecryptKey#byte[]#
+testFile,2,testFile - AESCypher.setDecryptKey#byte[]#
+testFile,3,testFile - AESCypher.setEncryptKey#byte[]#
+testFile,4,testFile - ConfigTools.decrypt#PublicKey#String#
+testFile,5,testFile - ConfigTools.encrypt#byte[]#String#
+testFile,6,testFile - generateChecksumPostsAndReplies.main#String[]#
+testFile,7,testFile - PdfPublicKeySecurityHandler.createDERForRecipient#byte[]#X509Certificate#
+testFile,8,testFile - PdfPublicKeySecurityHandler.computeRecipientInfo#X509Certificate#byte[]#
+testFile,9,testFile - PassportAuthService.doAA#PublicKey#
+testFile,10,testFile - PassportAuthService.PassportAuthService#
+testFile,11,testFile - BaseAuthenticationService.getCipher#int#String#
+testFile,12,testFile - SaavnFileRunner.decryptPlay#String#
+testFile,13,testFile - SecureConnectionHandler.run#
+testFile,14,testFile - Encrypting.encryptWithKey#byte[]#
+testFile,15,testFile - Encrypting.encrypt#byte[]#byte[]#
+testFile,16,testFile - ReinitializingCipher.misuse#BufferedReader#Key#

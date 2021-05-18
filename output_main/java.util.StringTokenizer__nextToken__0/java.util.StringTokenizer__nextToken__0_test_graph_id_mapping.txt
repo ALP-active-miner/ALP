@@ -1,0 +1,13 @@
+testFile,0,testFile - ZoneInfoCompiler.Rule.Rule#StringTokenizer#
+testFile,1,testFile - ZoneInfoCompiler.parseDataFile#BufferedReader#boolean#
+testFile,2,testFile - ZoneInfoCompiler.Zone.Zone#StringTokenizer#
+testFile,3,testFile - ZoneInfoCompiler.Zone.Zone#String#StringTokenizer#
+testFile,4,testFile - ZoneInfoCompiler.DateTimeOfYear.DateTimeOfYear#StringTokenizer#
+testFile,5,testFile - SimpleBookmark.iterateOutlines#PdfWriter#PdfIndirectReference#List#boolean#
+testFile,6,testFile - SimpleBookmark.createOutlineAction#PdfDictionary#HashMap#PdfWriter#boolean#
+testFile,7,testFile - CJKFont.getBBox#int#
+testFile,8,testFile - CJKFont.createMetric#String#
+testFile,9,testFile - WebColors.getRGBColor#String#
+testFile,10,testFile - Op5_StringTokenizerTest.main#String[]#
+testFile,11,testFile - H_92.main#String[]#
+testFile,12,testFile - TokenPrueba2.main#String[]#

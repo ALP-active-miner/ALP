@@ -1,0 +1,14 @@
+testFile,0,testFile - SecureMessagingWrapper.readDO8E#DataInputStream#byte[]#
+testFile,1,testFile - SecureMessagingWrapper.wrapCommandAPDU#byte[]#int#
+testFile,2,testFile - MqttSubscribe.getPayload#
+testFile,3,testFile - MqttSubscribe.getVariableHeader#
+testFile,4,testFile - MqttUnsubscribe.getPayload#
+testFile,5,testFile - MqttUnsubscribe.getVariableHeader#
+testFile,6,testFile - InstructionList.getByteCode#
+testFile,7,testFile - BlobTest.paintingTest#
+testFile,8,testFile - PartitionTest.encl#long#
+testFile,9,testFile - TestWritableUtils.testWritesReads#
+testFile,10,testFile - EncryptionParameters.writeTo#OutputStream#
+testFile,11,testFile - SignatureParameters.writeTo#OutputStream#
+testFile,12,testFile - SignaturePrivateKey.getEncoded#
+testFile,13,testFile - SignaturePublicKey.getEncoded#

@@ -1,0 +1,25 @@
+clingo version 5.2.2
+Reading from ...ult_interesting_subgraphs_coverage.txt
+Solving...
+Answer: 1
+covered_count(0) coverage(0)
+Optimization: 0
+Answer: 2
+selected(153) selected(209) selected(211) selected(688) covered_count(2) coverage(244)
+Optimization: -244
+Answer: 3
+selected(334) selected(93) selected(376) selected(71) selected(853) selected(172) selected(253) covered_count(287) coverage(604)
+Optimization: -604
+*** Info : (clingo): Sending shutdown signal...
+*** ERROR: (clingo): solving stopped by signal
+*** Info : (clingo): Shutdown completed in 6.374 seconds
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 3+
+  Optimum    : unknown
+Optimization : -604
+Calls        : 1
+Time         : 3606.373s (Solving: 3262.44s 1st Model: 9.95s Unsat: 0.00s)
+CPU Time     : 23133.520s
+Threads      : 7        (Winner: 7)

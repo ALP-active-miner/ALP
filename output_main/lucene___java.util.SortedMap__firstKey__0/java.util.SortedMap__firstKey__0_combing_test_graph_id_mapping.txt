@@ -1,0 +1,1 @@
+/Users/kanghongjin/repos/MUBench/mubench-checkouts/lucene/1918/checkout/src/java/org/apache/lucene/index/ParallelReader.java,0,/Users/kanghongjin/repos/MUBench/mubench-checkouts/lucene/1918/checkout/src/java/org/apache/lucene/index/ParallelReader.java - ParallelReader.ParallelTermEnum.ParallelTermEnum#

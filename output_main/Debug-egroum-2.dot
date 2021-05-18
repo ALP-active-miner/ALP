@@ -1,0 +1,6 @@
+digraph "CopyOnWriteMap.delegate#__FieldOfClass__" {
+1 [label="Collections.emptyMap()" shape=box]
+2 [label="delegate" shape=ellipse]
+3 [label="this" shape=ellipse]
+1 -> 2 [label="def"];
+}

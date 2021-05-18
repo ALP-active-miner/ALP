@@ -1,0 +1,2 @@
+/Users/kanghongjin/repos_for_misuses/pdfbox/pdfbox/src/main/java/org/apache/pdfbox/rendering/PageDrawer.java,0,/Users/kanghongjin/repos_for_misuses/pdfbox/pdfbox/src/main/java/org/apache/pdfbox/rendering/PageDrawer.java - PageDrawer.isRectangular#GeneralPath#
+/Users/kanghongjin/repos_for_misuses/pdfbox/fontbox/src/main/java/org/apache/fontbox/cff/Type1CharString.java,1,/Users/kanghongjin/repos_for_misuses/pdfbox/fontbox/src/main/java/org/apache/fontbox/cff/Type1CharString.java - Type1CharString.seac#Number#Number#Number#Number#Number#

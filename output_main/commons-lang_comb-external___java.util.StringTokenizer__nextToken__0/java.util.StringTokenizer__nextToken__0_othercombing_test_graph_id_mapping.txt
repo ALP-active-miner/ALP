@@ -1,0 +1,2 @@
+/Users/kanghongjin/repos_for_misuses/commons-lang/src/main/java/org/apache/commons/lang3/exception/ExceptionUtils.java,0,/Users/kanghongjin/repos_for_misuses/commons-lang/src/main/java/org/apache/commons/lang3/exception/ExceptionUtils.java - ExceptionUtils.getStackFrames#String#
+/Users/kanghongjin/repos_for_misuses/commons-lang/src/main/java/org/apache/commons/lang3/exception/ExceptionUtils.java,1,/Users/kanghongjin/repos_for_misuses/commons-lang/src/main/java/org/apache/commons/lang3/exception/ExceptionUtils.java - ExceptionUtils.getStackFrameList#Throwable#

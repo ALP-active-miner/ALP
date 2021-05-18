@@ -1,0 +1,21 @@
+clingo version 5.2.2
+Reading from ...ult_interesting_subgraphs_coverage.txt
+Solving...
+Answer: 1
+selected(1949) selected(379) selected(212) selected(1276) selected(2340) selected(441) selected(27) selected(2337) selected(1079) selected(1113) selected(346) selected(1645) selected(1407) selected(1166) selected(1476) selected(2257) selected(181) selected(2294) selected(1991) selected(815) selected(1008) selected(1894) covered_count(29)
+Optimization: -29
+Answer: 2
+selected(1949) selected(867) selected(212) selected(1526) selected(2339) selected(2340) selected(2442) selected(440) selected(441) selected(1265) selected(27) selected(1316) selected(1079) selected(1868) selected(1476) selected(2257) selected(181) selected(2294) selected(1991) selected(815) selected(1008) selected(1894) covered_count(30)
+Optimization: -30
+Answer: 3
+selected(1792) selected(1301) selected(1949) selected(379) selected(212) selected(1276) selected(2340) selected(2442) selected(441) selected(27) selected(1079) selected(1645) selected(1914) selected(2426) selected(1166) selected(1476) selected(2257) selected(2294) selected(199) selected(1991) selected(815) selected(1229) covered_count(31)
+Optimization: -31
+OPTIMUM FOUND
+
+Models       : 3
+  Optimum    : yes
+Optimization : -31
+Calls        : 1
+Time         : 702.260s (Solving: 702.22s 1st Model: 0.00s Unsat: 0.04s)
+CPU Time     : 4823.319s
+Threads      : 7        (Winner: 1)

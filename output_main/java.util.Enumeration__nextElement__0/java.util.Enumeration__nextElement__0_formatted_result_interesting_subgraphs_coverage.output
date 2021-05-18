@@ -1,0 +1,63 @@
+clingo version 5.2.2
+Reading from ...ult_interesting_subgraphs_coverage.txt
+Solving...
+Answer: 1
+selected(1109) selected(2605) selected(1088) selected(3184) selected(273) selected(3375) selected(1196) selected(493) selected(9) selected(339) covered_count(18)
+Optimization: -18
+Answer: 2
+selected(463) selected(491) selected(564) selected(1109) selected(2605) selected(1088) selected(273) selected(493) selected(9) selected(339) covered_count(25)
+Optimization: -25
+Answer: 3
+selected(463) selected(491) selected(564) selected(359) selected(1088) selected(224) selected(3375) selected(111) selected(1196) selected(493) selected(9) selected(339) covered_count(31)
+Optimization: -31
+Answer: 4
+selected(463) selected(491) selected(564) selected(359) selected(1088) selected(224) selected(3375) selected(111) selected(1196) selected(493) selected(3058) selected(9) selected(339) covered_count(32)
+Optimization: -32
+Answer: 5
+selected(463) selected(491) selected(564) selected(359) selected(1088) selected(273) selected(727) selected(729) selected(224) selected(3375) selected(111) selected(1196) selected(9) selected(339) covered_count(33)
+Optimization: -33
+Answer: 6
+selected(491) selected(359) selected(1088) selected(727) selected(728) selected(729) selected(224) selected(614) selected(1196) covered_count(42)
+Optimization: -42
+Answer: 7
+selected(463) selected(564) selected(1109) selected(2605) selected(273) selected(727) selected(728) selected(729) selected(224) selected(3375) selected(111) selected(1196) covered_count(52)
+Optimization: -52
+Answer: 8
+selected(463) selected(491) selected(564) selected(359) selected(1088) selected(727) selected(728) selected(729) selected(224) selected(3375) selected(111) selected(1196) selected(9) selected(339) covered_count(53)
+Optimization: -53
+Answer: 9
+selected(463) selected(491) selected(564) selected(359) selected(1088) selected(727) selected(728) selected(729) selected(224) selected(3375) selected(111) selected(1196) selected(3058) selected(9) selected(339) covered_count(54)
+Optimization: -54
+Answer: 10
+selected(463) selected(564) selected(1109) selected(2605) selected(359) selected(273) selected(727) selected(728) selected(729) selected(224) selected(3375) selected(111) selected(1196) selected(493) covered_count(55)
+Optimization: -55
+Answer: 11
+selected(463) selected(491) selected(564) selected(1109) selected(359) selected(1088) selected(727) selected(728) selected(729) selected(224) selected(3375) selected(111) selected(1196) selected(3058) selected(9) selected(339) covered_count(56)
+Optimization: -56
+Answer: 12
+selected(463) selected(564) selected(1109) selected(2605) selected(1088) selected(273) selected(727) selected(728) selected(729) selected(224) selected(614) selected(3375) selected(1196) selected(493) selected(9) selected(339) covered_count(58)
+Optimization: -58
+Answer: 13
+selected(463) selected(564) selected(1109) selected(2605) selected(1088) selected(273) selected(727) selected(728) selected(729) selected(224) selected(614) selected(3375) selected(111) selected(9) selected(339) covered_count(61)
+Optimization: -61
+Answer: 14
+selected(463) selected(491) selected(564) selected(1109) selected(2605) selected(1088) selected(3184) selected(273) selected(727) selected(728) selected(729) selected(224) selected(614) selected(3375) selected(111) selected(1196) covered_count(80)
+Optimization: -80
+Answer: 15
+selected(463) selected(491) selected(564) selected(1109) selected(2605) selected(1088) selected(3184) selected(273) selected(727) selected(728) selected(729) selected(224) selected(614) selected(3375) selected(111) selected(1196) selected(9) selected(339) covered_count(81)
+Optimization: -81
+Answer: 16
+selected(463) selected(564) selected(1109) selected(2605) selected(359) selected(1088) selected(3184) selected(273) selected(727) selected(728) selected(729) selected(224) selected(614) selected(3375) selected(111) selected(1196) selected(3058) selected(9) selected(339) covered_count(82)
+Optimization: -82
+Answer: 17
+selected(463) selected(491) selected(564) selected(1109) selected(2605) selected(359) selected(1088) selected(3184) selected(273) selected(727) selected(728) selected(729) selected(224) selected(614) selected(3375) selected(111) selected(1196) selected(3058) selected(9) selected(339) covered_count(83)
+Optimization: -83
+OPTIMUM FOUND
+
+Models       : 17
+  Optimum    : yes
+Optimization : -83
+Calls        : 1
+Time         : 0.064s (Solving: 0.06s 1st Model: 0.00s Unsat: 0.04s)
+CPU Time     : 0.391s
+Threads      : 7        (Winner: 2)

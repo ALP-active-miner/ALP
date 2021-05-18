@@ -1,0 +1,6 @@
+digraph "delegate(__FieldOfClass__)" {
+
+  1 [ label="Collections.emptyMap() L8" shape="box" ];
+  2 [ label="Map" shape="ellipse" ];
+  1 -> 2 [ label="def" style="solid" ];
+}

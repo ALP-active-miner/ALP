@@ -1,0 +1,2 @@
+/Users/kanghongjin/repos_for_misuses/commons-bcel/src/main/java/org/apache/bcel/verifier/VerifyDialog.java,0,/Users/kanghongjin/repos_for_misuses/commons-bcel/src/main/java/org/apache/bcel/verifier/VerifyDialog.java - VerifyDialog.main#String[]#
+/Users/kanghongjin/repos_for_misuses/commons-bcel/src/main/java/org/apache/bcel/verifier/GraphicalVerifier.java,1,/Users/kanghongjin/repos_for_misuses/commons-bcel/src/main/java/org/apache/bcel/verifier/GraphicalVerifier.java - GraphicalVerifier.GraphicalVerifier#

@@ -1,0 +1,7 @@
+testFile,0,testFile - ListGet.misuse#List#int#
+testFile,1,testFile - SortedDependencies.findCycle#List#Multimap#
+testFile,2,testFile - SortedDependencies.cycleToString#List#
+testFile,3,testFile - SortedDependencies.topologicalStableSort#List#Multimap#
+testFile,4,testFile - SortedDependencies.findCycle#INPUT#Set#Multimap#Set#
+testFile,5,testFile - EventBuilderImpl.buildEvent#Object#Map#
+testFile,6,testFile - TooRestrictive.misuse#List#

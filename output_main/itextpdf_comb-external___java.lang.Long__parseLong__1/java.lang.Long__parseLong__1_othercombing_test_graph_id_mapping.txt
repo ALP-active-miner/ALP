@@ -1,0 +1,2 @@
+/Users/kanghongjin/repos_for_misuses/itextpdf/itext/src/main/java/com/itextpdf/xmp/XMPUtils.java,0,/Users/kanghongjin/repos_for_misuses/itextpdf/itext/src/main/java/com/itextpdf/xmp/XMPUtils.java - XMPUtils.convertToLong#String#
+/Users/kanghongjin/repos_for_misuses/itextpdf/itext/src/main/java/com/itextpdf/text/pdf/PRTokeniser.java,1,/Users/kanghongjin/repos_for_misuses/itextpdf/itext/src/main/java/com/itextpdf/text/pdf/PRTokeniser.java - PRTokeniser.longValue#

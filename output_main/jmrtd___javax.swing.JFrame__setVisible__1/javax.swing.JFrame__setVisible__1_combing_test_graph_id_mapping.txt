@@ -1,0 +1,2 @@
+/Users/kanghongjin/repos/MUBench/mubench-checkouts/jmrtd/51/checkout/src/sos/mrtd/sample/PassportGUI.java,0,/Users/kanghongjin/repos/MUBench/mubench-checkouts/jmrtd/51/checkout/src/sos/mrtd/sample/PassportGUI.java - PassportGUI.main#String[]#
+/Users/kanghongjin/repos/MUBench/mubench-checkouts/jmrtd/51/checkout/src/sos/mrtd/sample/FacePanel.java,1,/Users/kanghongjin/repos/MUBench/mubench-checkouts/jmrtd/51/checkout/src/sos/mrtd/sample/FacePanel.java - FacePanel.FacePanel#CardService#

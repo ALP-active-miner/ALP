@@ -1,0 +1,117 @@
+clingo version 5.2.2
+Reading from ...ult_interesting_subgraphs_coverage.txt
+Solving...
+Answer: 1
+selected(79) selected(95) selected(132) selected(66) selected(4) selected(89) covered_count(7) coverage(277)
+Optimization: -277
+Answer: 2
+selected(79) selected(95) selected(132) selected(67) selected(66) selected(1501) covered_count(8) coverage(278)
+Optimization: -278
+Answer: 3
+selected(132) selected(274) selected(2910) selected(2911) selected(2940) selected(2941) selected(2944) selected(2943) selected(2930) covered_count(18) coverage(293)
+Optimization: -293
+Answer: 4
+selected(132) selected(2910) selected(2911) selected(1162) selected(2940) selected(2941) selected(2945) selected(2943) selected(2903) selected(2422) selected(2955) selected(2930) covered_count(35) coverage(294)
+Optimization: -294
+Answer: 5
+selected(95) selected(2164) selected(2511) selected(3054) selected(2941) selected(102) selected(3018) selected(148) selected(66) selected(2944) selected(2943) selected(2903) selected(2955) selected(4) selected(86) selected(161) selected(2930) selected(143) covered_count(52) coverage(295)
+Optimization: -295
+Answer: 6
+selected(7) selected(132) selected(2273) selected(2910) selected(2941) selected(102) selected(3018) selected(148) selected(66) selected(2944) selected(2943) selected(2903) selected(2955) selected(86) selected(161) selected(2930) selected(143) covered_count(49) coverage(296)
+Optimization: -296
+Answer: 7
+selected(7) selected(132) selected(447) selected(2910) selected(2477) selected(2940) selected(2944) selected(2943) selected(2903) selected(2955) selected(86) selected(2877) selected(2930) covered_count(21) coverage(298)
+Optimization: -298
+Answer: 8
+selected(79) selected(2494) selected(2652) selected(609) selected(2817) selected(3036) selected(1534) selected(1565) selected(1987) selected(862) selected(2523) selected(2987) selected(2062) selected(1291) selected(2107) selected(148) selected(624) selected(625) selected(2903) selected(82) selected(1810) selected(1954) selected(1359) selected(798) selected(1576) selected(143) covered_count(19) coverage(300)
+Optimization: -300
+Answer: 9
+selected(7) selected(2164) selected(132) selected(2273) selected(2910) selected(102) selected(669) selected(3018) selected(148) selected(2945) selected(2456) selected(901) selected(86) selected(674) selected(161) selected(2930) selected(1706) selected(1186) selected(2185) selected(1436) selected(1969) selected(143) covered_count(36) coverage(301)
+Optimization: -301
+Answer: 10
+selected(7) selected(132) selected(447) selected(2511) selected(1410) selected(1565) selected(2043) selected(67) selected(66) selected(1363) selected(82) selected(2955) selected(86) selected(2831) selected(161) selected(2431) selected(2877) selected(260) selected(1566) selected(1359) selected(1409) selected(2882) selected(1494) selected(1519) selected(1642) selected(1655) covered_count(37) coverage(308)
+Optimization: -308
+Answer: 11
+selected(7) selected(132) selected(2409) selected(1410) selected(1565) selected(2043) selected(1550) selected(67) selected(66) selected(1363) selected(387) selected(82) selected(2955) selected(86) selected(2831) selected(161) selected(2431) selected(2877) selected(260) selected(1566) selected(1359) selected(1409) selected(2882) selected(1494) selected(1519) selected(1655) covered_count(49) coverage(309)
+Optimization: -309
+Answer: 12
+selected(7) selected(2273) selected(274) selected(2409) selected(1410) selected(1565) selected(1516) selected(1550) selected(67) selected(1621) selected(66) selected(9) selected(1363) selected(82) selected(2955) selected(86) selected(2831) selected(161) selected(2877) selected(2930) selected(1359) selected(1409) selected(1494) selected(1655) selected(1786) covered_count(58) coverage(311)
+Optimization: -311
+Answer: 13
+selected(7) selected(132) selected(2273) selected(274) selected(1410) selected(1565) selected(2061) selected(2940) selected(67) selected(3018) selected(66) selected(1363) selected(86) selected(2831) selected(161) selected(2431) selected(2877) selected(260) selected(1359) selected(1409) selected(632) selected(1436) selected(1969) selected(1494) selected(1655) selected(1786) covered_count(38) coverage(312)
+Optimization: -312
+Answer: 14
+selected(7) selected(2273) selected(274) selected(1410) selected(1565) selected(1876) selected(2061) selected(2940) selected(1550) selected(67) selected(3018) selected(66) selected(1363) selected(387) selected(86) selected(2831) selected(161) selected(2431) selected(2877) selected(260) selected(1359) selected(1409) selected(632) selected(1436) selected(1969) selected(1786) covered_count(64) coverage(313)
+Optimization: -313
+Answer: 15
+selected(7) selected(2273) selected(274) selected(2409) selected(1410) selected(1565) selected(1595) selected(1604) selected(2061) selected(2940) selected(1550) selected(67) selected(3018) selected(66) selected(1363) selected(387) selected(86) selected(161) selected(2877) selected(2930) selected(1359) selected(1409) selected(632) selected(1436) selected(1969) covered_count(71) coverage(314)
+Optimization: -314
+Answer: 16
+selected(7) selected(2273) selected(274) selected(2409) selected(1410) selected(1565) selected(2061) selected(2940) selected(1516) selected(67) selected(3018) selected(1621) selected(66) selected(9) selected(1363) selected(86) selected(161) selected(2877) selected(2930) selected(1359) selected(1409) selected(632) selected(1436) selected(1969) selected(1473) covered_count(52) coverage(315)
+Optimization: -315
+Answer: 17
+selected(7) selected(2273) selected(274) selected(2409) selected(1410) selected(1565) selected(2061) selected(2940) selected(1516) selected(1550) selected(67) selected(3018) selected(1621) selected(66) selected(9) selected(1363) selected(86) selected(161) selected(2877) selected(2930) selected(1359) selected(1409) selected(632) selected(1436) selected(1969) covered_count(79) coverage(316)
+Optimization: -316
+Answer: 18
+selected(7) selected(471) selected(1410) selected(1565) selected(1876) selected(2061) selected(2940) selected(1516) selected(1550) selected(67) selected(3018) selected(1621) selected(66) selected(9) selected(1363) selected(86) selected(304) selected(161) selected(2877) selected(2930) selected(1359) selected(303) selected(2272) selected(1409) selected(1436) selected(1969) covered_count(82) coverage(317)
+Optimization: -317
+Answer: 19
+selected(2115) selected(2164) selected(122) selected(692) selected(2974) selected(996) selected(1003) selected(1211) selected(1565) selected(1966) selected(1987) selected(2940) selected(2941) selected(67) selected(102) selected(1564) selected(82) selected(629) selected(1810) selected(630) selected(161) selected(2877) selected(2930) selected(798) selected(1796) selected(1519) covered_count(32) coverage(320)
+Optimization: -320
+Answer: 20
+selected(2115) selected(2164) selected(122) selected(692) selected(2974) selected(996) selected(1003) selected(1211) selected(1565) selected(1964) selected(1987) selected(2940) selected(2941) selected(67) selected(102) selected(1564) selected(82) selected(629) selected(1810) selected(630) selected(161) selected(2877) selected(2930) selected(798) selected(1796) selected(1519) covered_count(34) coverage(322)
+Optimization: -322
+Answer: 21
+selected(2115) selected(2164) selected(122) selected(692) selected(996) selected(3054) selected(1049) selected(1223) selected(1565) selected(1966) selected(1987) selected(2940) selected(2941) selected(67) selected(102) selected(1564) selected(82) selected(629) selected(1810) selected(630) selected(161) selected(2877) selected(2930) selected(798) selected(1796) selected(1519) covered_count(39) coverage(323)
+Optimization: -323
+Answer: 22
+selected(79) selected(2166) selected(2623) selected(2818) selected(2853) selected(2910) selected(3036) selected(1314) selected(2107) selected(102) selected(2024) selected(424) selected(2903) selected(82) selected(539) selected(2955) selected(86) selected(798) selected(799) selected(1186) selected(1916) selected(2882) selected(2279) selected(2568) selected(2833) selected(3004) covered_count(22) coverage(324)
+Optimization: -324
+Answer: 23
+selected(79) selected(132) selected(2273) selected(274) selected(447) selected(471) selected(2853) selected(3036) selected(1162) selected(1314) selected(2107) selected(3018) selected(2024) selected(424) selected(82) selected(539) selected(2955) selected(86) selected(304) selected(303) selected(798) selected(799) selected(1186) selected(1916) selected(2882) selected(2279) covered_count(28) coverage(325)
+Optimization: -325
+Answer: 24
+selected(79) selected(122) selected(470) selected(572) selected(609) selected(2853) selected(3036) selected(1314) selected(2061) selected(2107) selected(102) selected(2024) selected(148) selected(424) selected(2903) selected(82) selected(539) selected(2955) selected(86) selected(798) selected(799) selected(1576) selected(1186) selected(1916) selected(2882) selected(2279) covered_count(31) coverage(326)
+Optimization: -326
+Answer: 25
+selected(79) selected(311) selected(609) selected(2853) selected(2910) selected(3036) selected(1314) selected(2061) selected(2107) selected(102) selected(2024) selected(424) selected(2903) selected(82) selected(539) selected(2955) selected(2831) selected(304) selected(303) selected(798) selected(799) selected(1576) selected(1186) selected(1916) selected(2882) selected(2279) covered_count(25) coverage(327)
+Optimization: -327
+Answer: 26
+selected(79) selected(261) selected(471) selected(2853) selected(2910) selected(3036) selected(1314) selected(2107) selected(102) selected(2024) selected(148) selected(66) selected(424) selected(2903) selected(82) selected(539) selected(2955) selected(86) selected(304) selected(303) selected(143) selected(1520) selected(2882) selected(946) selected(947) selected(2279) covered_count(30) coverage(328)
+Optimization: -328
+Answer: 27
+selected(79) selected(471) selected(2853) selected(2910) selected(3036) selected(1314) selected(2107) selected(102) selected(2024) selected(148) selected(66) selected(424) selected(387) selected(2903) selected(82) selected(539) selected(2955) selected(86) selected(304) selected(303) selected(143) selected(1520) selected(2882) selected(946) selected(947) selected(2279) covered_count(42) coverage(329)
+Optimization: -329
+Answer: 28
+selected(79) selected(471) selected(2853) selected(3036) selected(1314) selected(1897) selected(2107) selected(102) selected(2024) selected(424) selected(2903) selected(82) selected(539) selected(2955) selected(86) selected(304) selected(1706) selected(303) selected(798) selected(799) selected(1186) selected(1520) selected(1916) selected(2882) selected(946) selected(2279) covered_count(24) coverage(330)
+Optimization: -330
+Answer: 29
+selected(79) selected(471) selected(2853) selected(3036) selected(1314) selected(1499) selected(2107) selected(3018) selected(2024) selected(424) selected(2903) selected(82) selected(539) selected(2955) selected(86) selected(304) selected(1706) selected(303) selected(798) selected(799) selected(1186) selected(1520) selected(1916) selected(2882) selected(946) selected(2279) covered_count(39) coverage(331)
+Optimization: -331
+Answer: 30
+selected(79) selected(471) selected(2853) selected(3036) selected(1003) selected(1314) selected(2107) selected(102) selected(2024) selected(424) selected(82) selected(539) selected(2955) selected(86) selected(2831) selected(304) selected(2686) selected(303) selected(798) selected(799) selected(1520) selected(1916) selected(2882) selected(946) selected(947) selected(2279) covered_count(26) coverage(332)
+Optimization: -332
+Answer: 31
+selected(79) selected(132) selected(471) selected(2853) selected(3036) selected(1314) selected(2061) selected(2062) selected(2107) selected(102) selected(2024) selected(424) selected(82) selected(539) selected(2955) selected(86) selected(304) selected(1955) selected(2361) selected(303) selected(143) selected(2882) selected(946) selected(947) selected(2279) selected(1753) covered_count(26) coverage(334)
+Optimization: -334
+Answer: 32
+selected(79) selected(762) selected(2853) selected(3036) selected(1003) selected(1259) selected(1314) selected(1499) selected(2107) selected(102) selected(3018) selected(2024) selected(424) selected(1564) selected(82) selected(539) selected(2955) selected(86) selected(2831) selected(2686) selected(143) selected(1520) selected(1796) selected(946) selected(947) selected(2279) covered_count(32) coverage(335)
+Optimization: -335
+Answer: 33
+selected(79) selected(122) selected(471) selected(762) selected(2853) selected(3036) selected(1003) selected(1314) selected(2107) selected(102) selected(2024) selected(424) selected(1564) selected(82) selected(539) selected(2955) selected(86) selected(2831) selected(304) selected(2686) selected(303) selected(143) selected(1520) selected(946) selected(947) selected(2279) covered_count(28) coverage(336)
+Optimization: -336
+Answer: 34
+selected(7) selected(2095) selected(2164) selected(122) selected(2273) selected(1259) selected(1296) selected(2940) selected(2083) selected(2023) selected(2024) selected(148) selected(66) selected(424) selected(106) selected(2943) selected(2903) selected(2955) selected(4) selected(86) selected(304) selected(119) selected(161) selected(89) selected(90) selected(175) covered_count(52) coverage(346)
+Optimization: -346
+Answer: 35
+selected(7) selected(398) selected(403) selected(2471) selected(2496) selected(2497) selected(2511) selected(2635) selected(3054) selected(2940) selected(2023) selected(2024) selected(148) selected(66) selected(404) selected(405) selected(406) selected(424) selected(2903) selected(2955) selected(4) selected(86) selected(161) selected(303) selected(1576) selected(2157) covered_count(58) coverage(347)
+Optimization: -347
+Answer: 36
+selected(176) selected(182) selected(398) selected(408) selected(2496) selected(2497) selected(2511) selected(1157) selected(2263) selected(2264) selected(2940) selected(2023) selected(2024) selected(148) selected(405) selected(406) selected(423) selected(424) selected(2903) selected(2955) selected(86) selected(161) selected(1576) selected(234) selected(1880) selected(175) covered_count(57) coverage(348)
+Optimization: -348
+Answer: 37
+selected(2164) selected(176) selected(207) selected(261) selected(408) selected(2496) selected(2497) selected(2511) selected(2263) selected(2940) selected(373) selected(2023) selected(2024) selected(148) selected(405) selected(406) selected(423) selected(424) selected(387) selected(657) selected(2903) selected(2955) selected(86) selected(161) selected(1576) selected(1880) covered_count(81) coverage(349)
+Optimization: -349
+Answer: 38
+selected(7) selected(2164) selected(176) selected(408) selected(2496) selected(2497) selected(2511) selected(2940) selected(2023) selected(2024) selected(148) selected(405) selected(406) selected(423) selected(424) selected(387) selected(657) selected(2903) selected(2955) selected(4) selected(589) selected(86) selected(2545) selected(161) selected(230) selected(1576) covered_count(85) coverage(350)
+Optimization: -350

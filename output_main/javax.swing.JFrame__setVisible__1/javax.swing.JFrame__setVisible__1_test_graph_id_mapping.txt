@@ -1,0 +1,2 @@
+testFile,0,testFile - JFramePack.packAfterShowHasNoEffect#JFrame#
+testFile,1,testFile - CallOnDTE.main#String[]#

@@ -1,0 +1,1 @@
+/Users/kanghongjin/repos_for_misuses/xmlgraphics-fop/fop-core/src/main/java/org/apache/fop/afp/fonts/RasterFont.java,0,/Users/kanghongjin/repos_for_misuses/xmlgraphics-fop/fop-core/src/main/java/org/apache/fop/afp/fonts/RasterFont.java - RasterFont.getCharacterSet#int#
