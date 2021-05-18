@@ -34,7 +34,10 @@ identified_misuses = set()
 with open('all_probability_for_othercombing_no_reject_instances.txt') as infile:
 	for line in infile:
 		location_and_api = line[:line.rindex(',')]
-		identified_misuses.add(location_and_api.split('/Users/first_author/AU500_repositories/')[1])
+		#identified_misuses.add(location_and_api.split('/Users/first_author/AU500_repositories/')[1])
+		identified_misuses.add(location_and_api.split('/Users/author/repos_for_misuses/')[1])
+
+
 
 
 print('==== from output_without_reject_and_test_intersection =====')

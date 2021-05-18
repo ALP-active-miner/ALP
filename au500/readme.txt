@@ -1,3 +1,25 @@
+The data in the AU500 can be found in annotation_prep/to_annotate.csv
+
+
+To summarize the different tools and their performance on AU500,
+here are the outputs of running them:
+
+
+ALP's output:
+
+precision =  0.4152046783625731
+recall =  0.6173913043478261
+F1 =  0.4965034965034965
+
+ALP's output, but without the reject option:
+
+precision =  0.36
+recall =  0.6260869565217392
+F1 =  0.45714285714285713
+
+
+
+To construct the graphs again,
 ALPPipelineCombOtherProjectForAPIUsageGraphBuilder.java should be run, after modifying the paths to point to the right paths.
 e.g. 
 "/Users/first_author/repos_for_misuses/commons-bcel/",
@@ -37,35 +59,5 @@ curator:   2af84b9f
 bigtop:  c9cb18fb
 
 The 500 selected instnaces are in to_annotate.csv.
-These are the labels that are already discussed and resolved.
-
-To summarize the different tools and their performance on AU500,
-here are the outputs of running them:
-
-MUDetect's output (from mudetect_findings.csv):
-==== from mudetect_and_test_intersection =====
-total guesses by mudetect 123
-total correct misuse guesses by output 34
-total misuses in test 115
-precision =  0.2764227642276423
-recall =  0.2956521739130435
-F1 =  0.28571428571428575
-
-ALP's output 
-==== from output_and_test_intersection =====
-total guesses by output 141
-total correct misuse guesses by output 63
-total misuses in test 115
-precision =  0.44680851063829785
-recall =  0.5478260869565217
-F1 =  0.49218749999999994
-
-ALP's output, but without the reject option
-==== from output_without_reject_and_test_intersection =====
-total guesses by output_without_reject 200
-total correct misuse guesses by output_without_reject 72
-total misuses in test 115
-precision =  0.36
-recall =  0.6260869565217392
-F1 =  0.45714285714285713
+These are the labels that were already discussed and resolved.
 
